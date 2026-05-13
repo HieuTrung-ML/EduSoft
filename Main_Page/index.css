@@ -25,6 +25,17 @@ body {
   color: var(--text-dark);
   line-height: 1.5;
   overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1047,6 +1058,94 @@ a {
   transform: rotate(180deg);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.navbar.is-scrolled .hamburger span {
+  background-color: var(--text-dark);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px; /* Below header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--bg-light);
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 40px 24px;
+    gap: 24px !important;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Dropdown to accordion */
+  .dropdown-menu {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 16px 0;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: grid;
+  }
+
+  .dropdown.active .nav-link svg {
+    transform: rotate(180deg);
+  }
+}
+
 .dropdown-item {
   display: flex;
   align-items: center;
@@ -1079,4 +1178,108 @@ a {
 }
 .nav-links a.dropdown-item::after {
   display: none !important;
+}
+
+/* ========================================= */
+/* COMPREHENSIVE RESPONSIVE STYLES (MOBILE)  */
+/* ========================================= */
+
+/* Desktop / Tablet General Updates */
+h1 { font-size: clamp(36px, 8vw, 64px); }
+h2 { font-size: clamp(28px, 6vw, 44px); }
+
+@media (max-width: 1024px) {
+  /* 3. Hero Orbit Scale */
+  .spiral-scale-wrapper {
+    transform: scale(0.75);
+    transform-origin: right center;
+  }
+
+  /* 6. Grid, Card, Logo */
+  .feature-grid, .stats-grid, .value-props-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 8. Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* 3. Hero Mobile */
+  .hero {
+    height: auto !important;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+  .hero-content {
+    flex-direction: column;
+    padding-top: 100px;
+    text-align: center;
+    height: auto;
+  }
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-graphic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .spiral-scale-wrapper {
+    transform: scale(0.5);
+    transform-origin: center top;
+    margin-top: -100px;
+    margin-bottom: -400px;
+  }
+
+  /* 6. Grid Mobile */
+  .feature-grid, .stats-grid, .value-props-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .partner-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* 7. CTA Banner */
+  .cta-card, .newsletter-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .cta-card .btn-primary, .newsletter-form {
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 8. Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .footer-links {
+    justify-content: center;
+  }
+  a { min-height: 44px; display: inline-flex; align-items: center; } /* Touch target */
+}
+
+@media (max-width: 480px) {
+  .spiral-scale-wrapper {
+    transform: scale(0.4);
+    margin-bottom: -500px;
+  }
 }
