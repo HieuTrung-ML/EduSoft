@@ -1015,3 +1015,68 @@ a {
   .footer-grid { grid-template-columns: 1fr; }
   .blue-banner .container { padding: 40px; }
 }
+
+/* Dropdown Styles for Main Page */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #E5EAF2;
+  z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown:hover .nav-link svg {
+  transform: rotate(180deg);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  color: #111111;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #F6F9FF;
+  color: #0B7FEA;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #111111;
+  font-weight: 500;
+}
+
+/* Fix for dropdown item specificity */
+.nav-links a.dropdown-item {
+  color: #111111 !important;
+}
+.nav-links a.dropdown-item:hover {
+  color: #0B7FEA !important;
+  background-color: #F6F9FF !important;
+}
+.nav-links a.dropdown-item::after {
+  display: none !important;
+}

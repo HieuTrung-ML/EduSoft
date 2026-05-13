@@ -18,11 +18,32 @@
         <a href="#" class="navbar-brand">
           <img src="assets/images/SideBarLogo.png" alt="Edu Digital Logo">
         </a>
-        <div class="nav-links">
-          <a href="#">Sản phẩm</a>
-          <a href="#">Giải pháp</a>
-          <a href="#">Tri thức số</a>
-          <a href="#">Cá nhân</a>
+        <div class="nav-links" style="display: flex; align-items: center; gap: 32px; height: 100%;">
+          <!-- Dropdown Sản phẩm -->
+          <div class="dropdown" style="position: relative; height: 100%; display: flex; align-items: center;">
+            <a href="#" class="nav-link" style="display: flex; align-items: center; gap: 4px;">
+              Sản phẩm
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="./Human_Resource_Management/human_resource.html" class="dropdown-item">Quản lý Nhân sự</a>
+              <a href="./Training_Management/training.html" class="dropdown-item">Quản lý Đào tạo</a>
+              <a href="./Admission_Management/admission.html" class="dropdown-item">Quản lý Tuyển sinh</a>
+              <a href="./Tuition_Management/tuition.html" class="dropdown-item">Quản lý Học phí</a>
+              <a href="./Work_Management/work.html" class="dropdown-item">Quản lý Công việc</a>
+              <a href="./Learning_Management/learning.html" class="dropdown-item">Quản lý Học tập</a>
+              <a href="./Learner_Management/learner.html" class="dropdown-item">Quản lý Người học</a>
+              <a href="./Facilities_Management/facilities.html" class="dropdown-item">Quản lý Cơ sở vật chất</a>
+            </div>
+          </div>
+          
+          <!-- Các menu khác -->
+          <a href="#" class="nav-link" style="display: flex; align-items: center; gap: 4px;">
+            Giải pháp
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <a href="#" class="nav-link">Tri thức số</a>
+          <a href="#" class="nav-link" style="color: #0B7FEA; font-weight: 600;">Cá nhân</a>
           <a href="#" class="btn btn-primary">Đăng ký Demo</a>
         </div>
       </nav>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Nhân sự | Edu Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="human_resource.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand brand-gradient" title="Edu Digital"></a>
+      
+      <nav class="nav-menu">
+        <div class="dropdown">
+          <a href="#" class="nav-link">
+            Sản phẩm
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="../Human_Resource_Management/human_resource.html" class="dropdown-item">Quản lý Nhân sự</a>
+            <a href="../Training_Management/training.html" class="dropdown-item">Quản lý Đào tạo</a>
+            <a href="../Admission_Management/admission.html" class="dropdown-item">Quản lý Tuyển sinh</a>
+            <a href="../Tuition_Management/tuition.html" class="dropdown-item">Quản lý Học phí</a>
+            <a href="../Work_Management/work.html" class="dropdown-item">Quản lý Công việc</a>
+            <a href="../Learning_Management/learning.html" class="dropdown-item">Quản lý Học tập</a>
+            <a href="../Learner_Management/learner.html" class="dropdown-item">Quản lý Người học</a>
+            <a href="../Facilities_Management/facilities.html" class="dropdown-item">Quản lý Cơ sở vật chất</a>
+          </div>
+        </div>
+        <a href="#" class="nav-link">
+          Giải pháp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <a href="#" class="nav-link">Tri thức số</a>
+        <a href="#" class="nav-link">Liên hệ</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="#" class="link-personal">Cá nhân</a>
+        <a href="#" class="btn btn-primary">Đăng ký Demo</a>
+      </div>
+
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-up">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content" data-aos="fade-right">
+          <div class="hero-badge-wrap">
+            <span class="badge badge-glass">Nhân sự</span>
+          </div>
+          <h1 class="hero-title">Quản lý Nhân sự<br>(E – HMS)</h1>
+          <p class="hero-desc">Bộ tính năng quản trị nhân sự từ việc xây dựng cơ cấu tổ chức, hồ sơ nhân sự tới theo dõi quá trình công tác và các hoạt động phát triển nhân sự</p>
+          <a href="#" class="btn btn-primary">Đăng ký Demo</a>
+        </div>
+        
+        <div class="mockup-wrapper" data-aos="fade-left" data-aos-delay="200">
+          <div class="glass-card mockup-main">
+            <div class="mockup-header">Danh sách nhân sự</div>
+            <table class="mockup-table">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Họ và tên</th>
+                  <th>Email</th>
+                  <th>Phòng ban</th>
+                  <th>Chức vụ</th>
+                  <th>Vai trò</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>dviet</td>
+                  <td>Đỗ Việt</td>
+                  <td>dviet@company.com</td>
+                  <td>Kế toán</td>
+                  <td>Kế toán viên</td>
+                  <td>User</td>
+                </tr>
+                <tr>
+                  <td>hanhnt</td>
+                  <td>Nguyễn Thu Hạnh</td>
+                  <td>hanhnt@company.com</td>
+                  <td>Marketing</td>
+                  <td>Chuyên viên MKT</td>
+                  <td>Manager</td>
+                </tr>
+                <tr>
+                  <td>pquang</td>
+                  <td>Phạm Quang</td>
+                  <td>pquang@company.com</td>
+                  <td>IT</td>
+                  <td>Kỹ sư phần mềm</td>
+                  <td>User</td>
+                </tr>
+                <tr>
+                  <td><div class="mockup-skeleton-line" style="width: 40px;"></div></td>
+                  <td><div class="mockup-skeleton-line" style="width: 80px;"></div></td>
+                  <td><div class="mockup-skeleton-line" style="width: 120px;"></div></td>
+                  <td><div class="mockup-skeleton-line" style="width: 60px;"></div></td>
+                  <td><div class="mockup-skeleton-line" style="width: 70px;"></div></td>
+                  <td><div class="mockup-skeleton-line" style="width: 40px;"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="glass-card mockup-float">
+            <div class="mockup-header">Cơ cấu tổ chức</div>
+            <div class="tree-container">
+              <div class="tree-item">
+                <div class="tree-item-name">
+                  <div class="tree-line"></div>
+                  Phòng Hành chính - Nhân sự
+                </div>
+                <div class="tree-actions">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="tree-item">
+                <div class="tree-item-name">
+                  <div class="tree-line"></div>
+                  Bộ phận Tuyển dụng
+                </div>
+                <div class="tree-actions">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="tree-item">
+                <div class="tree-item-name">
+                  <div class="tree-line"></div>
+                  Bộ phận Chấm công - Lương thưởng
+                </div>
+                <div class="tree-actions">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="tree-item">
+                <div class="tree-item-name">
+                  <div class="tree-line" style="width: 60px;"></div>
+                </div>
+                <div class="tree-actions">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section intro-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-down">Giải pháp số hoá Nhân sự của Edu Digital</h2>
+      <h3 class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Quản lý nguồn nhân lực hiệu quả</h3>
+      
+      <div class="intro-grid">
+        <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="intro-icon">
+            <img src="../assets/images/hr_org.png" alt="Cơ cấu tổ chức">
+          </div>
+          <h4>CƠ CẤU TỔ CHỨC KHOA HỌC</h4>
+          <p>Xây dựng cơ cấu tổ chức theo mô hình dạng cây trực quan, thao tác trực tiếp và hiệu quả</p>
+        </div>
+        <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="intro-icon">
+            <img src="../assets/images/hr_role.png" alt="Phân quyền tính năng">
+          </div>
+          <h4>PHÂN QUYỀN TÍNH NĂNG CHẶT CHẼ</h4>
+          <p>Dựa theo cơ cấu tổ chức để phân quyền rõ ràng các tác vụ và thông tin hiển thị</p>
+        </div>
+        <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="intro-icon">
+            <img src="../assets/images/hr_profile.png" alt="Hồ sơ nhân sự">
+          </div>
+          <h4>HỒ SƠ NHÂN SỰ CHI TIẾT</h4>
+          <p>Hồ sơ lý lịch toàn diện và thông tin quá trình công tác nhân sự trên một màn hình</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Overview (Tabs) -->
+  <section class="section features-overview" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">Chức năng Tổng thể</h2>
+      <h3 class="section-subtitle">Một nền tảng hợp nhất cho mọi hoạt động</h3>
+      
+      <div class="tabs-container">
+        <button class="tab-btn active" data-target="tab-org">Cơ cấu tổ chức</button>
+        <button class="tab-btn" data-target="tab-hr">Danh sách nhân sự</button>
+      </div>
+
+      <div class="software-mockup">
+        <div class="software-header">
+          <div class="logo" style="font-size: 18px;">
+            <div class="logo-icon" style="width: 20px; height: 20px;"></div>
+            DIGITAL
+          </div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        
+        <div class="software-body">
+          <div class="software-sidebar">
+            <h4 style="margin-bottom: 8px;">Cơ cấu tổ chức</h4>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">Thêm phòng ban</p>
+            
+            <div class="tree-list">
+              <div class="tree-list-item"><span class="name">Ban Chủ nhiệm Khoa (10)</span></div>
+              <div class="tree-list-item"><span class="name">Ban giám hiệu (7)</span></div>
+              <div class="tree-list-item"><span class="name">Bộ môn Giáo dục - Thể chất (13)</span></div>
+              <div class="tree-list-item"><span class="name">Bộ môn Lý luận - Chính trị (7)</span></div>
+              <div class="tree-list-item"><span class="name">Bộ môn QP - AN (9)</span></div>
+              <div class="tree-list-item"><span class="name">Khoa Công nghệ thông tin (1)</span></div>
+              <div class="tree-list-item"><span class="name">Khoa Công trình (5)</span></div>
+              <div class="tree-list-item"><span class="name">Khoa Kế toán (8)</span></div>
+              <div class="tree-list-item"><span class="name">Mời giảng (106)</span></div>
+              <div class="tree-list-item"><span class="name">Phòng Công tác HSSV (3)</span></div>
+              <div class="tree-list-item"><span class="name">Phòng Đào Tạo (9)</span></div>
+            </div>
+          </div>
+          
+          <div class="software-main">
+            <!-- Content for 'Cơ cấu tổ chức' Tab -->
+            <div id="tab-org" class="tab-content active">
+              <div class="software-table-header">
+                <h4>Danh sách nhân sự</h4>
+                <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Xuất excel</button>
+              </div>
+              <div class="table-responsive">
+                <table class="table-light">
+                  <thead>
+                    <tr>
+                      <th>STT</th>
+                      <th>User name</th>
+                      <th>Họ tên</th>
+                      <th>Email</th>
+                      <th>Vai trò</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>nva</td><td>Nguyễn Văn A</td><td>nva@gmail.com</td><td>Cán bộ nhà trường</td><td>Thao tác ▾</td></tr>
+                    <tr><td>2</td><td>ntna</td><td>Nguyễn Thị Ngọc Anh</td><td>ntna@gmail.com</td><td>Cán bộ nhà trường</td><td>Thao tác ▾</td></tr>
+                    <tr><td>3</td><td>pva</td><td>Phạm Việt Anh</td><td>pva@gmail.com</td><td>Cán bộ nhà trường</td><td>Thao tác ▾</td></tr>
+                    <tr><td>4</td><td>ttva</td><td>Trần Thị Vân Anh</td><td>ttva@gmail.com</td><td>Cán bộ nhà trường</td><td>Thao tác ▾</td></tr>
+                    <tr><td>5</td><td>ntva</td><td>Nguyễn Thị Vân Anh</td><td>ntva@gmail.com</td><td>Cán bộ nhà trường</td><td>Thao tác ▾</td></tr>
+                    <tr><td>6</td><td>tma</td><td>Trần Minh Anh</td><td>tma@gmail.com</td><td>Cán bộ nhà trường</td><td>Thao tác ▾</td></tr>
+                    <tr><td>7</td><td>hta</td><td>Hạ Thị Anh</td><td>hta@gmail.com</td><td>Cán bộ nhà trường</td><td>Thao tác ▾</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Content for 'Danh sách nhân sự' Tab -->
+            <div id="tab-hr" class="tab-content">
+              <div class="software-table-header">
+                <h4>Thông tin chi tiết nhân sự</h4>
+              </div>
+              <p style="color: var(--text-muted); font-size: 14px;">Vui lòng chọn nhân sự ở cột bên trái để xem chi tiết thông tin, hợp đồng, bảo hiểm, và đánh giá hiệu suất.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Detail 1 -->
+  <section class="feature-detail" data-aos="fade-up">
+    <div class="container">
+      <div class="feature-detail-inner">
+        <div class="visual-card" data-aos="fade-right">
+          <div class="visual-mockup-inner" style="opacity: 0.8; transform: scale(0.95) translateY(-20px);">
+             <table class="mockup-table" style="width: 100%;">
+                <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px; color: #333; font-size: 10px;">Username</td>
+                  <td style="padding: 8px; color: #333; font-size: 10px;">Họ và tên</td>
+                  <td style="padding: 8px; color: #333; font-size: 10px;">Email</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; font-size: 10px; color: #666;">dviet</td>
+                  <td style="padding: 8px; font-size: 10px; color: #666;">Đỗ Việt</td>
+                  <td style="padding: 8px; font-size: 10px; color: #666;">dviet@company.com</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; font-size: 10px; color: #666;">pquang</td>
+                  <td style="padding: 8px; font-size: 10px; color: #666;">Phạm Quang</td>
+                  <td style="padding: 8px; font-size: 10px; color: #666;">pquang@company.com</td>
+                </tr>
+             </table>
+          </div>
+          <div class="visual-profile-card">
+            <div class="profile-avatar">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div class="profile-info">
+              <h4>Nguyễn Thu Hạnh</h4>
+              <p>📞 0123456789</p>
+              <p>✉️ hanhnt@company.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="feature-text" data-aos="fade-left">
+          <h3>Quản lý chi tiết hồ sơ nhân sự</h3>
+          <p>Lưu trữ tổng hợp chi tiết hồ sơ nhân sự với nhiều nhóm dữ liệu như thông tin cá nhân, lịch sử công tác, các file bằng cấp, khen thưởng</p>
+          <ul class="feature-list">
+            <li><strong>Danh sách nhân sự:</strong> Khai báo và cập nhật đầy đủ các nhóm thông tin cá nhân, hoạt động giáo dục, thông tin bằng lương, v.v</li>
+            <li><strong>Quản lý giảng viên:</strong> Quản lý Hồ sơ Giảng viên theo cơ cấu Khoa và Bộ môn Giảng dạy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Detail 2 (Reverse) -->
+  <section class="feature-detail feature-detail-reverse" data-aos="fade-up">
+    <div class="container">
+      <div class="feature-detail-inner">
+        <div class="visual-card" data-aos="fade-left">
+          <div class="visual-mockup-inner" style="display: flex; gap: 20px;">
+             <div style="flex: 1; border-right: 1px solid #eee; padding-right: 10px;">
+                <div style="font-weight: bold; font-size: 12px; margin-bottom: 10px;">Cơ cấu tổ chức</div>
+                <div style="font-size: 10px; color: #555; margin-bottom: 5px;">- Phòng Hành chính</div>
+                <div style="font-size: 10px; color: #555; margin-bottom: 5px; padding-left: 10px;">- Bộ phận Tuyển dụng</div>
+             </div>
+             <div style="flex: 2;">
+                <div style="font-weight: bold; font-size: 12px; margin-bottom: 10px;">Danh sách bộ phận</div>
+                <div style="font-size: 10px; background: #f9f9f9; padding: 5px; margin-bottom: 5px; border-radius: 4px;">Nguyễn Văn A - Trưởng bộ phận</div>
+                <div style="font-size: 10px; background: #f9f9f9; padding: 5px; margin-bottom: 5px; border-radius: 4px;">Trần Thị B - Chuyên viên</div>
+             </div>
+          </div>
+        </div>
+        
+        <div class="feature-text" data-aos="fade-right">
+          <h3>Hệ thống cơ cấu tổ chức khoa học</h3>
+          <p>Sắp xếp hệ thống cơ cấu tổ chức theo mô hình dạng cây với khả năng tuỳ chỉnh linh hoạt, phù hợp với sơ đồ của các đơn vị giáo dục</p>
+          <ul class="feature-list">
+            <li><strong>Chức danh / Vai trò:</strong> Khai báo thông tin chức danh / vai trò và gắn vào cơ cấu tổ chức theo mô hình dạng cây</li>
+            <li><strong>Phòng ban:</strong> Hệ thống và tiêu chuẩn hóa thông tin các bộ phận, phòng ban trong đơn vị</li>
+            <li><strong>Phân quyền:</strong> Dựa theo Vai trò và Phòng ban để phân quyền phạm vi phụ trách, sử dụng tính năng và quản lý dữ liệu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Detail 3 -->
+  <section class="feature-detail" data-aos="fade-up">
+    <div class="container">
+      <div class="feature-detail-inner">
+        <div class="visual-card visual-calendar" data-aos="fade-right">
+          <div class="calendar-mockup">
+             <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px;">
+                <div style="font-size: 12px; font-weight: bold;">15/12/2025 - 20/12/2025</div>
+             </div>
+             <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; text-align: center;">
+                <div style="font-size: 10px;">15</div>
+                <div style="font-size: 10px;">16</div>
+                <div style="font-size: 10px; color: var(--primary); font-weight: bold;">17</div>
+                <div style="font-size: 10px;">18</div>
+                <div style="font-size: 10px;">19</div>
+                
+                <div style="height: 40px; background: #f0f0f0; border-radius: 4px; margin-top: 10px;"></div>
+                <div style="height: 40px; background: #f0f0f0; border-radius: 4px; margin-top: 10px;"></div>
+                <div style="height: 80px; background: var(--primary); color: white; border-radius: 4px; margin-top: 10px; font-size: 8px; padding: 5px;">Phỏng vấn ứng viên<br>09:00 - 11:00</div>
+                <div style="height: 40px; background: #f0f0f0; border-radius: 4px; margin-top: 10px;"></div>
+                <div style="height: 40px; background: #f0f0f0; border-radius: 4px; margin-top: 10px;"></div>
+             </div>
+          </div>
+          <div class="calendar-popup">
+             <div style="font-weight: bold; font-size: 14px; margin-bottom: 10px;">Phỏng vấn ứng viên</div>
+             <div style="font-size: 12px; color: #555; margin-bottom: 5px;">Thời gian: 09:00 - 11:00</div>
+             <div style="font-size: 12px; color: #555;">Ngày: Thứ Ba, 17/12/2025</div>
+          </div>
+        </div>
+        
+        <div class="feature-text" data-aos="fade-left">
+          <h3>Xử lý thủ tục hành chính đơn giản</h3>
+          <p>Khai báo, xử lý các công việc hành chính liên quan tới nhân sự nhanh chóng đơn giản và tiện lợi</p>
+          <ul class="feature-list">
+            <li><strong>Chính sách lao động:</strong> Khởi tạo các điều kiện về chính sách lao động như thừa giờ, chấm công, nghỉ phép, v.v</li>
+            <li><strong>Thủ tục đơn giản:</strong> Hỗ trợ khai báo và theo dõi đơn giản. VD: Chấm công online, đăng ký nghỉ phép, theo dõi thừa giờ. Quá trình cập nhật và xác thực thông tin đơn giản, ngắn gọn</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-section" data-aos="zoom-in">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-text">
+          <h2>Sẵn sàng số hoá toàn diện trong Giáo dục</h2>
+          <a href="#" class="btn btn-primary" style="background-color: var(--primary); box-shadow: none;">Đăng ký Demo</a>
+        </div>
+        <div class="cta-illustration">
+          <div class="illustration-placeholder">
+             <!-- Placeholder for Globe & Cap illustration -->
+             <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 140px; height: 40px; background: #333; border-radius: 4px;"></div>
+             <div style="position: absolute; top: 10px; right: -20px; width: 60px; height: 20px; background: #FFD700; border-radius: 2px; transform: rotate(45deg);"></div>
+             <svg style="width: 100%; height: 100%; padding: 20px; color: rgba(255,255,255,0.8);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <img src="../assets/images/SideBarLogo.png" alt="Edu Digital Logo" style="height: 40px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+          </div>
+          <p>Viện phát triển công nghệ và giáo dục EduSoft</p>
+          <p style="margin-top: 16px;">📧 info@edusoft.vn</p>
+          <p>📞 (+84) 916 567 528</p>
+          <p>📍 5 Ngõ 199 Trần Quốc Hoàn, Khu tập thể Đại học Sư phạm, Cầu Giấy, Hà Nội</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Sản phẩm</h4>
+          <ul>
+            <li><a href="../Training_Management/training.html">Quản lý đào tạo</a></li>
+            <li><a href="../Learning_Management/learning.html">Quản lý học tập</a></li>
+            <li><a href="../Work_Management/work.html">Quản lý công việc</a></li>
+            <li><a href="../Facilities_Management/facilities.html">Quản lý CSVC</a></li>
+            <li><a href="../Learner_Management/learner.html">Quản lý người học</a></li>
+            <li><a href="../Tuition_Management/tuition.html">Quản lý học phí</a></li>
+            <li><a href="../Human_Resource_Management/human_resource.html">Quản lý nhân sự</a></li>
+            <li><a href="../Admission_Management/admission.html">Quản lý tuyển sinh</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Giải pháp chuyển đổi số</h4>
+          <ul>
+            <li><a href="#">Giáo dục Đại học</a></li>
+            <li><a href="#">Giáo dục Nghề nghiệp</a></li>
+            <li><a href="#">Giáo dục K12</a></li>
+            <li><a href="#">Trung tâm đào tạo bồi dưỡng ngắn hạn</a></li>
+            <li><a href="#">Trung tâm ngoại ngữ & kỹ năng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hỗ trợ</h4>
+          <ul>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Hỏi đáp và chia sẻ</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+           <p>Edu Digital đã có mặt trên:</p>
+           <div style="display: flex; gap: 10px; margin-top: 10px;">
+             <div style="width: 120px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; border: 1px solid rgba(255,255,255,0.3);">App Store</div>
+             <div style="width: 120px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; border: 1px solid rgba(255,255,255,0.3);">Google Play</div>
+           </div>
+        </div>
+        <p style="margin-top: 20px;">Copyright © 2023 Edu Digital, Inc.</p>
+        <div class="footer-links">
+          <a href="#">Điều khoản</a>
+          <a href="#">Chính sách</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="human_resource.js"></script>
+</body>
+</html>
