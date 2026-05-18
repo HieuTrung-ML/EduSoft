@@ -109,10 +109,10 @@
   if (!orbitStage || orbitCards.length === 0) return;
 
   const layerConfig = {
-    main: { radius: 230, speed: 0.11, currentAngle: -Math.PI / 2 },
-    inner: { radius: 200, speed: 0.16, currentAngle: -Math.PI / 2 },
-    middle: { radius: 320, speed: 0.11, currentAngle: 0 },
-    outer: { radius: 455, speed: -0.055, currentAngle: -Math.PI / 2 }
+    main: { radius: 230, speed: 0.25, currentAngle: -Math.PI / 2 },
+    inner: { radius: 200, speed: 0.35, currentAngle: -Math.PI / 2 },
+    middle: { radius: 320, speed: 0.25, currentAngle: 0 },
+    outer: { radius: 455, speed: -0.15, currentAngle: -Math.PI / 2 }
   };
 
   const groupedCards = orbitCards.reduce((groups, el) => {
@@ -186,14 +186,7 @@
     });
   };
 
-  if (prefersReducedMotion) {
-    distributeLayers();
-    render();
-    cards.forEach(({ el }) => {
-      el.style.opacity = '1';
-    });
-    return;
-  }
+  // Removed prefersReducedMotion early return to ensure animation always plays
 
   let previousTime = performance.now();
   const animate = (time) => {

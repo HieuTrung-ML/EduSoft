@@ -92,19 +92,17 @@ a {
 .hero {
   position: relative;
   min-height: 100vh;
+  background: #00061A url('assets/images/FirstPage.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--text-white);
+  overflow: hidden;
 }
 
 /* Overlay for readability */
 .hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
-  z-index: 1;
+  display: none;
 }
 
 .hero > * {
@@ -216,7 +214,7 @@ a {
 .hero-text h1 {
   font-size: 64px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 100px;
   margin-bottom: 24px;
   word-break: normal;
   overflow-wrap: normal;
@@ -228,8 +226,9 @@ a {
 
 .hero-text p {
   font-size: 24px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  color: #D9D9D9;
+  line-height: 36px;
   margin-bottom: 40px;
   word-break: normal;
   overflow-wrap: normal;
@@ -663,58 +662,7 @@ a {
   z-index: 10;
 }
 
-.spiral-center {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.spiral-circle {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-.circle-1 { width: 250px; height: 250px; border-color: rgba(255, 255, 255, 0.3); }
-.circle-2 { width: 350px; height: 350px; border-color: rgba(255, 255, 255, 0.2); }
-.circle-3 { width: 450px; height: 450px; border-color: rgba(255, 255, 255, 0.1); }
-.circle-4 { width: 550px; height: 550px; border-color: rgba(1, 112, 240, 0.4); }
-
-.spiral-logo-container {
-  width: 120px;
-  height: 120px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 4px solid rgba(255, 255, 255, 0.2);
-}
-
-.spiral-logo-container img {
-  width: 82px;
-  height: 78px;
-  object-fit: contain;
-}
-
-.orbit-item {
-  position: absolute;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 15px 30px;
-  border-radius: 12px;
-  font-size: 24px;
-  font-weight: 500;
-  z-index: 15;
-}
-
-.orbit-1 { top: 0; left: 50%; transform: translateX(-50%); }
-.orbit-2 { bottom: 0; left: 50%; transform: translateX(-50%); }
 .spiral-scale-wrapper {
   transform: scale(0.65);
   transform-origin: center right;
@@ -736,12 +684,6 @@ a {
 
 .orbit-card div {
   white-space: nowrap;
-}
-
-.orbit-card > div:not(:first-child) {
-  max-width: calc(100% - 56px);
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 @media (prefers-reduced-motion: reduce) {
