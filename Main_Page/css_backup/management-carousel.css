@@ -1,0 +1,394 @@
+.education-platform,
+.integrate-school {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.integrate-school {
+  align-self: stretch;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-8);
+  flex-shrink: 0;
+}
+
+/* ===========================
+   integrate-school  – Management Carousel
+   =========================== */
+
+/* ── Outer section ── */
+.integrate-school {
+  width: 100%;
+  background: linear-gradient(307deg, #0D3676 0%, #010D40 100%);
+  padding: 160px 0 200px 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── Fixed header ── */
+.mng-header {
+  text-align: center;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.mng-subtitle {
+  margin: 0 0 12px;
+  color: white;
+  font-family: Inter, sans-serif;
+  font-size: clamp(18px, 2.2vw, 32px);
+  font-weight: 700;
+}
+
+.mng-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mng-title-word {
+  color: white;
+  font-family: Inter, sans-serif;
+  font-size: clamp(24px, 4.2vw, 60px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.mng-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mng-badge-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.16) 100%);
+  border: 1px solid rgba(255,255,255,0.50);
+  border-radius: 110px;
+  backdrop-filter: blur(50px);
+}
+
+.mng-badge-text {
+  position: relative;
+  color: white;
+  font-family: Inter, sans-serif;
+  font-size: clamp(24px, 4.5vw, 64px);
+  font-weight: 700;
+  padding: 8px 28px;
+  line-height: 1;
+}
+
+/* ── Carousel wrapper ── */
+.mng-carousel-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+/* ── Nav arrows ── */
+.mng-nav {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  background: rgba(0,0,0,0.08);
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  backdrop-filter: blur(10px);
+  padding: 0;
+}
+
+.mng-nav:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.mng-nav svg {
+  display: block;
+}
+
+/* ── Slides viewport ── */
+.mng-viewport {
+  flex: 1;
+  max-width: 1200px;
+  overflow: hidden;
+  border-radius: 30px;
+  /* card is 1530×800 — scale it to fit container */
+}
+
+/* ── Track (slides side by side) ── */
+.mng-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  /* 4 slides, each 25% of the 400% wide track */
+  width: 400%;
+}
+
+/* ── Individual slide ── */
+.mng-slide {
+  flex: 0 0 25%;
+  width: 25%;
+  overflow: hidden;
+  /* The card inside is 1530×800 — scaler handles it */
+}
+
+/* ── Card scaler: scales the 1530×800 card to fit ── */
+.mng-card-scaler {
+  width: 1530px;
+  height: 800px;
+  transform-origin: top left;
+  /* Scale is set dynamically via JS */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Dots ── */
+.mng-dots {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mng-dot {
+  width: 30px;
+  height: 30px;
+  background: rgba(0,0,0,0.20);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.mng-dot.active {
+  background: white;
+}
+
+/* Section wraps: [arrow] [viewport] [arrow] */
+.mng-slider-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Navigation arrows */
+.mng-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(8px);
+  padding: 0;
+}
+
+.mng-arrow:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.mng-arrow img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.mng-arrow-next img {
+  transform: rotate(180deg);
+}
+
+/* Slider viewport - clips to one slide at a time */
+.mng-slider-viewport {
+  flex: 1;
+  max-width: 1000px;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* Track holds all slides side by side */
+.mng-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 400%; /* 4 slides × 100% */
+}
+
+/* Individual slide */
+.mng-slide {
+  flex: 0 0 25%; /* 100% ÷ 4 */
+  width: 25%;
+  overflow: hidden;
+}
+
+.mng-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Dots row */
+.mng-dots-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.mng-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.mng-dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+
+/* --- 8. Management Carousel Absolute Stacking & Navigation Positioning --- */
+
+/* Parent section min-height and layout context */
+.integrate-school {
+  position: relative !important;
+  min-height: 720px !important;
+}
+
+/* Carousel wrapper for centering viewport and positioning absolute arrows */
+.mng-carousel-wrap {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Viewport styling */
+.mng-viewport {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+
+/* Track matches viewport size and has absolute children */
+.mng-track {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Slide absolute stacking with opacity transition */
+.mng-slide {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  transition: opacity 0.5s ease-in-out !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  flex: none !important;
+}
+
+.mng-slide.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 2 !important;
+}
+
+/* Pinned navigation arrows on left/right edges of wrap */
+.mng-nav-prev {
+  position: absolute !important;
+  left: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+}
+
+.mng-nav-next {
+  position: absolute !important;
+  right: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+}
+
+/* Pinned dots row at bottom center of the section */
+.mng-dots {
+  position: absolute !important;
+  bottom: -48px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 10 !important;
+  display: flex !important;
+  gap: 14px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;
+}
+
+.mng-dot {
+  width: 12px !important;
+  height: 12px !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: background 0.3s ease, transform 0.3s ease !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.mng-dot.active {
+  background: #ffffff !important;
+  transform: scale(1.3) !important;
+}

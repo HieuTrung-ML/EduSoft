@@ -59,78 +59,49 @@
    Fix: background-1-parent bị ẩn bởi legacy.css
    Căn giữa banner và tạo responsive linh hoạt
    ───────────────────────────────────────────────────── */
-/* Fix: Căn giữa banner và tạo responsive linh hoạt bằng Flexbox */
 .background-1-parent {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  max-width: 1440px !important;
+  display: block !important;
+  position: relative !important;
+  width: calc(100% - 64px) !important;
+  max-width: 1550px !important;
   height: auto !important;
-  min-height: 480px !important;
+  min-height: 380px !important;
+  aspect-ratio: 1550 / 560 !important;
   margin: 60px auto !important;
-  padding: 40px 60px !important;
   border-radius: 30px !important;
   background: var(--gradient-5) !important;
   overflow: hidden !important;
-  box-sizing: border-box !important;
   box-shadow: 0 20px 50px rgba(0, 10, 30, 0.15) !important;
-  position: relative !important;
 }
 
-/* Group text: Tiêu đề và Mô tả */
-.background-1-parent > div:not(.oval-parent):not(.ng-k-demo-wrapper2) {
-  /* This might be tricky if there's no wrapper for the text. 
-     Let's style the text elements relative to their new flex container.
-     Wait, in the HTML, they are individual elements. We should create a flex column for them or use grid. */
-}
-
-/* Thay vì flex, dùng Grid để chia 2 cột cho an toàn nếu không bọc wrapper */
-.background-1-parent {
-  display: grid !important;
-  grid-template-columns: 1fr auto !important;
-  grid-template-rows: auto auto !important;
-  gap: 20px !important;
-  align-content: center !important;
-}
-
+/* Định vị text và CTA tương đối trong Banner */
 .background-1-parent .kt-ni-tri {
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  grid-column: 1 / 2 !important;
-  grid-row: 1 / 2 !important;
-  font-size: clamp(32px, 3.8vw, 60px) !important;
+  position: absolute !important;
+  left: 48% !important;
+  top: 13.7% !important; /* ~77px / 560px */
+  font-size: clamp(26px, 3.8vw, 60px) !important;
   line-height: 1.25 !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  margin: 0 !important;
+  white-space: nowrap !important;
 }
 
 .background-1-parent .khng-ch-l {
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  grid-column: 1 / 2 !important;
-  grid-row: 2 / 3 !important;
-  width: 80% !important;
-  font-size: clamp(16px, 1.4vw, 24px) !important;
+  position: absolute !important;
+  left: 48% !important;
+  top: 48% !important; /* ~269px / 560px */
+  width: 44% !important;
+  font-size: clamp(13px, 1.4vw, 24px) !important;
   line-height: 1.5 !important;
   color: rgba(255, 255, 255, 0.85) !important;
-  margin: 0 !important;
 }
 
 .background-1-parent .ng-k-demo-wrapper2 {
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  grid-column: 2 / 3 !important;
-  grid-row: 1 / 3 !important;
-  align-self: center !important;
-  justify-self: end !important;
-  width: clamp(180px, 16.7vw, 260px) !important;
-  height: clamp(56px, 5.4vw, 85px) !important;
+  position: absolute !important;
+  left: 48% !important;
+  top: 70.3% !important; /* ~394px / 560px */
+  width: clamp(160px, 16.7vw, 260px) !important;
+  height: clamp(48px, 5.4vw, 85px) !important;
   border-radius: 999px !important;
   background: linear-gradient(228deg, #0072FF 10%, #00B9FF 100%) !important;
   border: none !important;
@@ -141,7 +112,6 @@
   cursor: pointer !important;
   box-shadow: 0 4px 15px rgba(0, 158, 247, 0.3) !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-  margin: 0 !important;
 }
 
 .background-1-parent .ng-k-demo-wrapper2:hover {
@@ -151,9 +121,10 @@
 
 .background-1-parent .ng-k-demo4 {
   position: static !important;
-  font-size: clamp(16px, 1.5vw, 24px) !important;
+  font-size: clamp(14px, 1.5vw, 24px) !important;
   font-weight: 700 !important;
   color: #ffffff !important;
+  letter-spacing: -0.03em !important;
   line-height: 1 !important;
 }
 
@@ -693,11 +664,4 @@
   .background-1-parent .oval-parent {
     display: none !important; /* Ẩn cuốn sách 3D trên mobile/tablet dưới 900px để tránh vỡ giao diện */
   }
-}
-
-.desktop-6 {
-    width: 100% !important;
-    max-width: 100vw !important;
-    position: relative !important;
-    margin: 0 auto !important;
 }
