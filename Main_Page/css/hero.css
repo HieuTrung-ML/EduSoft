@@ -1,0 +1,1095 @@
+.desktop-6,
+.ellipse-parent {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--color-white);
+}
+
+.ellipse-parent {
+  align-self: stretch;
+  height: 1113px;
+  background-color: var(--color-gray-200);
+  flex-shrink: 0;
+  align-items: flex-start;
+  isolation: isolate;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--fs-28);
+  font-family: var(--font-inter);
+}
+
+.glass,
+.glass-parent {
+  position: absolute;
+  backdrop-filter: blur(100px);
+  border-radius: var(--br-100);
+  box-sizing: border-box;
+}
+
+.glass-parent {
+  top: 152px;
+  left: 224px;
+  background: var(--gradient-2);
+  border: var(--border-1);
+  width: 214px;
+  height: 67px;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.ti-chnh-parent {
+  position: absolute;
+  top: 14px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-11);
+}
+
+.ti-chnh {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.tablerwallet-icon {
+  height: var(--height-40);
+  width: var(--width-40);
+  position: relative;
+}
+
+.tuyn-sinh-parent {
+  position: absolute;
+  top: 11px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-10);
+}
+
+.khaothi-2-icon {
+  height: 46px;
+  width: 46px;
+  position: relative;
+}
+
+.o-to-parent {
+  position: absolute;
+  top: 15px;
+  left: 29px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-12);
+}
+
+.glass-parent2 {
+  position: absolute;
+  top: 750px;
+  left: 429px;
+  backdrop-filter: blur(100px);
+  border-radius: var(--br-100);
+  background: var(--gradient-2);
+  border: var(--border-1);
+  box-sizing: border-box;
+  width: 234px;
+  height: 67px;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.vb-cc-1-icon {
+  height: 46px;
+  width: 43px;
+  position: relative;
+}
+
+.glass-parent3 {
+  position: absolute;
+  top: 521px;
+  left: 678px;
+  backdrop-filter: blur(100px);
+  border-radius: var(--br-100);
+  background: var(--gradient-2);
+  border: var(--border-1);
+  box-sizing: border-box;
+  width: 167px;
+  height: 55px;
+  z-index: 3;
+  flex-shrink: 0;
+  font-size: var(--fs-20);
+}
+
+.hc-tp-parent {
+  position: absolute;
+  top: 12px;
+  left: 23px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-12);
+}
+
+.hc-tp {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.hoctap2-1-icon {
+  height: var(--height-32);
+  width: var(--width-32);
+  position: relative;
+}
+
+.glass-parent4 {
+  position: absolute;
+  top: 275px;
+  left: 805px;
+  backdrop-filter: blur(100px);
+  border-radius: var(--br-100);
+  background: var(--gradient-2);
+  border: var(--border-1);
+  box-sizing: border-box;
+  width: 152px;
+  height: 55px;
+  z-index: 3;
+  flex-shrink: 0;
+  font-size: var(--fs-20);
+}
+
+.glass-parent5,
+.glass-parent6 {
+  backdrop-filter: blur(100px);
+  background: var(--gradient-2);
+  border: var(--border-1);
+  box-sizing: border-box;
+  width: 167px;
+  height: 55px;
+  font-size: var(--fs-20);
+}
+
+.glass-parent5 {
+  position: absolute;
+  top: 617px;
+  left: 52px;
+  border-radius: var(--br-100);
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.glass-parent6 {
+  top: 520px;
+  left: 242px;
+}
+
+.frame-child2,
+.frame-child3,
+.glass-parent6 {
+  position: absolute;
+  border-radius: var(--br-100);
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.frame-child8,
+.frame-child9,
+.glass-parent7,
+.glass9 {
+  position: absolute;
+  border-radius: var(--br-100);
+}
+
+.glass-parent7,
+.glass9 {
+  backdrop-filter: blur(100px);
+  box-sizing: border-box;
+}
+
+.glass-parent7 {
+  top: 456px;
+  left: 455px;
+  background: linear-gradient(180deg, var(--color-white), var(--color-white));
+  border: 3px solid var(--color-royalblue-400);
+  width: 180px;
+  height: 180px;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.glass9 {
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, var(--color-white), var(--color-white))
+      padding-box,
+    linear-gradient(
+        204.9deg,
+        var(--color-royalblue-400),
+        rgba(119, 218, 255, 0.8) 35.17%,
+        rgba(1, 112, 240, 0.8) 74.5%,
+        rgba(255, 255, 255, 0.8)
+      )
+      border-box;
+  border: var(--border-3);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.draw-2-icon {
+  position: absolute;
+  top: 33px;
+  left: 35px;
+  box-shadow: 0 4px 10px rgba(0, 97, 189, 0.5);
+  width: 109px;
+  height: 114px;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.glass-parent8 {
+  height: var(--height-100);
+  backdrop-filter: blur(100px);
+  border-radius: 110px;
+  background: linear-gradient(
+    114.4deg,
+    var(--color-gray-500),
+    rgba(255, 255, 255, 0.16)
+  );
+  border: 1px solid var(--color-gray-300);
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-8) 31px var(--padding-11) 35px;
+  font-size: var(--fs-64);
+}
+
+/* --- 2. Background & Lighting Blobs --- */
+.ellipse-parent {
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(13, 54, 118, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 85% 75%, rgba(13, 54, 118, 0.35) 0%, transparent 60%),
+    linear-gradient(135deg, #00061A 0%, #000b25 50%, #00061A 100%) !important;
+  height: 1080px !important;
+  position: relative !important;
+  overflow: hidden !important;  /* clips at the section edge only */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* --- 5. Orbit Rings & Center Logo --- */
+.orbit-ring-outer {
+  position: absolute !important;
+  width: 812px !important;
+  height: 812px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) rotate(27deg) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.orbit-ring-inner {
+  position: absolute !important;
+  width: 483px !important;
+  height: 483px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) rotate(27deg) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.glass-parent7 {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 180px !important;
+  height: 180px !important;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  border: 3px solid rgba(0, 73, 175, 0.8) !important;
+  box-shadow: 0 0 35px rgba(0, 114, 255, 0.6) !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 5 !important;
+}
+
+.draw-2-icon {
+  position: static !important;
+  width: 110px !important;
+  height: auto !important;
+  z-index: 6 !important;
+}
+
+/* Hide redundant glass layer inside center logo */
+.glass9 {
+  display: none !important;
+}
+
+/* --- 6. Label Bubble Glassmorphism & Positions --- */
+
+/* Base style for all capsules */
+.glass-parent,
+.glass-group,
+.glass-container,
+.glass-parent2,
+.glass-parent3,
+.glass-parent4,
+.glass-parent5,
+.glass-parent6 {
+  position: absolute !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(221deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.22) 100%) !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 100px !important;
+  padding: 12px 24px !important;
+  box-sizing: border-box !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: 4 !important;
+}
+
+/* Reset sub-layouts to flex standard */
+.ti-chnh-parent,
+.tuyn-sinh-parent,
+.o-to-parent,
+.chng-ch-parent,
+.hc-tp-parent {
+  position: static !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Label text properties */
+.ti-chnh,
+.hc-tp {
+  margin: 0 !important;
+  font-family: Inter, sans-serif !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  font-weight: 600 !important;
+}
+
+/* Text sizes */
+.glass-parent .ti-chnh,       /* Tài chính */
+.glass-container .ti-chnh,    /* Đào tạo */
+.glass-group .ti-chnh,        /* Tuyển sinh */
+.glass-parent2 .ti-chnh {     /* Chứng chỉ */
+  font-size: 28px !important;
+}
+
+.glass-parent3 .hc-tp,        /* Học tập */
+.glass-parent4 .hc-tp,        /* Tài sản */
+.glass-parent5 .hc-tp,        /* Nhân sự */
+.glass-parent6 .hc-tp {        /* Khảo thí */
+  font-size: 20px !important;
+}
+
+/* Icon layout adjustments */
+.tablerwallet-icon,
+.khaothi-2-icon,
+.vb-cc-1-icon,
+.hoctap2-1-icon,
+.frame-icon {
+  position: static !important;
+  flex-shrink: 0 !important;
+}
+
+/* Absolute coordinates centered on orbit lines */
+.glass-parent { left: 455px !important; top: 125px !important; }
+
+/* Đào tạo */
+.glass-parent4 { left: 918px !important; top: 420px !important; }
+
+/* Tài sản */
+.glass-parent3 { left: 766px !important; top: 546px !important; }
+
+/* Tuyển sinh */
+.glass-parent2 { left: 455px !important; top: 925px !important; }
+
+/* Chứng chỉ */
+.glass-parent5 { left: 120px !important; top: 525px !important; }
+
+/* Nhân sự */
+.glass-parent6 { left: 328px !important; top: 387px !important; }
+
+/* Sharper orbit rings. */
+.orbit-ring-outer {
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: inset 0 0 8px rgba(80, 180, 255, 0.05) !important;
+}
+
+.orbit-ring-inner {
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  box-shadow: inset 0 0 8px rgba(80, 180, 255, 0.05) !important;
+}
+
+/* Center logo: true circular mask with a glow outside the white disk. */
+.glass-parent7 {
+  overflow: visible !important;
+  isolation: isolate !important;
+  border-radius: 50% !important;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(205deg, #0049af 0%, rgba(119, 218, 255, 0.95) 38%, rgba(1, 112, 240, 0.9) 74%, rgba(255, 255, 255, 0.9) 100%) border-box !important;
+  border: 3px solid transparent !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.24),
+    0 0 28px rgba(27, 200, 255, 0.55),
+    0 0 72px rgba(0, 114, 255, 0.52) !important;
+}
+
+.glass-parent7::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 200, 255, 0.45) 0%, rgba(0, 114, 255, 0.16) 46%, rgba(0, 114, 255, 0) 72%);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.glass-parent7::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  z-index: 0;
+}
+
+.draw-2-icon {
+  position: relative !important;
+  z-index: 1 !important;
+  object-fit: contain !important;
+  box-shadow: none !important;
+}
+
+/* Frosted-glass module labels: visible translucent fill with readable text. */
+.glass-parent,
+.glass-group,
+.glass-container,
+.glass-parent2,
+.glass-parent3,
+.glass-parent4,
+.glass-parent5,
+.glass-parent6 {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08)) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.46) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    0 12px 36px rgba(0, 22, 66, 0.18) !important;
+  backdrop-filter: blur(26px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(135%) !important;
+}
+
+.glass-parent .ti-chnh,
+.glass-group .ti-chnh,
+.glass-container .ti-chnh,
+.glass-parent2 .ti-chnh,
+.glass-parent3 .hc-tp,
+.glass-parent4 .hc-tp,
+.glass-parent5 .hc-tp,
+.glass-parent6 .hc-tp {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.32) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Orbit diagram final pass
+   -------------------------------------------------------------------------- */
+
+.ellipse-parent {
+  min-height: 980px !important;
+}
+
+.orbit-ring-outer {
+  width: 812px !important;
+  height: 812px !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) rotate(27deg) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.78) !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.orbit-ring-inner {
+  width: 483px !important;
+  height: 483px !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) rotate(27deg) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.glass-parent7 {
+  width: 180px !important;
+  height: 180px !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: #ffffff !important;
+  border: 3px solid rgba(0, 73, 175, 0.8) !important;
+  border-radius: 50% !important;
+  box-shadow:
+    0 0 22px rgba(27, 200, 255, 0.72),
+    0 0 58px rgba(0, 114, 255, 0.56) !important;
+  filter: drop-shadow(0 0 22px rgba(27, 200, 255, 0.58)) !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  z-index: 6 !important;
+}
+
+.glass-parent7::before,
+.glass-parent7::after {
+  display: none !important;
+}
+
+.draw-2-icon {
+  width: 114px !important;
+  height: 118px !important;
+  object-fit: contain !important;
+}
+
+.glass-parent,
+.glass-group,
+.glass-container,
+.glass-parent2,
+.glass-parent3,
+.glass-parent4,
+.glass-parent5,
+.glass-parent6 {
+  position: absolute !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 12px 24px !important;
+  border-radius: 100px !important;
+  background: linear-gradient(221deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.24) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 12px 34px rgba(0, 0, 0, 0.18) !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  transform: translate(-50%, -50%) !important;
+  box-sizing: border-box !important;
+  z-index: 5 !important;
+}
+
+.ti-chnh-parent,
+.tuyn-sinh-parent,
+.o-to-parent,
+.chng-ch-parent,
+.hc-tp-parent {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.glass-parent .ti-chnh,
+.glass-group .ti-chnh,
+.glass-container .ti-chnh,
+.glass-parent2 .ti-chnh {
+  font-size: 28px !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+.glass-parent3 .hc-tp,
+.glass-parent4 .hc-tp,
+.glass-parent5 .hc-tp,
+.glass-parent6 .hc-tp {
+  font-size: 20px !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+.glass-parent { left: 392px !important; top: 210px !important; }
+
+.glass-parent4 { left: 900px !important; top: 335px !important; }
+
+.glass-parent3 { left: 812px !important; top: 525px !important; }
+
+.glass-parent2 { left: 522px !important; top: 745px !important; }
+
+.glass-parent5 { left: 92px !important; top: 600px !important; }
+
+.glass-parent6 { left: 266px !important; top: 525px !important; }
+
+/* --------------------------------------------------------------------------
+   Orbit diagram aspect-ratio reset
+   Keeps the diagram circular and centered in the right hero column.
+   -------------------------------------------------------------------------- */
+
+.ellipse-parent {
+  height: min(1000px, 100vh) !important;
+  min-height: 860px !important;
+}
+
+.orbit-ring-outer,
+.orbit-ring-inner {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) rotate(27deg) !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+.orbit-ring-outer {
+  width: 100% !important;
+  height: 100% !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.78) !important;
+}
+
+.orbit-ring-inner {
+  width: 59.5% !important;
+  height: 59.5% !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.glass-parent7 {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 22.17% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  transform: translate(-50%, -50%) !important;
+  background: #ffffff !important;
+  border: 3px solid rgba(0, 73, 175, 0.8) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 60px rgba(0, 163, 255, 0.4) !important;
+  filter: none !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  z-index: 6 !important;
+}
+
+.glass-parent7::before,
+.glass-parent7::after,
+.glass9 {
+  display: none !important;
+}
+
+.draw-2-icon {
+  position: relative !important;
+  width: 64% !important;
+  height: 64% !important;
+  object-fit: contain !important;
+  box-shadow: none !important;
+  z-index: 1 !important;
+}
+
+.glass-parent,
+.glass-group,
+.glass-container,
+.glass-parent2,
+.glass-parent3,
+.glass-parent4,
+.glass-parent5,
+.glass-parent6 {
+  position: absolute !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 12px 24px !important;
+  border-radius: 100px !important;
+  background: linear-gradient(221deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.24) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 12px 34px rgba(0, 0, 0, 0.18) !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  transform: translate(-50%, -50%) !important;
+  box-sizing: border-box !important;
+  z-index: 5 !important;
+}
+
+.ti-chnh-parent,
+.tuyn-sinh-parent,
+.o-to-parent,
+.chng-ch-parent,
+.hc-tp-parent {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.glass-parent .ti-chnh,
+.glass-group .ti-chnh,
+.glass-container .ti-chnh,
+.glass-parent2 .ti-chnh {
+  font-size: clamp(20px, 1.55vw, 28px) !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+.glass-parent3 .hc-tp,
+.glass-parent4 .hc-tp,
+.glass-parent5 .hc-tp,
+.glass-parent6 .hc-tp {
+  font-size: clamp(16px, 1.1vw, 20px) !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+.tablerwallet-icon,
+.khaothi-2-icon,
+.vb-cc-1-icon,
+.hoctap2-1-icon,
+.frame-icon {
+  flex: 0 0 auto !important;
+}
+
+.glass-parent { left: 30.51% !important; top: 3.95% !important; }
+
+.glass-parent4 { left: 94.56% !important; top: 27.33% !important; }
+
+.glass-parent3 { left: 79.75% !important; top: 50.00% !important; }
+
+.glass-parent2 { left: 49.53% !important; top: 79.75% !important; }
+
+.glass-parent5 { left: 0.72% !important; top: 58.47% !important; }
+
+.glass-parent6 { left: 20.25% !important; top: 50.00% !important; }
+
+.ellipse-parent {
+  height: clamp(860px, 100svh, 1080px) !important;
+  min-height: 860px !important;
+}
+
+/* Orbit rings, glass-parent7, glass9, draw-2-icon → defined in FINAL block below */
+
+
+
+.glass-parent,
+.glass-group,
+.glass-container,
+.glass-parent2,
+.glass-parent3,
+.glass-parent4,
+.glass-parent5,
+.glass-parent6 {
+  position: absolute !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: linear-gradient(221deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.24) 100%) !important;
+  border-radius: 100px !important;
+  border: 1px white solid !important;
+  backdrop-filter: blur(50px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  z-index: 5 !important;
+}
+
+/* Big Capsules — all 4 */
+.glass-parent {          /* Tài chính */
+  width: 214px !important;
+  height: 86px !important;
+  left: 205px !important;
+  top: 124px !important;
+}
+
+.glass-group {           /* Tuyển sinh */
+  width: 235px !important;
+  height: 86px !important;
+  left: 704px !important;
+  top: 815px !important;
+}
+
+.glass-container {       /* Đào tạo */
+  width: 214px !important;
+  height: 86px !important;
+  left: 437px !important;
+  top: 266px !important;
+}
+
+.glass-parent2 {         /* Chứng chỉ */
+  width: 234px !important;
+  height: 86px !important;
+  left: 410px !important;
+  top: 722px !important;
+}
+
+/* Small Capsules — all 4 */
+.glass-parent3 {         /* Học tập */
+  width: 176px !important;
+  height: 71px !important;
+  left: 678px !important;
+  top: 521px !important;
+}
+
+.glass-parent4 {         /* Tài sản */
+  width: 176px !important;
+  height: 71px !important;
+  left: 805px !important;
+  top: 275px !important;
+}
+
+.glass-parent5 {         /* Nhân sự */
+  width: 176px !important;
+  height: 71px !important;
+  left: 52px !important;
+  top: 617px !important;
+}
+
+.glass-parent6 {         /* Khảo thí */
+  width: 167px !important;
+  height: 71px !important;
+  left: 242px !important;
+  top: 520px !important;
+}
+
+/* Titles & Alignment inside Capsules */
+.ti-chnh-parent,
+.tuyn-sinh-parent,
+.o-to-parent,
+.chng-ch-parent,
+.hc-tp-parent {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.glass-parent .ti-chnh,
+.glass-container .ti-chnh,
+.glass-parent2 .ti-chnh,
+.glass-group .ti-chnh {
+  color: white !important;
+  font-size: 28px !important;
+  font-family: Inter, sans-serif !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.84px !important;
+  white-space: nowrap !important;
+}
+
+.glass-parent3 .hc-tp,
+.glass-parent4 .hc-tp,
+.glass-parent5 .hc-tp,
+.glass-parent6 .hc-tp {
+  color: white !important;
+  font-size: 20px !important;
+  font-family: Inter, sans-serif !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.6px !important;
+  white-space: nowrap !important;
+}
+
+/* Icons in Capsules */
+.tablerwallet-icon,
+.khaothi-2-icon,
+.o-to-icon,
+.chng-ch-icon,
+.hc-tp-icon,
+.ti-sn-icon,
+.nhn-s-icon,
+.kho-th-icon {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  display: inline-block !important;
+  object-fit: contain !important;
+  flex: 0 0 auto !important;
+}
+
+.tablerwallet-icon { width: 40px !important; height: 40px !important; }
+
+.khaothi-2-icon { width: 46px !important; height: 46px !important; }
+
+.hc-tp-icon { width: 32px !important; height: 32px !important; }
+
+/* ─── Frame-child icons (small circular decorative icons on orbit) ── */
+.frame-child2,
+.frame-child3,
+.frame-child4,
+.frame-child5,
+.frame-child6,
+.frame-child7,
+.frame-child8,
+.frame-child9 {
+  position: absolute !important;
+  border-radius: 9999px !important;
+  z-index: 3 !important;
+  flex-shrink: 0 !important;
+  display: block !important; /* restored — these are decorative orbit icons */
+  object-fit: contain !important;
+}
+
+.frame-child2 { top: 659px !important; left: 712px !important; width: 70px !important; height: 70px !important; }
+.frame-child3 { top: 348px !important; left: 686px !important; width: 80px !important; height: 80px !important; }
+.frame-child4 { top: 361px !important; left: 312px !important; width: 70px !important; height: 70px !important; }
+.frame-child5 { top: 670px !important; left: 318px !important; width: 80px !important; height: 80px !important; }
+.frame-child6 { top: 568px !important; left: 902px !important; width: 94px !important; height: 94px !important; }
+.frame-child7 { top: 279px !important; left: 140px !important; width: 106px !important; height: 106px !important; }
+.frame-child8 { top: 819px !important; left: 250px !important; width: 105px !important; height: 105px !important; }
+.frame-child9 { top: 110px !important; left: 622px !important; width: 120px !important; height: 120px !important; }
+
+/* =====================================================
+   FINAL HERO FIXES — single source of truth (last wins)
+   ===================================================== */
+
+/* ─── Orbit Rings ──────────────────────────────────────
+   Both rings are children of .frame-div (1051×1051px).
+   Original Figma math: position + rotate(27deg) from
+   top-left puts visual center at ~(525, 525) for both.
+   ─────────────────────────────────────────────────── */
+.orbit-ring-outer {
+  position: absolute !important;
+  width: 812px !important;
+  height: 812px !important;
+  left: 350px !important;
+  top: -20px !important;
+  transform: rotate(27deg) !important;
+  transform-origin: top left !important;
+  border-radius: 9999px !important;
+  border: 1.5px rgba(255, 255, 255, 0.88) solid !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.orbit-ring-inner {
+  position: absolute !important;
+  width: 483px !important;
+  height: 483px !important;
+  left: 420px !important;
+  top: 201px !important;
+  transform: rotate(27deg) !important;
+  transform-origin: top left !important;
+  border-radius: 9999px !important;
+  border: 1.5px rgba(255, 255, 255, 0.72) solid !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* ─── Center Logo (glass-parent7) ──────────────────────
+   Centered at (436, 436) = (525 - 90), size 180×180px.
+   ─────────────────────────────────────────────────── */
+.glass-parent7 {
+  position: absolute !important;
+  width: 180px !important;
+  height: 180px !important;
+  left: 436px !important;
+  top: 436px !important;
+  transform: none !important;
+  border-radius: 50% !important;
+  border: 3px rgba(0, 73, 175, 0.80) solid !important;
+  background: white !important;
+  box-shadow:
+    0 4px 30px rgba(0, 97, 189, 0.35),
+    0 0 50px rgba(0, 114, 255, 0.20) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  z-index: 6 !important;
+}
+
+.glass9 {
+  display: none !important;
+}
+
+/* ─── EDUSOFT logo inside center circle ─────────────── */
+.draw-2-icon {
+  position: relative !important;
+  width: 109px !important;
+  height: 114px !important;
+  left: auto !important;
+  top: auto !important;
+  object-fit: contain !important;
+  box-shadow: none !important;
+  z-index: 1 !important;
+  margin: 0 !important;
+}
+
+/* ─── Hide stray floating icon-only elements ─────────── */
+.frame-child2,
+.frame-child3,
+.frame-child4,
+.frame-child5,
+.frame-child6,
+.frame-child7,
+.frame-child8,
+.frame-child9 {
+  display: block !important;
+}
+

@@ -1,0 +1,839 @@
+// 100+
+color: #0170F0;
+ font-size: 60px;
+ font-family: Lato;
+ font-weight: 800;
+ line-height: 90px;
+ word-wrap: break-word
+---
+// Đại học,  Trung tâm & Tổ chức đã chuyển đổi số thành công cùng
+color: #A6A6A6;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 54px;
+ word-wrap: break-word
+---
+// Edu Digital
+color: #56CCF2;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 54px;
+ word-wrap: break-word
+---
+// Nền tảng số hoá đặc thù và ưu việt
+color: black;
+ font-size: 60px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 90px;
+ word-wrap: break-word
+---
+// Edu Digital
+color: #0170F0;
+ font-size: 32px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 48px;
+ word-wrap: break-word
+---
+//  đáp ứng trọn vẹn nhu cầu và phù hợp riêng biệt cho từng đơn vị Giáo dục.
+color: black;
+ font-size: 32px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 48px;
+ word-wrap: break-word
+---
+// Phù hợp với Giáo dục
+color: black;
+ font-size: 60px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 90px;
+ word-wrap: break-word
+---
+// Tích hợp bộ tính năng chuyển đổi số toàn diện trên một nền tảng duy nhất
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 64.80px;
+ word-wrap: break-word
+---
+// Edu Digital
+color: #0170F0;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// Khối Cơ sở Giáo dục K12
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 50.40px;
+ word-wrap: break-word
+---
+// Được thiết kế nằm số hóa toàn diện công tác quản lý đào tạo, nghiên cứu và hoạt động sinh viên
+color: #555555;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 43.20px;
+ word-wrap: break-word
+---
+// Tìm hiểu thêm
+color: #0170F0;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word
+---
+// Trung tâm Đào tạo & bồi dưỡng ngắn hạn
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 50.40px;
+ word-wrap: break-word
+---
+// Nền tảng quản trị hợp nhất cho các mô hình đào tạo phức tạp và linh hoạt của đào tạo liên tục
+color: #555555;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 43.20px;
+ word-wrap: break-word
+---
+// Tìm hiểu thêm
+color: #0170F0;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word
+---
+// Tự động hóa – Minh bạch – Hiệu quả cho mọi cấp bậc giáo dục.
+color: #555555;
+ font-size: 32px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 51.20px;
+ word-wrap: break-word
+---
+// Khối cơ sở giáo dục nghề nghiệp
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 50.40px;
+ word-wrap: break-word
+---
+// Giải pháp quản lý đào tạo đặc thù đáp ứng mọi nhu cầu vận hành và lộ trình thay đổi quy chế quản lý
+color: #555555;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 43.20px;
+ word-wrap: break-word
+---
+// Tìm hiểu thêm
+color: #0170F0;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word
+---
+// Trung tâm ngoại ngữ và kĩ năng
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 50.40px;
+ word-wrap: break-word
+---
+// Chuẩn hóa quy trình vận hành, tối ưu trải nghiệm học viên và tạo đà tăng trưởng bền vững
+color: #555555;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 43.20px;
+ word-wrap: break-word
+---
+// Tìm hiểu thêm
+color: #0170F0;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word
+---
+// Khối Giáo dục Đại học
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 600;
+ line-height: 50.40px;
+ word-wrap: break-word
+---
+// Được thiết kế nằm số hóa toàn diện công tác quản lý đào tạo, nghiên cứu và hoạt động sinh viên
+color: #555555;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 43.20px;
+ word-wrap: break-word
+---
+// Tìm hiểu thêm
+color: #0170F0;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word
+---
+// Các gói giải pháp quản lý nghiệp vụ toàn diện trong Giáo dục
+color: black;
+ font-size: 60px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 90px;
+ word-wrap: break-word
+---
+// Đăng ký Demo
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Edu Digital
+color: #56CCF2;
+ font-size: 64px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 96px;
+ word-wrap: break-word
+---
+// Công nghệ nâng tầm chất lượng Giáo dục
+color: black;
+ font-size: 48px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 72px;
+ word-wrap: break-word
+---
+// Cập nhật thông tin
+color: black;
+ font-size: 48px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 72px;
+ word-wrap: break-word
+---
+// Thông tin chi tiết và tin tức sản phẩm mới nhất sẽ được gửi đến hộp thư của bạn.
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 57.60px;
+ word-wrap: break-word
+---
+// Nói chuyện với chuyên gia 
+color: black;
+ font-size: 48px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 72px;
+ word-wrap: break-word
+---
+// Hỗ trợ giải đáp thắc mắc và tư vấn giúp người dùng có nhiều góc nhìn khác nhau về nền tảng. 
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 57.60px;
+ word-wrap: break-word
+---
+// Dùng thử miễn phí
+color: black;
+ font-size: 48px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 72px;
+ word-wrap: break-word
+---
+// Dùng thử miễn phí trong vòng 30 ngày. Thoải mái trải nghiệm các tính năng tiện ích.
+color: black;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 57.60px;
+ word-wrap: break-word
+---
+// Dùng thử Ngay
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Kết nối tri thức,<br/>Vượt mọi giới hạn
+color: white;
+ font-size: 60px;
+ font-family: Lato;
+ font-weight: 800;
+ line-height: 86px;
+ word-wrap: break-word
+---
+// Không chỉ là phần mềm, Edu Digital cung cấp giải pháp, tri thức & sự đồng hành cùng bạn
+color: #D8D8D8;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 400;
+ line-height: 40px;
+ word-wrap: break-word
+---
+// Đăng ký Demo
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Với nhiều tiện ích độc đáo, bạn có thể quản lí học tập, giảng dạy một cách dễ dàng
+color: black;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Enter your mail
+color: #555555;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 300;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Đăng ký
+color: white;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 600;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Chúng tôi sẽ không bao giờ chia sẻ thông tin của bạn với bên thứ ba.
+color: black;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Xem 
+color: black;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Chính sách Quyền riêng
+color: #0170F0;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 50px;
+ word-wrap: break-word
+---
+//  
+color: #0049AF;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// tư 
+color: #0170F0;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// của chúng tôi để biết thêm thông tin
+color: black;
+ font-size: 32px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Nhận thông mới nhất về
+color: black;
+ font-size: 48px;
+ font-family: Inter;
+ font-weight: 600;
+ line-height: 58px;
+ word-wrap: break-word
+---
+// Edu Digital
+color: #56CCF2;
+ font-size: 48px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 72px;
+ word-wrap: break-word
+---
+// Edu Digital
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 700;
+ line-height: 42px;
+ word-wrap: break-word
+---
+// Sản phẩm
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 700;
+ line-height: 42px;
+ word-wrap: break-word
+---
+// Hỗ trợ
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 700;
+ line-height: 42px;
+ word-wrap: break-word
+---
+// Giải pháp chuyển đổi số
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 700;
+ line-height: 42px;
+ word-wrap: break-word
+---
+// Quản lý đào tạo<br/>Quản lý học tập<br/>Quản lý công việc<br/>Quản lý CSVC <br/>Quản lý người học<br/>Quản lý học phí<br/>Quản lý nhân sự<br/>Quản lý tuyển sinh
+color: #DDE9FA;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 60px;
+ word-wrap: break-word
+---
+// Giới thiệu<br/>Tri thức số<br/>Tuyển dụng
+color: #DDE9FA;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 60px;
+ word-wrap: break-word
+---
+// Liên hệ<br/>Hỏi đáp & chia sẻ
+color: #DDE9FA;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 60px;
+ word-wrap: break-word
+---
+// Giáo dục Đại học<br/>Giáo dục Nghề nghiệp
+color: #DDE9FA;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 60px;
+ word-wrap: break-word
+---
+// Trung tâm đào tạo bồi<br/>dưỡng ngắn hạn
+color: #DDE9FA;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// Trung tâm ngoại ngữ &<br/>kỹ năng
+color: #DDE9FA;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// Trụ sở Hà Nội:
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// (+84) 916 567 528
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// 5 Ngõ 199 Trần Quốc Hoàn, Khu tập thể Đại học Sư phạm, Cầu Giấy, Hà Nội
+color: #DDE9FA;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// Edu Digital đã có mặt trên: 
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Copyright 
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// 2023 Edu Digital, Inc
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Điều khoản
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ text-decoration: underline;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Chính sách
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ text-decoration: underline;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// info@edusoft.vn
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 50px;
+ word-wrap: break-word
+---
+// Viện phát triển công nghệ và giáo dục EduSoft
+color: white;
+ font-size: 40px;
+ font-family: Inter;
+ font-weight: 600;
+ word-wrap: break-word
+---
+// phần mềm trên một nền tảng duy nhất
+color: white;
+ font-size: 60px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Tích hợp
+color: white;
+ font-size: 60px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// 30+
+color: white;
+ font-size: 64px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Nền tảng kết nối nhà trường, giáo viên và học sinh
+color: white;
+ font-size: 42px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Đăng ký Demo
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Mô hình chuyển đổi số tổng thể trong Giáo dục
+color: white;
+ font-size: 48px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 72px;
+ word-wrap: break-word
+---
+// Edu Digital
+color: #56CCF2;
+ font-size: 36px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 54px;
+ word-wrap: break-word
+---
+// Tích hợp và liên thông dữ liệu
+color: #A6A6A6;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// Xây dựng cơ sở dữ liệu & hệ thống
+color: #A6A6A6;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// An toàn bảo mật thông tin
+color: #A6A6A6;
+ font-size: 24px;
+ font-family: Lato;
+ font-weight: 700;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// Phân hệ hoạt động
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 600;
+ word-wrap: break-word
+---
+// Quản lý đào tạo
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// E - TMS
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Quản lý học tập
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// E - LMS
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Văn bằng, chứng chỉ
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// E - CERT
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Quản lí khảo thí
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// E - EXAM
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Phân hệ chất lượng
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 600;
+ word-wrap: break-word
+---
+// Phân hệ nguồn lực
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 600;
+ word-wrap: break-word
+---
+// TỔ CHỨC
+color: white;
+ font-size: 14px;
+ font-family: Inter;
+ font-weight: 600;
+ word-wrap: break-word
+---
+// QUẢN LÍ SINH VIÊN
+color: white;
+ font-size: 14px;
+ font-family: Inter;
+ font-weight: 600;
+ word-wrap: break-word
+---
+// QUẢN LÍ NHÂN SỰ
+color: white;
+ font-size: 14px;
+ font-family: Inter;
+ font-weight: 600;
+ word-wrap: break-word
+---
+// Tài chính
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Tuyển sinh
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Đào tạo
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Chứng chỉ
+color: white;
+ font-size: 28px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Học tập
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Tài sản
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Nhân sự
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Khảo thí
+color: white;
+ font-size: 20px;
+ font-family: Inter;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Nền tảng chuyển đổi số <br/>toàn diện cho Giáo dục
+color: white;
+ font-size: 64px;
+ font-family: Inter;
+ font-weight: 700;
+ line-height: 100px;
+ word-wrap: break-word
+---
+// Hỗ trợ nhà trường, giáo viên & học sinh dạy – học – quản lý hiệu quả hơn với công nghệ
+color: #D9D9D9;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ line-height: 36px;
+ word-wrap: break-word
+---
+// Đăng ký Demo
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Đăng ký Demo
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Cá nhân
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 700;
+ word-wrap: break-word
+---
+// Sản phẩm
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word
+---
+// Giải pháp
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word
+---
+// Tri thức số
+color: white;
+ font-size: 24px;
+ font-family: Inter;
+ font-weight: 500;
+ word-wrap: break-word

@@ -1,0 +1,667 @@
+/* ===================================================
+   merge-override.css
+   Load CUỐI CÙNG — sau responsive.css
+   Xử lý: dropdown Product, hamburger, mobile panel,
+           background-1-parent fix, z-index conflicts.
+   =================================================== */
+
+/* ─────────────────────────────────────────────────────
+   Tỷ lệ scale responsive cho Orbit và Banner cuốn sách
+   ───────────────────────────────────────────────────── */
+:root {
+  --orbit-scale: 0.78;
+  --banner-scale: 1;
+}
+
+@media screen and (max-width: 1600px) {
+  :root {
+    --orbit-scale: 0.68;
+    --banner-scale: 0.92;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  :root {
+    --orbit-scale: 0.60;
+    --banner-scale: 0.84;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  :root {
+    --orbit-scale: 0.54;
+    --banner-scale: 0.78;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :root {
+    --orbit-scale: 0.48;
+    --banner-scale: 0.72;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --orbit-scale: 0.42;
+    --banner-scale: 0.66;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --orbit-scale: 0.38;
+    --banner-scale: 0.6;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   Fix: background-1-parent bị ẩn bởi legacy.css
+   Căn giữa banner và tạo responsive linh hoạt
+   ───────────────────────────────────────────────────── */
+.background-1-parent {
+  display: block !important;
+  position: relative !important;
+  width: calc(100% - 64px) !important;
+  max-width: 1550px !important;
+  height: auto !important;
+  min-height: 380px !important;
+  aspect-ratio: 1550 / 560 !important;
+  margin: 60px auto !important;
+  border-radius: 30px !important;
+  background: var(--gradient-5) !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 50px rgba(0, 10, 30, 0.15) !important;
+}
+
+/* Định vị text và CTA tương đối trong Banner */
+.background-1-parent .kt-ni-tri {
+  position: absolute !important;
+  left: 48% !important;
+  top: 13.7% !important; /* ~77px / 560px */
+  font-size: clamp(26px, 3.8vw, 60px) !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+}
+
+.background-1-parent .khng-ch-l {
+  position: absolute !important;
+  left: 48% !important;
+  top: 48% !important; /* ~269px / 560px */
+  width: 44% !important;
+  font-size: clamp(13px, 1.4vw, 24px) !important;
+  line-height: 1.5 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.background-1-parent .ng-k-demo-wrapper2 {
+  position: absolute !important;
+  left: 48% !important;
+  top: 70.3% !important; /* ~394px / 560px */
+  width: clamp(160px, 16.7vw, 260px) !important;
+  height: clamp(48px, 5.4vw, 85px) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(228deg, #0072FF 10%, #00B9FF 100%) !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(0, 158, 247, 0.3) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.background-1-parent .ng-k-demo-wrapper2:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 158, 247, 0.45) !important;
+}
+
+.background-1-parent .ng-k-demo4 {
+  position: static !important;
+  font-size: clamp(14px, 1.5vw, 24px) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+}
+
+/* Cuốn sách 3D bên trái */
+.background-1-parent .oval-parent {
+  position: absolute !important;
+  left: -569px !important;
+  top: -617px !important;
+  width: 1386px !important;
+  height: 1385px !important;
+  transform: scale(var(--banner-scale, 1)) !important;
+  transform-origin: 945px 917px !important; /* Giữ cuốn sách ở tiêu điểm */
+  pointer-events: none !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   Desktop Dropdown: Sản phẩm
+   ───────────────────────────────────────────────────── */
+.frame-header .nav-dropdown {
+  position: relative;
+}
+
+.frame-header .nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px 0;
+  box-shadow: 0 8px 32px rgba(0, 16, 42, 0.12);
+  min-width: 240px;
+  z-index: 2000;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  animation: dropdownFadeIn 0.18s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.frame-header .nav-dropdown:hover .nav-dropdown-menu,
+.frame-header .nav-dropdown.active .nav-dropdown-menu {
+  display: block;
+}
+
+.frame-header .nav-dropdown-item {
+  display: block;
+  padding: 11px 20px;
+  color: #1F1F1F;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.frame-header .nav-dropdown-item:hover {
+  background: #f0f5ff;
+  color: #0170F0;
+}
+
+.frame-header .nav-dropdown-trigger {
+  cursor: pointer;
+}
+
+/* ─────────────────────────────────────────────────────
+   Hamburger Button: ẩn trên desktop, hiện trên mobile
+   ───────────────────────────────────────────────────── */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+  z-index: 1100;
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger màu tối khi navbar đã scroll */
+#main-nav.scrolled .hamburger-line {
+  background: #0d3676;
+}
+
+/* Hamburger → X khi active */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────────────────
+   Mobile Nav Panel
+   ───────────────────────────────────────────────────── */
+.mobile-nav-panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(4, 21, 63, 0.98);
+  z-index: 999;
+  flex-direction: column;
+  padding: 100px 32px 40px;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-nav-panel.open {
+  transform: translateX(0);
+}
+
+.mobile-nav-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-item {
+  display: block;
+  padding: 16px 0;
+  color: white;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-item:hover {
+  color: #56CCF2;
+}
+
+.mobile-nav-highlight {
+  color: #56CCF2;
+  font-weight: 700;
+}
+
+.mobile-nav-arrow {
+  float: right;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.mobile-dropdown-trigger.open .mobile-nav-arrow {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  padding: 4px 0 8px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mobile-dropdown-menu.open {
+  display: flex;
+}
+
+.mobile-nav-sub-item {
+  display: block;
+  padding: 11px 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-sub-item:hover {
+  color: #56CCF2;
+}
+
+.mobile-nav-cta {
+  margin-top: 28px;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(228deg, #0072ff 0%, #1bc8ff 100%);
+  color: white;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-nav-cta:hover {
+  opacity: 0.9;
+}
+
+/* ─────────────────────────────────────────────────────
+   Responsive: Hiện hamburger + panel tại ≤ 900px
+   ───────────────────────────────────────────────────── */
+@media screen and (max-width: 900px) {
+  .hamburger-btn {
+    display: flex !important;
+  }
+
+  .mobile-nav-panel {
+    display: flex;
+  }
+
+  .frame-header .nav-dropdown:hover .nav-dropdown-menu {
+    display: none;
+  }
+}
+
+/* ===================================================
+   HERO & ORBIT OVERRIDES (Scoped chặt chẽ để an toàn)
+   =================================================== */
+
+.ellipse-parent {
+  height: auto !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 160px !important; /* Increased from 110px to push content down */
+  padding-bottom: 60px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+/* Reset frame-parent thành flexbox co giãn thay vì absolute */
+.ellipse-parent > .frame-parent {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin: 24px auto 0 !important; /* Added 24px margin-top to push text/orbit down further */
+  height: auto !important;
+  min-height: 720px !important;
+  padding: 0 48px !important;
+  box-sizing: border-box !important;
+  gap: 32px !important;
+}
+
+/* Cột bên trái: Text và Button Demo */
+.ellipse-parent .frame-group {
+  position: relative !important;
+  left: auto !important;
+  bottom: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  flex: 0 0 46% !important;
+  max-width: 46% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: clamp(24px, 3vw, 48px) !important;
+  z-index: 5 !important;
+}
+
+.ellipse-parent .nn-tng-chuyn {
+  font-size: clamp(34px, 3.5vw, 64px) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+}
+
+.ellipse-parent .h-tr-nh {
+  font-size: clamp(15px, 1.3vw, 24px) !important;
+  line-height: 1.45 !important;
+  text-align: left !important;
+}
+
+.ellipse-parent .ng-k-demo-wrapper {
+  width: 250px !important;
+  height: 75px !important;
+  min-width: 250px !important;
+  min-height: 75px !important;
+  border-radius: 50px !important;
+  background: linear-gradient(228deg, #0072FF 10%, #00B9FF 100%) !important;
+  box-shadow: 0 4px 15px rgba(0, 158, 247, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  border: none !important;
+}
+
+.ellipse-parent .ng-k-demo-wrapper:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 158, 247, 0.4) !important;
+}
+
+/* Cột bên phải: Orbit Container */
+.ellipse-parent .frame-container {
+  position: relative !important;
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+  height: 760px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  margin: 0 !important;
+}
+
+/* Orbit diagram: scale ở trung tâm */
+.ellipse-parent .vector-parent {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) scale(var(--orbit-scale)) !important;
+  transform-origin: center center !important;
+  width: 1073px !important;
+  height: 1092px !important;
+  margin: 0 !important;
+  z-index: 2 !important;
+  pointer-events: auto !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   Tối ưu hóa Spacing giữa các section
+   ───────────────────────────────────────────────────── */
+.desktop-6-inner {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   Định nghĩa khoảng cách mặc định Navbar (Desktop)
+   ───────────────────────────────────────────────────── */
+#main-nav .product-solution-title {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 56px !important; /* Giãn cách rộng rãi các mục menu trên desktop */
+}
+
+#main-nav .product-solution-labels {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important; /* Giãn cách chữ và mũi tên dropdown */
+}
+
+/* ─────────────────────────────────────────────────────
+   Tối ưu hóa Navbar trên màn hình Laptop (1280px - 1536px)
+   ───────────────────────────────────────────────────── */
+@media screen and (max-width: 1536px) {
+  #main-nav.frame-header {
+    padding: 14px 48px !important;
+    gap: 40px !important;
+  }
+  #main-nav .frame-parent2 {
+    gap: 60px !important;
+  }
+  #main-nav .product-solution-title {
+    gap: 48px !important;
+  }
+  #main-nav .product-solution-labels {
+    gap: 12px !important;
+  }
+  #main-nav .frame-parent3 {
+    gap: 48px !important;
+  }
+  #main-nav .sn-phm,
+  #main-nav .tri-thc-s,
+  #main-nav .c-nhn {
+    font-size: 18px !important;
+  }
+  #main-nav .ng-k-demo-container {
+    width: 230px !important;
+    min-width: 230px !important;
+    height: 64px !important;
+  }
+  #main-nav .ng-k-demo2 {
+    font-size: 20px !important;
+  }
+  #main-nav .draw-ngang-white-1-wrapper,
+  #main-nav #nav-logo,
+  #main-nav #nav-logo-overlay {
+    height: 40px !important;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  #main-nav.frame-header {
+    padding: 12px 40px !important;
+    gap: 32px !important;
+  }
+  #main-nav .frame-parent2 {
+    gap: 48px !important;
+  }
+  #main-nav .product-solution-title {
+    gap: 40px !important;
+  }
+  #main-nav .product-solution-labels {
+    gap: 10px !important;
+  }
+  #main-nav .frame-parent3 {
+    gap: 40px !important;
+  }
+  #main-nav .sn-phm,
+  #main-nav .tri-thc-s,
+  #main-nav .c-nhn {
+    font-size: 17px !important;
+  }
+  #main-nav .ng-k-demo-container {
+    width: 210px !important;
+    min-width: 210px !important;
+    height: 56px !important;
+  }
+  #main-nav .ng-k-demo2 {
+    font-size: 18px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   Tối ưu hóa Tablet & Mobile (Dọc)
+   ───────────────────────────────────────────────────── */
+@media screen and (max-width: 900px) {
+  .ellipse-parent {
+    padding-top: 100px !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+  }
+
+  .ellipse-parent > .frame-parent {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 24px !important;
+    gap: 40px !important;
+  }
+
+  .ellipse-parent .frame-group {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .ellipse-parent .nn-tng-chuyn {
+    text-align: center !important;
+  }
+
+  .ellipse-parent .h-tr-nh {
+    text-align: center !important;
+  }
+
+  .ellipse-parent .frame-container {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    height: 480px !important;
+  }
+
+  /* Banner Kết nối tri thức xếp dọc trên Mobile */
+  .background-1-parent {
+    width: calc(100% - 32px) !important;
+    margin: 40px auto !important;
+    aspect-ratio: auto !important;
+    height: auto !important;
+    min-height: 420px !important;
+    padding: 32px 24px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .background-1-parent .kt-ni-tri {
+    position: static !important;
+    font-size: 28px !important;
+    margin-bottom: 16px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .background-1-parent .khng-ch-l {
+    position: static !important;
+    width: 100% !important;
+    font-size: 15px !important;
+    margin-bottom: 24px !important;
+    text-align: center !important;
+  }
+
+  .background-1-parent .ng-k-demo-wrapper2 {
+    position: static !important;
+    width: 220px !important;
+    height: 60px !important;
+    margin-top: 16px !important;
+  }
+
+  .background-1-parent .oval-parent {
+    display: none !important; /* Ẩn cuốn sách 3D trên mobile/tablet dưới 900px để tránh vỡ giao diện */
+  }
+}
