@@ -11,74 +11,47 @@
 :root {
   --orbit-scale: 0.78;
   --banner-scale: 1;
-  --page-max: 1440px; 
-  --page-pad: clamp(20px, 5vw, 96px);
-  --section-gap: clamp(64px, 8vw, 140px);
-  --orbit-size: clamp(560px, 46vw, 820px);
 }
 
-@media (max-width: 1600px) {
+@media screen and (max-width: 1600px) {
   :root {
     --orbit-scale: 0.68;
     --banner-scale: 0.92;
   }
 }
 
-@media (max-width: 1536px) {
-  :root {
-    --page-pad: 72px;
-    --orbit-size: clamp(520px, 44vw, 740px);
-  }
-}
-
-@media (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   :root {
     --orbit-scale: 0.60;
     --banner-scale: 0.84;
   }
 }
 
-@media (max-width: 1366px) {
+@media screen and (max-width: 1366px) {
   :root {
     --orbit-scale: 0.54;
     --banner-scale: 0.78;
-    --page-pad: 56px;
-    --orbit-size: clamp(480px, 42vw, 640px);
   }
 }
 
-@media (max-width: 1280px) {
-  :root {
-    --page-pad: 44px;
-    --orbit-size: clamp(440px, 40vw, 580px);
-  }
-}
-
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   :root {
     --orbit-scale: 0.48;
     --banner-scale: 0.72;
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   :root {
     --orbit-scale: 0.42;
     --banner-scale: 0.66;
-    --page-pad: 32px;
   }
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   :root {
     --orbit-scale: 0.38;
-    --banner-scale: 0.60;
-  }
-}
-
-@media (max-width: 430px) {
-  :root {
-    --page-pad: 20px;
+    --banner-scale: 0.6;
   }
 }
 
@@ -437,28 +410,32 @@
 .ellipse-parent {
   height: auto !important;
   min-height: 100vh !important;
+  max-height: none !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
-  padding-top: clamp(100px, 8vw, 160px) !important;
+  padding-top: 160px !important; /* Increased from 110px to push content down */
   padding-bottom: 60px !important;
   box-sizing: border-box !important;
   position: relative !important;
-  overflow: hidden !important; /* Ngăn Orbit tràn khung */
 }
 
-/* Chuyển frame-parent thành Grid linh hoạt thay vì flex cứng */
+/* Reset frame-parent thành flexbox co giãn thay vì absolute */
 .ellipse-parent > .frame-parent {
   position: relative !important;
-  display: grid !important;
-  grid-template-columns: minmax(360px, 0.9fr) minmax(520px, 1.1fr) !important;
-  width: min(calc(100% - 2 * var(--page-pad)), var(--page-max)) !important;
-  margin-inline: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
   align-items: center !important;
-  gap: clamp(32px, 5vw, 96px) !important;
-  padding: 0 !important;
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin: 24px auto 0 !important; /* Added 24px margin-top to push text/orbit down further */
+  height: auto !important;
+  min-height: 720px !important;
+  padding: 0 48px !important;
   box-sizing: border-box !important;
+  gap: 32px !important;
 }
 
 /* Cột bên trái: Text và Button Demo */
@@ -468,34 +445,33 @@
   bottom: auto !important;
   top: auto !important;
   margin: 0 !important;
+  flex: 0 0 46% !important;
+  max-width: 46% !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: center !important;
   gap: clamp(24px, 3vw, 48px) !important;
   z-index: 5 !important;
-  max-width: 100% !important;
-  flex: none !important;
 }
 
 .ellipse-parent .nn-tng-chuyn {
-  font-size: clamp(36px, 4vw, 72px) !important;
-  line-height: 1.15 !important;
+  font-size: clamp(34px, 3.5vw, 64px) !important;
+  line-height: 1.2 !important;
   text-align: left !important;
-  letter-spacing: -0.02em !important;
-  margin: 0 !important;
 }
 
 .ellipse-parent .h-tr-nh {
-  font-size: clamp(16px, 1.3vw, 24px) !important;
+  font-size: clamp(15px, 1.3vw, 24px) !important;
   line-height: 1.45 !important;
   text-align: left !important;
-  margin: 0 !important;
 }
 
 .ellipse-parent .ng-k-demo-wrapper {
-  width: clamp(200px, 15vw, 250px) !important;
-  height: clamp(56px, 4.5vw, 75px) !important;
+  width: 250px !important;
+  height: 75px !important;
+  min-width: 250px !important;
+  min-height: 75px !important;
   border-radius: 50px !important;
   background: linear-gradient(228deg, #0072FF 10%, #00B9FF 100%) !important;
   box-shadow: 0 4px 15px rgba(0, 158, 247, 0.25) !important;
@@ -507,55 +483,38 @@
   border: none !important;
 }
 
+.ellipse-parent .ng-k-demo-wrapper:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 158, 247, 0.4) !important;
+}
+
 /* Cột bên phải: Orbit Container */
 .ellipse-parent .frame-container {
   position: relative !important;
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+  height: 760px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   overflow: visible !important;
   margin: 0 !important;
-  max-width: 100% !important;
-  flex: none !important;
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1 / 1 !important; /* Đảm bảo khung vuông để orbit căn giữa chuẩn */
 }
 
-/* Orbit diagram: scale chuẩn theo viewport, giữ absolute nội bộ */
+/* Orbit diagram: scale ở trung tâm */
 .ellipse-parent .vector-parent {
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
-  width: var(--orbit-size) !important;
-  height: var(--orbit-size) !important;
-  transform: translate(-50%, -50%) !important; /* Center chuẩn xác */
+  transform: translate(-50%, -50%) scale(var(--orbit-scale)) !important;
+  transform-origin: center center !important;
+  width: 1073px !important;
+  height: 1092px !important;
   margin: 0 !important;
   z-index: 2 !important;
   pointer-events: auto !important;
 }
 
-/* Break 1 cột sớm tại 1100px để tránh chật */
-@media (max-width: 1100px) {
-  .ellipse-parent > .frame-parent {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-    gap: 40px !important;
-  }
-  
-  .ellipse-parent .frame-group {
-    align-items: center !important;
-  }
-  
-  .ellipse-parent .nn-tng-chuyn,
-  .ellipse-parent .h-tr-nh {
-    text-align: center !important;
-  }
-  
-  .ellipse-parent .frame-container {
-    height: 500px !important;
-  }
-}
 /* ─────────────────────────────────────────────────────
    Tối ưu hóa Spacing giữa các section
    ───────────────────────────────────────────────────── */
