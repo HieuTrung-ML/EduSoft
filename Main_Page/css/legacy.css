@@ -559,7 +559,7 @@
 }
 
 .union-center {
-  width: 1735px;
+  width: 100%;
   justify-content: center;
   max-width: 100%;
   text-align: left;
@@ -679,7 +679,7 @@
   height: 821px;
   flex: 1;
   position: relative;
-  min-width: 994px;
+  min-width: 0;
   max-width: 100%;
 }
 

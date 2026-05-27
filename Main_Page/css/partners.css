@@ -1,5 +1,5 @@
 .desktop-6-inner {
-  width: 1884px;
+  width: 100%; /* responsive thay v\u00ec c\u1ee9ng 1884px */
   display: flex;
   align-items: flex-start;
   justify-content: center;

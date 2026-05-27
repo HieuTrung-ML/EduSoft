@@ -89,7 +89,7 @@
 }
 
 .technology-platform {
-  width: 1810px;
+  width: 100%; /* Bỏ cứng 1810px */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -218,7 +218,7 @@
 .latest-promo {
   flex: 1;
   gap: 80px;
-  min-width: 585px;
+  min-width: 0; /* Bỏ cứng 585px */
 }
 
 .updated-panel {

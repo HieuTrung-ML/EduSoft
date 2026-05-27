@@ -269,14 +269,12 @@
 }
 
 /* --- 2. Background & Lighting Blobs --- */
+/* Background được quản lý bởi merge-override.css (SVG BackGroundFrame.svg) */
+/* KHÔNG set background ở đây để tránh override SVG */
 .ellipse-parent {
-  background: 
-    radial-gradient(circle at 15% 25%, rgba(13, 54, 118, 0.4) 0%, transparent 60%),
-    radial-gradient(circle at 85% 75%, rgba(13, 54, 118, 0.35) 0%, transparent 60%),
-    linear-gradient(135deg, #00061A 0%, #000b25 50%, #00061A 100%) !important;
-  height: 1080px !important;
+  /* fallback nếu SVG không load */
+  background-color: #00061A;
   position: relative !important;
-  overflow: hidden !important;  /* clips at the section edge only */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -666,8 +664,8 @@
    Keeps the diagram circular and centered in the right hero column.
    -------------------------------------------------------------------------- */
 
+/* Height kiểm soát bởi merge-override.css — không ghi đè tại đây */
 .ellipse-parent {
-  height: min(1000px, 100vh) !important;
   min-height: 860px !important;
 }
 
@@ -813,8 +811,8 @@
 
 .glass-parent6 { left: 20.25% !important; top: 50.00% !important; }
 
+/* Height kiểm soát bởi merge-override.css */
 .ellipse-parent {
-  height: clamp(860px, 100svh, 1080px) !important;
   min-height: 860px !important;
 }
 

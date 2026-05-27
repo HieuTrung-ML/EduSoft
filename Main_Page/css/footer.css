@@ -70,7 +70,7 @@
 }
 
 .info-navigation-parent {
-  width: 1383px;
+  width: 100%; /* responsive thay vì cứng 1383px */
   justify-content: space-between;
   gap: var(--gap-20);
 }
