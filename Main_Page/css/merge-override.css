@@ -9,17 +9,19 @@
    Tỷ lệ scale responsive cho Orbit và Banner cuốn sách
    ───────────────────────────────────────────────────── */
 :root {
-  --orbit-scale: 0.78;
+  --orbit-scale: 0.86; /* Scale mặc định cho 1920px trở lên */
   --banner-scale: 1;
-  --page-max: 1440px; 
+  --page-max: 1440px;
   --page-pad: clamp(20px, 5vw, 96px);
   --section-gap: clamp(64px, 8vw, 140px);
-  --orbit-size: clamp(560px, 46vw, 820px);
+  /* --orbit-size đã bị xóa — dùng scale() thuần túy thay thế */
 }
+
+@media (max-width: 1800px) { :root { --orbit-scale: 0.80; } }
 
 @media (max-width: 1600px) {
   :root {
-    --orbit-scale: 0.68;
+    --orbit-scale: 0.74;
     --banner-scale: 0.92;
   }
 }
@@ -27,43 +29,41 @@
 @media (max-width: 1536px) {
   :root {
     --page-pad: 72px;
-    --orbit-size: clamp(520px, 44vw, 740px);
   }
 }
 
 @media (max-width: 1440px) {
   :root {
-    --orbit-scale: 0.60;
+    --orbit-scale: 0.68;
     --banner-scale: 0.84;
   }
 }
 
 @media (max-width: 1366px) {
   :root {
-    --orbit-scale: 0.54;
+    --orbit-scale: 0.62;
     --banner-scale: 0.78;
     --page-pad: 56px;
-    --orbit-size: clamp(480px, 42vw, 640px);
   }
 }
 
 @media (max-width: 1280px) {
   :root {
+    --orbit-scale: 0.56;
     --page-pad: 44px;
-    --orbit-size: clamp(440px, 40vw, 580px);
   }
 }
 
 @media (max-width: 1200px) {
   :root {
-    --orbit-scale: 0.48;
+    --orbit-scale: 0.50;
     --banner-scale: 0.72;
   }
 }
 
 @media (max-width: 1024px) {
   :root {
-    --orbit-scale: 0.42;
+    --orbit-scale: 0.44;
     --banner-scale: 0.66;
     --page-pad: 32px;
   }
@@ -445,7 +445,7 @@
   padding-bottom: 60px !important;
   box-sizing: border-box !important;
   position: relative !important;
-  overflow: hidden !important; /* Ngăn Orbit tràn khung */
+  overflow: clip !important; /* Clip theo block axis, không cắt orbit dọc */
 }
 
 /* Chuyển frame-parent thành Grid linh hoạt thay vì flex cứng */
@@ -510,29 +510,29 @@
 /* Cột bên phải: Orbit Container */
 .ellipse-parent .frame-container {
   position: relative !important;
+  width: 100% !important;
+  height: calc(1051px * var(--orbit-scale)) !important; /* Luôn đúng với scale */
+  overflow: visible !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  overflow: visible !important;
   margin: 0 !important;
   max-width: 100% !important;
   flex: none !important;
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1 / 1 !important; /* Đảm bảo khung vuông để orbit căn giữa chuẩn */
 }
 
-/* Orbit diagram: scale chuẩn theo viewport, giữ absolute nội bộ */
+/* Orbit diagram: giữ width 1051px cố định, chỉ scale() toàn bộ đồng đều */
 .ellipse-parent .vector-parent {
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
-  width: var(--orbit-size) !important;
-  height: var(--orbit-size) !important;
-  transform: translate(-50%, -50%) !important; /* Center chuẩn xác */
+  width: 1051px !important;
+  height: 1051px !important;
+  transform: translate(-50%, -50%) scale(var(--orbit-scale)) !important;
+  transform-origin: center center !important;
   margin: 0 !important;
   z-index: 2 !important;
-  pointer-events: auto !important;
+  overflow: visible !important;
 }
 
 /* Break 1 cột sớm tại 1100px để tránh chật */

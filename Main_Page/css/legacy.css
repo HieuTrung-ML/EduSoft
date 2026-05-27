@@ -1693,6 +1693,8 @@
   overflow: visible !important;
 }
 
+/* COMMENTED OUT — conflict với merge-override.css (load sau)
+   Rule này bị override bởi .ellipse-parent .vector-parent trong merge-override.css
 .ellipse-parent .vector-parent {
   --orbit-scale: 0.86;
   --orbit-offset-y: 46px;
@@ -1706,6 +1708,7 @@
   transform: translateY(var(--orbit-offset-y)) scale(var(--orbit-scale)) !important;
   will-change: transform !important;
 }
+*/
 
 .ellipse-parent .frame-div {
   position: absolute !important;
