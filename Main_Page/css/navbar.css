@@ -149,18 +149,31 @@
    SCROLLED STATE
    ============================================= */
 
-.frame-header.is-glass,
+/* Trạng thái is-glass: scroll nhẹ, vẫn trong hero nền tối
+   → glass tối, trong suốt, hòa vào background */
+.frame-header.is-glass:not(.scrolled) {
+  background: rgba(0, 6, 26, 0.28) !important;
+  backdrop-filter: blur(14px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(120%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: none !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+/* Trạng thái scrolled: đã qua hero, các section nền sáng
+   → background sáng để text dark dễ đọc */
 .frame-header.scrolled {
-  background: rgba(245, 248, 252, 0.38) !important;
+  background: rgba(245, 248, 252, 0.94) !important;
   backdrop-filter: blur(12px) saturate(112%) !important;
   -webkit-backdrop-filter: blur(12px) saturate(112%) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.24) !important;
+  border-bottom: 1px solid rgba(200, 215, 235, 0.40) !important;
   box-shadow: 0 8px 24px rgba(0, 16, 42, 0.06) !important;
   padding-top: 12px !important;
   padding-bottom: 12px !important;
 }
 
-/* Menu text → dark brand color */
+/* Menu text → dark brand color khi scrolled */
 .frame-header.scrolled .sn-phm,
 .frame-header.scrolled .tri-thc-s,
 .frame-header.scrolled .c-nhn {
@@ -173,7 +186,7 @@
   color: #0072ff !important;
 }
 
-/* Arrow SVG: white stroke → dark when on white bg */
+/* Arrow SVG: white → dark khi trên nền sáng */
 .frame-header.scrolled .product-solution-labels img {
   filter: invert(1) brightness(0) !important;
 }
@@ -187,23 +200,30 @@
   opacity: 1 !important;
 }
 
-/* CTA button text stays white always */
+/* CTA button text: trắng luôn */
 .ng-k-demo2 {
   color: #ffffff !important;
 }
 
+/* CTA Button — giảm từ 272×84px, dùng padding linh hoạt */
 .frame-header .ng-k-demo-container {
-  width: 272px !important;
-  height: 84px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 148px !important;
+  padding: clamp(10px, 0.85vw, 13px) clamp(20px, 1.8vw, 32px) !important;
   border-radius: 999px !important;
   background: linear-gradient(228deg, #0072ff 0%, #1bc8ff 100%) !important;
-  box-shadow: 0 4px 22px rgba(0, 114, 255, 0.32) !important;
+  box-shadow: 0 4px 18px rgba(0, 114, 255, 0.30) !important;
   border: none !important;
   flex: 0 0 auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
 }
 
 .frame-header .ng-k-demo2 {
-  font-size: 24px !important;
+  font-size: clamp(14px, 1.05vw, 17px) !important;
   font-weight: 700 !important;
   line-height: 1 !important;
   white-space: nowrap !important;
@@ -360,9 +380,10 @@
 }
 
 #main-nav .ng-k-demo-container {
-  width: 272px !important;
-  height: 84px !important;
-  min-width: 272px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 148px !important;
+  padding: clamp(10px, 0.85vw, 13px) clamp(20px, 1.8vw, 32px) !important;
 }
 
 #main-nav.frame-header.scrolled {
@@ -371,9 +392,16 @@
   padding-bottom: 10px !important;
 }
 
-#main-nav.frame-header.is-glass,
+/* #main-nav: is-glass trên hero dark */
+#main-nav.frame-header.is-glass:not(.scrolled) {
+  background: rgba(0, 6, 26, 0.28) !important;
+  backdrop-filter: blur(14px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(120%) !important;
+}
+
+/* #main-nav: scrolled qua hero, nền sáng */
 #main-nav.frame-header.scrolled {
-  background: rgba(245, 248, 252, 0.38) !important;
+  background: rgba(245, 248, 252, 0.94) !important;
   backdrop-filter: blur(12px) saturate(112%) !important;
   -webkit-backdrop-filter: blur(12px) saturate(112%) !important;
 }
@@ -400,9 +428,12 @@
   }
 
   #main-nav .ng-k-demo-container {
-    width: 220px !important;
-    min-width: 220px !important;
-    height: 68px !important;
+    min-width: 136px !important;
+    padding: 9px 18px !important;
+  }
+
+  #main-nav .ng-k-demo2 {
+    font-size: 14px !important;
   }
 }
 

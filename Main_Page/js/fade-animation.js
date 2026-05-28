@@ -77,10 +77,10 @@ export function initFadeAnimation() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-      } else {
-        // Remove class when leaving viewport so it can fade in again later
-        entry.target.classList.remove('visible');
+        // Once reveal: unobserve sau khi đã hiện — không chạy lại khi scroll
+        observer.unobserve(entry.target);
       }
+      // Không có else → không remove class, không fade out khi rời viewport
     });
   }, observerOptions);
 

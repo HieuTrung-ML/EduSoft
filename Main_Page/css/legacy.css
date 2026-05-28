@@ -1893,3 +1893,17 @@
   box-shadow: none !important;
   z-index: 1 !important;
 }
+
+/* ─── Fix vị trí pill "Khảo thí" (.glass-parent6) ──────────────────────
+   Phương pháp: đối xứng với "Học tập" (glass-parent3) qua trục dọc.
+   Học tập: left=678, top=521 → center (766, 556.5) → offset (+240.5, +31) → R≈242 ✅
+   Khảo thí đối xứng: center (285, 556.5) → offset (-240.5, +31) → R≈242 ✅
+   anchor top-left (transform: none):
+     left = 285 - 83.5 (half-width 167px) = 201.5 ≈ 202px
+     top  = 556.5 - 35.5 (half-height 71px) = 521px
+   ─────────────────────────────────────────────────────────────────────── */
+.ellipse-parent .glass-parent6 {
+  left: 202px !important;
+  top: 521px !important;
+}
+

@@ -44,3 +44,14 @@
   20% { left: 200%; }
   100% { left: 200%; }
 }
+
+/* Accessibility: tắt animation cho người dùng chọn giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-left,
+  .fade-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
