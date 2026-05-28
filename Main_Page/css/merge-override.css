@@ -729,14 +729,8 @@
   margin: 0 !important;
 }
 
-/* Overrides to prevent premature wrapping of Solutions cards layout and wrap only at 1024px */
-@media screen and (max-width: 1700px) {
-  .frame-parent9 {
-    flex-wrap: nowrap !important;
-  }
-}
-
-@media screen and (max-width: 1024px) {
+/* Overrides to ensure correct column wrapping for Solutions section */
+@media screen and (max-width: 1366px) {
   .frame-parent9 {
     flex-wrap: wrap !important;
   }
@@ -745,6 +739,21 @@
     min-width: 100% !important;
     width: 100% !important;
     flex: 1 1 auto !important;
+  }
+}
+
+/* Overrides to keep cards side-by-side until 768px (overriding responsive.css premature wrapping at 1325px) */
+@media screen and (max-width: 1325px) {
+  .core-block,
+  .training-platform {
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .core-block,
+  .training-platform {
+    flex-wrap: wrap !important;
   }
 }
 

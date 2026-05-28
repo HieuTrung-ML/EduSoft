@@ -2,7 +2,6 @@
   width: 100%; /* responsive thay vì cứng 1795px */
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
   padding: var(--padding-0) clamp(24px, 4vw, 76px) 288px;
   box-sizing: border-box;
   max-width: 100%;
@@ -13,9 +12,12 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: var(--gap-30);
+  width: min(100% - clamp(32px, 6vw, 152px), 1440px) !important;
+  margin-inline: auto !important;
   max-width: 100%;
+  min-width: 0;
 }
 
 .frame-parent9 {
@@ -204,7 +206,7 @@
   font-weight: 600;
   font-family: inherit;
   display: inline-block;
-  min-width: 280px;
+  min-width: 0;
   max-width: 100%;
 }
 
@@ -312,7 +314,7 @@
   font-weight: 600;
   font-family: inherit;
   display: inline-block;
-  min-width: 210px;
+  min-width: 0;
   max-width: 100%;
 }
 
@@ -366,7 +368,9 @@
 }
 
 .block-core-item-inner {
-  width: 390px;
+  width: 100%;
+  max-width: 390px;
+  min-width: 0;
   padding: var(--padding-0) var(--padding-0) 10.5px;
   box-sizing: border-box;
 }
@@ -425,17 +429,18 @@
   font-weight: 600;
   font-family: inherit;
   display: inline-block;
-  min-width: 226px;
+  min-width: 0;
   max-width: 100%;
 }
 
 .direction-area {
-  width: 390px;
+  width: 100%;
+  max-width: 390px;
+  min-width: 0;
   display: flex;
   align-items: flex-start;
   padding: var(--padding-0) var(--padding-0) var(--padding-10);
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 .frame-parent13,
@@ -460,7 +465,9 @@
 }
 
 .frame-parent13 {
-  width: 409px;
+  width: 100%;
+  max-width: 409px;
+  min-width: 0;
   padding: var(--padding-0) var(--padding-0) var(--padding-0_5);
   gap: var(--gap-20);
 }
@@ -486,12 +493,13 @@
 }
 
 .platform-details-inner {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
   display: flex;
   align-items: flex-start;
   padding: var(--padding-0) var(--padding-0) 10.5px;
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 .lin-h-hi,
