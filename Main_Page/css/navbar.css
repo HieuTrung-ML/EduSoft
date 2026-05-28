@@ -207,10 +207,10 @@
 
 /* CTA Button — giảm từ 272×84px, dùng padding linh hoạt */
 .frame-header .ng-k-demo-container {
-  width: auto !important;
-  height: auto !important;
-  min-width: 148px !important;
-  padding: clamp(10px, 0.85vw, 13px) clamp(20px, 1.8vw, 32px) !important;
+  width: 168px !important;
+  height: 50px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
   border-radius: 999px !important;
   background: linear-gradient(228deg, #0072ff 0%, #1bc8ff 100%) !important;
   box-shadow: 0 4px 18px rgba(0, 114, 255, 0.30) !important;
@@ -220,10 +220,11 @@
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
+  box-sizing: border-box !important;
 }
 
 .frame-header .ng-k-demo2 {
-  font-size: clamp(14px, 1.05vw, 17px) !important;
+  font-size: 15px !important;
   font-weight: 700 !important;
   line-height: 1 !important;
   white-space: nowrap !important;
@@ -271,11 +272,13 @@
     gap: 24px !important;
   }
   .frame-header .ng-k-demo-container {
-    width: 220px !important;
-    height: 68px !important;
+    width: 150px !important;
+    height: 44px !important;
+    min-width: 0 !important;
+    padding: 0 !important;
   }
   .frame-header .ng-k-demo2 {
-    font-size: 21px !important;
+    font-size: 14px !important;
   }
 }
 
@@ -380,10 +383,11 @@
 }
 
 #main-nav .ng-k-demo-container {
-  width: auto !important;
-  height: auto !important;
-  min-width: 148px !important;
-  padding: clamp(10px, 0.85vw, 13px) clamp(20px, 1.8vw, 32px) !important;
+  width: 168px !important;
+  height: 50px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
 #main-nav.frame-header.scrolled {
@@ -428,8 +432,11 @@
   }
 
   #main-nav .ng-k-demo-container {
-    min-width: 136px !important;
-    padding: 9px 18px !important;
+    width: 150px !important;
+    height: 44px !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
   #main-nav .ng-k-demo2 {

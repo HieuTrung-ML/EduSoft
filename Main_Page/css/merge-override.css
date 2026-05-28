@@ -607,7 +607,7 @@
 
 @media screen and (max-width: 1366px) {
   #main-nav .ng-k-demo2 {
-    font-size: 18px !important;
+    font-size: 15px !important;
   }
 }
 
@@ -727,4 +727,66 @@
   position: relative !important;
   overflow-x: hidden !important;
   margin: 0 !important;
+}
+
+/* Overrides to prevent premature wrapping of Solutions cards layout and wrap only at 1024px */
+@media screen and (max-width: 1700px) {
+  .frame-parent9 {
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .frame-parent9 {
+    flex-wrap: wrap !important;
+  }
+  .frame-wrapper6,
+  .header-container-parent {
+    min-width: 100% !important;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+  }
+}
+
+/* 100+ Pill (.group-div) Styling & Responsive Override */
+.group-div {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  
+  /* Gradient Background and Gradient Border */
+  background: linear-gradient(133deg, rgba(0, 158, 247, 0.12) 0%, rgba(255, 255, 255, 0.80) 100%) padding-box,
+              linear-gradient(133deg, rgba(255, 255, 255, 0.60) 0%, rgba(0, 158, 247, 0.60) 100%) border-box !important;
+  border: 3px solid transparent !important;
+  border-radius: 50px !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  
+  /* Desktop Dimensions */
+  min-width: 215px !important;
+  min-height: 76px !important;
+  padding: 8px 32px !important;
+}
+
+.group-div .h2 {
+  font-size: 52px !important;
+  line-height: 1 !important;
+}
+
+.glass10 {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .group-div {
+    min-width: 150px !important;
+    min-height: 52px !important;
+    padding: 6px 22px !important;
+    border-radius: 26px !important;
+  }
+  .group-div .h2 {
+    font-size: 32px !important;
+    line-height: 1 !important;
+  }
 }

@@ -1,9 +1,9 @@
 .desktop-6-child {
-  width: 100%; /* responsive thay v\u00ec c\u1ee9ng 1795px */
+  width: 100%; /* responsive thay vì cứng 1795px */
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: var(--padding-0) 76px 288px;
+  padding: var(--padding-0) clamp(24px, 4vw, 76px) 288px;
   box-sizing: border-box;
   max-width: 100%;
   flex-shrink: 0;
@@ -24,6 +24,7 @@
   align-items: flex-start;
   gap: 45px;
   max-width: 100%;
+  min-width: 0;
 }
 
 .detail-container-parent,
@@ -43,6 +44,8 @@
   color: var(--color-royalblue-100);
   font-family: var(--font-lato);
   flex: 1 1 0;
+  max-width: 100%;
+  flex-shrink: 1;
 }
 
 .detail-container-parent {
@@ -100,12 +103,12 @@
 }
 
 .t-ng-ha-minh-bch-hiu-parent {
-  width: 530px;
+  width: 100%;
+  max-width: 530px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap-25);
-  max-width: 100%;
   font-size: var(--fs-32);
   color: var(--color-dimgray-200);
 }
@@ -129,7 +132,6 @@
 }
 
 .header-container-parent {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -137,6 +139,7 @@
   min-width: 0; /* Bỏ cứng 666px — tránh overflow tablet */
   max-width: 100%;
   flex: 1.2 1 0;
+  flex-shrink: 1;
 }
 
 .header-container,
@@ -175,10 +178,10 @@
 }
 
 .primary-header {
-  width: 492px;
+  width: 100%;
+  max-width: 492px;
   gap: var(--gap-20);
-  max-width: 100%;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 .box-region {
@@ -206,12 +209,12 @@
 }
 
 .container-education {
-  width: 908px;
+  width: 100%;
+  max-width: 908px;
   display: flex;
   align-items: flex-start;
   padding: var(--padding-0) var(--padding-50);
   box-sizing: border-box;
-  max-width: 100%;
   font-size: var(--fs-24);
   color: var(--color-dimgray-200);
 }
@@ -288,6 +291,9 @@
   flex-direction: column;
   padding: var(--padding-39) var(--padding-39) 56px 49px;
   gap: 29.5px;
+  min-width: 0;
+  max-width: 100%;
+  flex-shrink: 1;
 }
 
 .level-education-item {
@@ -341,6 +347,8 @@
   padding: var(--padding-39) var(--padding-20) 56px var(--padding-50);
   gap: 29.5px;
   max-width: 100%;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .gii-php-qun {
@@ -364,12 +372,14 @@
 }
 
 .training-platform {
-  width: 1025px;
+  width: 100%;
+  max-width: 1025px;
   gap: 45px;
   text-align: left;
   font-size: var(--fs-36);
   color: var(--color-black);
   font-family: var(--font-lato);
+  min-width: 0;
 }
 
 .platform-details,
@@ -389,6 +399,8 @@
   padding: var(--padding-39) 34px 51px 49px;
   gap: var(--gap-30);
   max-width: 100%;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .training-modules {
@@ -443,6 +455,8 @@
   padding: var(--padding-39) var(--padding-26) 56px 44px;
   gap: 29.5px;
   max-width: 100%;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .frame-parent13 {

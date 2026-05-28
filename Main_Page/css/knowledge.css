@@ -43,7 +43,7 @@
   box-sizing: border-box;
 }
 
-.ng-k-demo2 {
+.request-demo .ng-k-demo2 {
   position: relative;
   font-size: var(--fs-24);
   letter-spacing: -0.03em;
@@ -609,12 +609,12 @@
 }
 
 /* Button Shine Effect */
-.ng-k-demo-wrapper, .ng-k-demo-container, .request-demo {
+.ng-k-demo-wrapper, .request-demo {
   position: relative;
   overflow: hidden;
 }
 
-.ng-k-demo-wrapper::after, .ng-k-demo-container::after, .request-demo::after {
+.ng-k-demo-wrapper::after, .request-demo::after {
   content: '';
   position: absolute;
   top: 0;
@@ -626,50 +626,13 @@
   animation: shine 4s infinite;
 }
 
-/* CTA "Đăng ký Demo" Button */
-.ng-k-demo-container {
-  width: 250px !important;
-  height: 75px !important;
-  border-radius: 50px !important;
-  border: none !important;
-  background: linear-gradient(228deg, #0072FF 0%, #1BC8FF 100%) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  cursor: pointer !important;
-  outline: none !important;
-  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-.ng-k-demo-container:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4) !important;
-  background: linear-gradient(228deg, #0072FF 0%, #1BC8FF 100%) !important;
-  border: none !important;
-}
-
-.ng-k-demo2 {
+.request-demo .ng-k-demo2 {
   font-family: Inter, sans-serif !important;
   font-size: 24px !important;
   font-weight: 700 !important;
   color: #ffffff !important;
   display: block !important;
   text-align: center !important;
-}
-
-/* Header CTA: no ghost border, round pill shape. */
-.ng-k-demo-container,
-.ng-k-demo-container:hover,
-.ng-k-demo-container:focus,
-.ng-k-demo-container:active {
-  border: none !important;
-  outline: none !important;
-  border-radius: 999px !important;
-  background: linear-gradient(228deg, #00f0ff 0%, #0072ff 100%) !important;
-  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.25) !important;
 }
 
 /* Hero CTA: use the exact gradient and dimensions from the reference. */
