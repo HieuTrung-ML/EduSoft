@@ -171,8 +171,10 @@
     gap: 42px;
   }
   .logo-collection {
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: clamp(60px, 8vw, 100px) !important;
+  }
+  .logo-item {
+    max-height: 45px !important;
   }
   .nn-tng-s-ho-c-th-v-u-wrapper {
     padding-left: 34px;

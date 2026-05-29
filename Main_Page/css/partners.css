@@ -293,6 +293,7 @@
 
 .logo-item {
   max-height: 60px !important;
+  flex-shrink: 0 !important;
 }
 
 .frame-parent5 {
