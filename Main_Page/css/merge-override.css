@@ -784,313 +784,566 @@
   }
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   FOOTER SECTION — TÁI CẤU TRÚC LAYOUT NÂNG CAO (GRID & FLEX REFACTOR)
-   ══════════════════════════════════════════════════════════════════════════ */
+/* ==========================================================================
+   Footer layout override
+   ========================================================================== */
 
-/* Khung cha Footer dạng Flex cột, padding và gap co giãn */
 .site-disclaimer {
   display: flex !important;
   flex-direction: column !important;
-  padding: clamp(60px, 6vw, 100px) clamp(24px, 5vw, 96px) clamp(40px, 4vw, 60px) !important;
-  gap: clamp(40px, 5vw, 80px) !important;
-  font-size: 15px !important;
-  background-color: var(--color-royalblue-300) !important;
+  align-items: center !important;
   width: 100% !important;
+  padding: 94px clamp(24px, 7.5vw, 184px) 64px !important;
+  gap: 46px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  background-color: var(--color-royalblue-300) !important;
+  color: #ffffff !important;
+  font-family: var(--font-inter) !important;
+}
+
+.site-disclaimer .product-support,
+.site-disclaimer .contact-details {
+  width: min(100%, 1402px) !important;
+  max-width: 1402px !important;
+  margin: 0 auto !important;
   box-sizing: border-box !important;
 }
 
 .site-disclaimer .product-support {
-  width: 100% !important;
-  gap: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 34px !important;
 }
 
-/* 1. Refactor Menu liên kết sang CSS Grid */
-.site-disclaimer .info-navigation-parent {
+.site-disclaimer .info-navigation-parent,
+.site-disclaimer .resource-intro {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-  gap: clamp(30px, 4vw, 50px) !important;
+  grid-template-columns: 1fr 1fr 1.25fr 0.9fr !important;
+  column-gap: clamp(42px, 6vw, 92px) !important;
   width: 100% !important;
-  justify-content: space-between !important;
+  align-items: start !important;
 }
 
 .site-disclaimer .info-navigation,
 .site-disclaimer .info-navigation2,
+.site-disclaimer .work-relation,
 .site-disclaimer .education-hub {
-  width: 100% !important;
+  width: auto !important;
   max-width: 100% !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* Định dạng tiêu đề cột menu */
 .site-disclaimer .gii-php-chuyn,
-.site-disclaimer .h-tr,
-.site-disclaimer .gio-dc-i {
-  font-size: 18px !important;
-  font-weight: 700 !important;
+.site-disclaimer .h-tr {
+  margin: 0 !important;
   color: #ffffff !important;
-  margin-bottom: 12px !important;
-  line-height: 1.4 !important;
+  font-size: clamp(22px, 1.55vw, 28px) !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
   white-space: nowrap !important;
-}
-
-/* Các liên kết chữ trong menu footer */
-.site-disclaimer .resource-intro {
-  font-size: 14px !important;
-  color: rgba(255, 255, 255, 0.72) !important;
-  line-height: 2 !important;
 }
 
 .site-disclaimer .gii-thiu-tri,
 .site-disclaimer .gio-dc-i,
+.site-disclaimer .trung-tm-o2,
 .site-disclaimer .lin-h-hi {
-  font-size: 14px !important;
-  line-height: 2 !important;
   width: auto !important;
-  color: rgba(255, 255, 255, 0.72) !important;
+  max-width: 100% !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: clamp(20px, 1.32vw, 24px) !important;
+  line-height: 2.28 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
 }
 
-.site-disclaimer .lin-h-hi {
+.site-disclaimer .education-hub {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+}
+
+.site-disclaimer .course-view {
+  padding: 0 !important;
+}
+
+.site-disclaimer .contact-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 38px !important;
+  font-size: 24px !important;
+}
+
+.site-disclaimer .contact-component {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.site-disclaimer .line-icon3,
+.site-disclaimer .line-icon6 {
   width: 100% !important;
   max-width: 100% !important;
+  height: 1px !important;
+  object-fit: fill !important;
 }
 
-/* 2. Refactor Khối Liên hệ & Tải ứng dụng sang CSS Grid */
 .site-disclaimer .info-details {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-  gap: clamp(30px, 4vw, 60px) !important;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) !important;
+  column-gap: 56px !important;
   width: 100% !important;
   align-items: start !important;
 }
 
-/* Xoá bỏ width cố định gây tràn trang trên laptop */
-.site-disclaimer .address-location {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 0 !important;
-  gap: 12px !important;
-}
-
+.site-disclaimer .address-location,
 .site-disclaimer .frame-parent17 {
   width: 100% !important;
   max-width: 100% !important;
-  gap: 20px !important;
+  padding: 0 !important;
+  gap: 18px !important;
+}
+
+.site-disclaimer .panel-indicator-parent,
+.site-disclaimer .frame-parent18 {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+.site-disclaimer .panel-indicator {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  flex: 0 0 28px !important;
+}
+
+.site-disclaimer .shape-marker-icon {
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: contain !important;
 }
 
 .site-disclaimer .tr-s-h {
-  font-size: 16px !important;
-  line-height: 1.5 !important;
+  color: #ffffff !important;
+  font-size: clamp(20px, 1.32vw, 24px) !important;
+  line-height: 1.55 !important;
   font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+.site-disclaimer .direction-guide {
+  padding: 0 !important;
 }
 
 .site-disclaimer .ng-199-trn {
-  font-size: 14px !important;
-  line-height: 1.6 !important;
-  color: rgba(255, 255, 255, 0.72) !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-size: clamp(19px, 1.25vw, 23px) !important;
+  line-height: 1.55 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
 }
 
-/* Ẩn vạch ngăn đứng cố định giữa 2 cột để tránh lệch bố cục khi xuống dòng */
 .site-disclaimer .line-icon4 {
-  display: none !important;
+  display: block !important;
+  width: 1px !important;
+  height: 112px !important;
+  align-self: start !important;
+  object-fit: fill !important;
+  background: rgba(255, 255, 255, 0.32) !important;
+  opacity: 0.62 !important;
 }
 
-/* Khu vực tải app ứng dụng */
 .site-disclaimer .border-elements {
   display: flex !important;
-  gap: 16px !important;
   flex-wrap: wrap !important;
+  gap: 28px !important;
   width: 100% !important;
 }
 
 .site-disclaimer .store-logos {
-  flex: 0 1 160px !important;
-  height: 52px !important;
-  min-width: 160px !important;
+  flex: 0 0 258px !important;
+  width: 258px !important;
+  min-width: 0 !important;
+  height: 80px !important;
+  padding: 0 !important;
+  border: 0 !important;
   border-radius: 8px !important;
+  background: #ffffff !important;
   position: relative !important;
+  overflow: hidden !important;
 }
 
 .site-disclaimer .app-store-1,
 .site-disclaimer .ch-play-1 {
+  position: absolute !important;
   top: 50% !important;
   left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 130px !important;
+  width: 224px !important;
   height: auto !important;
+  transform: translate(-50%, -50%) !important;
+  object-fit: contain !important;
 }
 
-/* 3. Refactor Hộp thư liên hệ & Nút mạng xã hội */
 .site-disclaimer .frame-parent19 {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 30px !important;
-  width: 100% !important;
-  padding: 10px 0 !important;
-}
-
-.site-disclaimer .frame-wrapper8 {
-  flex: 0 1 auto !important;
-}
-
-.site-disclaimer .email-container {
-  padding: 8px 24px !important;
-  gap: 12px !important;
-}
-
-.site-disclaimer .infoedusoftvn {
-  font-size: 14px !important;
-  line-height: 1.5 !important;
-}
-
-/* Biểu tượng MXH */
-.site-disclaimer .frame-child21 {
-  width: auto !important;
-  height: 32px !important;
-  flex: 0 0 auto !important;
-}
-
-/* Chuyển dòng kẻ ngang phân cách sang 100% chiều rộng */
-.site-disclaimer .line-container {
-  flex: 1 1 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+  align-items: end !important;
+  gap: 84px !important;
   width: 100% !important;
   padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
-.site-disclaimer .line-icon6 {
+.site-disclaimer .frame-wrapper8,
+.site-disclaimer .email-container-parent {
   width: 100% !important;
   max-width: 100% !important;
 }
 
-/* 4. Refactor Chân trang (Brand & Copyright) */
-.site-disclaimer .edu-soft-info-wrapper {
-  font-size: 24px !important;
-  padding: 20px 0 0 0 !important;
+.site-disclaimer .email-container-parent {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 28px !important;
+  padding: 0 !important;
+}
+
+.site-disclaimer .email-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  align-self: flex-start !important;
+  gap: 18px !important;
+  min-width: 260px !important;
+  height: 52px !important;
+  padding: 0 32px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.site-disclaimer .level-education-item,
+.site-disclaimer .line-wrapper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.site-disclaimer .infoedusoftvn {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+.site-disclaimer .frame-child21 {
+  width: 330px !important;
+  max-width: 30vw !important;
+  height: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+}
+
+.site-disclaimer .line-container {
   width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 0 11px !important;
+  box-sizing: border-box !important;
+}
+
+.site-disclaimer .edu-soft-info-wrapper {
+  width: 100% !important;
+  padding: 14px 0 0 !important;
+  box-sizing: border-box !important;
 }
 
 .site-disclaimer .edu-soft-info {
-  width: 100% !important;
   display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
+  flex-direction: column !important;
   align-items: center !important;
-  flex-wrap: wrap !important;
-  gap: 20px !important;
+  width: 100% !important;
+  gap: 26px !important;
+  text-align: center !important;
 }
 
 .site-disclaimer .footer-container {
-  flex: 1 1 auto !important;
-  gap: 12px !important;
-  flex-direction: row !important;
+  display: flex !important;
+  flex-direction: column !important;
   align-items: center !important;
-  flex-wrap: wrap !important;
+  gap: 28px !important;
+  width: 100% !important;
 }
 
 .site-disclaimer .interface-elements-inner {
   display: flex !important;
-  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
 }
 
 .site-disclaimer .e-digital-white-1-icon {
-  width: 140px !important;
+  width: 238px !important;
   height: auto !important;
+  object-fit: contain !important;
 }
 
 .site-disclaimer .vin-pht-trin {
-  font-size: clamp(14px, 1.5vw, 18px) !important;
-  line-height: 1.4 !important;
+  margin: 0 !important;
   color: #ffffff !important;
+  font-size: clamp(28px, 2.15vw, 40px) !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
 }
 
 .site-disclaimer .copyright-info {
-  font-size: 13px !important;
-  padding: 0 !important;
-  color: rgba(255, 255, 255, 0.5) !important;
   display: flex !important;
-  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 0 !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 18px !important;
 }
 
 .site-disclaimer .copyright-parent {
-  gap: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
 }
 
 .site-disclaimer .copyright {
   height: auto !important;
-  line-height: 1.5 !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
 }
 
 .site-disclaimer .brand-icon-wrapper {
-  padding: 0 !important;
   display: flex !important;
   align-items: center !important;
+  padding: 0 !important;
 }
 
 .site-disclaimer .brand-icon {
-  width: 12px !important;
+  width: 14px !important;
+  height: 14px !important;
 }
 
 .site-disclaimer .legal-links-wrapper {
-  font-size: 13px !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
   padding: 0 !important;
-  flex: 0 0 auto !important;
+  font-size: 18px !important;
 }
 
 .site-disclaimer .legal-links {
-  gap: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
 }
 
 .site-disclaimer .iu-khon,
 .site-disclaimer .chnh-sch {
-  font-size: 13px !important;
-  line-height: 1.5 !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  font-size: inherit !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
 }
 
-/* 5. Định dạng Mobile & Tablet (<= 768px) */
-@media (max-width: 768px) {
+.site-disclaimer .frame-child22 {
+  width: 1px !important;
+  height: 18px !important;
+  background: rgba(255, 255, 255, 0.65) !important;
+}
+
+@media (max-width: 1200px) {
   .site-disclaimer {
-    padding: 50px 24px 40px !important;
+    padding: 72px clamp(24px, 6vw, 72px) 56px !important;
     gap: 40px !important;
   }
-  
-  .site-disclaimer .info-navigation-parent {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
-    gap: 24px !important;
+
+  .site-disclaimer .info-navigation-parent,
+  .site-disclaimer .resource-intro {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    column-gap: 36px !important;
   }
-  
+
+  .site-disclaimer .info-details {
+    column-gap: 36px !important;
+  }
+
+  .site-disclaimer .store-logos {
+    flex-basis: 210px !important;
+    width: 210px !important;
+    height: 64px !important;
+  }
+
+  .site-disclaimer .app-store-1,
+  .site-disclaimer .ch-play-1 {
+    width: 178px !important;
+  }
+
+  .site-disclaimer .frame-parent19 {
+    gap: 42px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-disclaimer .product-support {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 22px !important;
+  }
+
+  .site-disclaimer .info-navigation-parent,
+  .site-disclaimer .resource-intro {
+    display: contents !important;
+  }
+
+  .site-disclaimer .info-navigation {
+    order: 1 !important;
+  }
+
+  .site-disclaimer .gii-thiu-tri {
+    order: 2 !important;
+  }
+
+  .site-disclaimer .info-navigation2 {
+    order: 3 !important;
+  }
+
+  .site-disclaimer .work-relation {
+    order: 4 !important;
+  }
+
+  .site-disclaimer .gii-php-chuyn {
+    order: 5 !important;
+  }
+
+  .site-disclaimer .education-hub {
+    order: 6 !important;
+  }
+
+  .site-disclaimer .info-navigation-parent > .h-tr {
+    order: 7 !important;
+  }
+
+  .site-disclaimer .lin-h-hi {
+    order: 8 !important;
+  }
+
   .site-disclaimer .info-details {
     grid-template-columns: 1fr !important;
-    gap: 30px !important;
+    row-gap: 34px !important;
   }
-  
-  .site-disclaimer .edu-soft-info {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 16px !important;
+
+  .site-disclaimer .line-icon4 {
+    display: none !important;
   }
-  
+
+  .site-disclaimer .frame-parent19 {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    justify-items: center !important;
+  }
+
+  .site-disclaimer .email-container {
+    align-self: center !important;
+  }
+
+  .site-disclaimer .frame-child21 {
+    max-width: 330px !important;
+    width: min(330px, 70vw) !important;
+  }
+
+  .site-disclaimer .line-container {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-disclaimer {
+    padding: 52px 24px 44px !important;
+    gap: 34px !important;
+  }
+
+  .site-disclaimer .product-support {
+    gap: 24px !important;
+  }
+
+  .site-disclaimer .gii-php-chuyn,
+  .site-disclaimer .h-tr {
+    white-space: normal !important;
+  }
+
+  .site-disclaimer .gii-thiu-tri,
+  .site-disclaimer .gio-dc-i,
+  .site-disclaimer .trung-tm-o2,
+  .site-disclaimer .lin-h-hi {
+    line-height: 1.9 !important;
+  }
+
+  .site-disclaimer .border-elements {
+    gap: 14px !important;
+  }
+
+  .site-disclaimer .store-logos {
+    flex: 1 1 180px !important;
+    width: auto !important;
+    max-width: 240px !important;
+    height: 62px !important;
+  }
+
+  .site-disclaimer .app-store-1,
+  .site-disclaimer .ch-play-1 {
+    width: 168px !important;
+  }
+
+  .site-disclaimer .email-container {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+    padding: 0 22px !important;
+  }
+
   .site-disclaimer .footer-container {
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-disclaimer {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .site-disclaimer .border-elements {
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
   }
-  
-  .site-disclaimer .vin-pht-trin {
-    text-align: center !important;
+
+  .site-disclaimer .store-logos {
+    flex: 0 0 58px !important;
+    width: 210px !important;
   }
-  
-  .site-disclaimer .copyright-info {
-    justify-content: center !important;
+
+  .site-disclaimer .app-store-1,
+  .site-disclaimer .ch-play-1 {
+    width: 170px !important;
   }
-  
-  .site-disclaimer .legal-links-wrapper {
-    justify-content: center !important;
+
+  .site-disclaimer .e-digital-white-1-icon {
+    width: 200px !important;
   }
 }
 
