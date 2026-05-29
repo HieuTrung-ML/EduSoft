@@ -66,12 +66,6 @@
   .frame-wrapper4 {
     flex: 1;
   }
-  .desktop-6-child {
-    padding-left: 38px;
-    padding-right: 38px;
-    padding-bottom: 187px;
-    box-sizing: border-box;
-  }
   .container-education,
   .header-container {
     padding-left: var(--padding-24);
@@ -216,10 +210,6 @@
   .content-details-parent {
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .desktop-6-child {
-    padding-bottom: 122px;
-    box-sizing: border-box;
   }
   .frame-parent9 {
     gap: var(--gap-22);
@@ -552,10 +542,6 @@
   .tch-hp-b {
     font-size: var(--fs-22);
     line-height: 39px;
-  }
-  .desktop-6-child {
-    padding-bottom: 79px;
-    box-sizing: border-box;
   }
   .edu-digital2 {
     font-size: var(--fs-19);

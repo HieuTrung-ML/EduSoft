@@ -2,21 +2,25 @@
   width: 100%; /* responsive thay vì cứng 1795px */
   display: flex;
   align-items: flex-start;
-  padding: var(--padding-0) clamp(24px, 4vw, 76px) clamp(80px, 10vw, 180px);
+  /* Horizontal padding provides the side margins — this is the reliable approach
+     when the flex child uses flex:1 (margin-inline:auto won't work on flex:1 child) */
+  padding: 0 clamp(24px, 4vw, 100px) clamp(60px, 8vw, 160px);
   box-sizing: border-box;
   max-width: 100%;
   flex-shrink: 0;
 }
 
 .frame-parent8 {
-  flex: 1;
+  flex: 1; /* fills inner width after .desktop-6-child padding */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap-30);
-  width: min(100% - clamp(32px, 6vw, 152px), 1440px) !important;
+  /* max-width caps the content at 1440px on very wide screens;
+     margin-inline: auto then distributes the leftover space */
+  max-width: 1440px !important;
+  width: 100% !important;
   margin-inline: auto !important;
-  max-width: 100%;
   min-width: 0;
 }
 
@@ -24,7 +28,7 @@
   align-self: stretch;
   display: flex;
   align-items: flex-start;
-  gap: 45px;
+  gap: clamp(24px, 3.5vw, 60px);
   max-width: 100%;
   min-width: 0;
 }
@@ -82,20 +86,27 @@
 }
 
 .detail-container-inner {
-  flex: 1;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: var(--padding-30) var(--padding-0) var(--padding-0);
   box-sizing: border-box;
-  min-width: 218px;
+  min-width: 0; /* removed hard 218px — line stretches to fill remaining space */
   max-width: 100%;
+}
+
+/* FIX: badge "Edu Digital" text was clipped by overflow: hidden in legacy.css
+   because .detail-container-inner (flex:1) was consuming all row space */
+.frame-parent10 {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
 }
 
 .cc-gi-gii {
   margin: 0;
   position: relative;
-  font-size: var(--fs-60);
+  font-size: clamp(32px, 4vw, 60px);
   line-height: 150%;
   font-weight: 700;
   font-family: inherit;
@@ -106,7 +117,7 @@
 
 .t-ng-ha-minh-bch-hiu-parent {
   width: 100%;
-  max-width: 530px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -276,7 +287,7 @@
 
 .core-block {
   align-self: stretch;
-  gap: 45px;
+  gap: clamp(16px, 3vw, 45px);
   text-align: left;
   font-size: var(--fs-36);
   color: var(--color-black);
@@ -378,7 +389,7 @@
 .training-platform {
   width: 100%;
   max-width: 1025px;
-  gap: 45px;
+  gap: clamp(16px, 3vw, 45px);
   text-align: left;
   font-size: var(--fs-36);
   color: var(--color-black);
@@ -508,37 +519,57 @@
   line-height: 150%;
 }
 
+/* ════════════════════════════════════════════════════════
+   SOLUTIONS SECTION — Complete Responsive Control
+   Single source of truth — do NOT add conflicting rules
+   for this section in responsive.css or merge-override.css
+   ════════════════════════════════════════════════════════ */
+
+/* ── Desktop & Large Laptop (≥1025px): 2 columns side-by-side ── */
 @media screen and (min-width: 1025px) {
   .frame-parent9 {
     flex-wrap: nowrap !important;
+    flex-direction: row !important;
     align-items: flex-start !important;
+    gap: clamp(24px, 3.5vw, 60px) !important;
   }
   .frame-wrapper6 {
-    flex: 0 0 clamp(280px, 30%, 420px) !important;
+    flex: 0 0 clamp(280px, 28%, 400px) !important;
     min-width: 0 !important;
+    max-width: 400px !important;
   }
   .header-container-parent {
     flex: 1 1 0 !important;
     min-width: 0 !important;
+    max-width: 100% !important;
   }
 }
 
+/* ── Tablet & Mobile (≤1024px): stacked vertically ── */
 @media screen and (max-width: 1024px) {
   .frame-parent9 {
     flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 40px !important;
   }
   .frame-wrapper6,
   .header-container-parent {
     width: 100% !important;
     max-width: 100% !important;
+    flex: none !important;
+  }
+  .detail-container {
+    gap: 16px !important;
   }
 }
 
+/* ── Cards: 2-column grid (≥769px) ── */
 @media screen and (min-width: 769px) {
   .core-block,
   .training-platform {
     flex-wrap: nowrap !important;
-    gap: 20px !important;
+    flex-direction: row !important;
+    gap: clamp(16px, 3vw, 45px) !important;
   }
   .block-core-item,
   .block-core-item2,
@@ -547,19 +578,44 @@
     flex: 1 1 0 !important;
     min-width: 240px !important;
     max-width: 50% !important;
+    width: auto !important;
   }
 }
 
+/* ── Cards: single column (≤768px) ── */
 @media screen and (max-width: 768px) {
   .core-block,
   .training-platform {
     flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 20px !important;
   }
   .block-core-item,
   .block-core-item2,
   .platform-details,
   .platform-details2 {
     max-width: 100% !important;
+    min-width: 0 !important;
     width: 100% !important;
+    flex: none !important;
+  }
+  /* Badge: tighter padding on mobile */
+  .frame-parent10 {
+    padding: 8px 14px !important;
+  }
+  .edu-digital2 {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
   }
 }
+
+/* ── Very small phones (≤480px) ── */
+@media screen and (max-width: 480px) {
+  .detail-container {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  .detail-container-inner {
+    min-width: 60px !important;
+  }
+}

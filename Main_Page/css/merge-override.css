@@ -729,19 +729,7 @@
   margin: 0 !important;
 }
 
-/* Overrides to ensure correct column wrapping for Solutions section */
-@media screen and (max-width: 1366px) {
-  .frame-parent9 {
-    flex-wrap: wrap !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .core-block,
-  .training-platform {
-    flex-wrap: wrap !important;
-  }
-}
+/* Solutions section layout fully controlled by solutions.css */
 
 /* 100+ Pill (.group-div) Styling & Responsive Override */
 .group-div {
