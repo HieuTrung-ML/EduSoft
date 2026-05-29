@@ -734,20 +734,6 @@
   .frame-parent9 {
     flex-wrap: wrap !important;
   }
-  .frame-wrapper6,
-  .header-container-parent {
-    min-width: 100% !important;
-    width: 100% !important;
-    flex: 1 1 auto !important;
-  }
-}
-
-/* Overrides to keep cards side-by-side until 768px (overriding responsive.css premature wrapping at 1325px) */
-@media screen and (max-width: 1325px) {
-  .core-block,
-  .training-platform {
-    flex-wrap: nowrap !important;
-  }
 }
 
 @media screen and (max-width: 768px) {

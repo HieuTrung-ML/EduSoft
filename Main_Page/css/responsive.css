@@ -82,10 +82,6 @@
     padding-left: var(--padding-25);
     padding-right: var(--padding-25);
   }
-  .core-block,
-  .training-platform {
-    flex-wrap: wrap;
-  }
   .education-platform {
     gap: 53px;
     padding: var(--padding-60) var(--padding-40) 94px;
