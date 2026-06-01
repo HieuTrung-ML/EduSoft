@@ -16,7 +16,7 @@ const HERO_CONFIG = {
   PAGE_PAD_MAX: 380,
   PAGE_MAX: 1720,
   COPY_WIDTH_MIN: 420,
-  COPY_WIDTH_MAX: 680,
+  COPY_WIDTH_MAX: 880,
   GAP_MIN: 20,
   GAP_MAX: 100,
 
@@ -157,7 +157,9 @@ function computeBaseScale(viewport) {
 
   const pagePad = getPagePad(vw);
   const container = clamp(600, Math.min(vw - 2 * pagePad, HERO_CONFIG.PAGE_MAX), HERO_CONFIG.PAGE_MAX);
-  const copyWidth = clamp(HERO_CONFIG.COPY_WIDTH_MIN, vw * 0.32, HERO_CONFIG.COPY_WIDTH_MAX);
+  const copyWidthRatio = vw >= 1440 ? 0.42 : vw >= 1200 ? 0.4 : 0.32;
+  const copyWidthMin = vw >= 1440 ? 650 : vw >= 1200 ? 540 : HERO_CONFIG.COPY_WIDTH_MIN;
+  const copyWidth = clamp(copyWidthMin, vw * copyWidthRatio, HERO_CONFIG.COPY_WIDTH_MAX);
   const gapRatio = wideShort ? 0.048 : 0.038;
   const gap = clamp(HERO_CONFIG.GAP_MIN, vw * gapRatio, HERO_CONFIG.GAP_MAX);
 
