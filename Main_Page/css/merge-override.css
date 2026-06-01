@@ -1648,8 +1648,28 @@
   }
 
   .mng-carousel-wrap {
+    width: min(calc(100vw - (2 * var(--page-pad))), 1720px) !important;
+    max-width: 1720px !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .mng-viewport {
+    width: min(100%, 1530px) !important;
+    max-width: min(1530px, calc(100vw - (2 * var(--page-pad)))) !important;
+    min-width: min(100%, 720px) !important;
+    border-radius: 30px !important;
+  }
+
+  .mng-card-scaler {
+    transform-origin: top center !important;
+  }
+
+  .mng-slide {
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .value-knowledge {
