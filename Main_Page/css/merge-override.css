@@ -1730,6 +1730,9 @@
   .information-rights {
     width: clamp(320px, 28vw, 520px) !important;
     max-width: 100% !important;
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .entry-panel,
@@ -1737,11 +1740,33 @@
   .contact-container,
   .action-component {
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .message-details {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .entry-panel {
+    align-items: stretch !important;
+  }
+
+  .details-pane {
+    padding-left: clamp(20px, 2.4vw, 32px) !important;
+    padding-right: clamp(20px, 2.4vw, 32px) !important;
+  }
+
+  .contact-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .action-component {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    align-items: center !important;
   }
 
   .site-disclaimer {
