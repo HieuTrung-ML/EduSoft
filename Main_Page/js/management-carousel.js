@@ -23,7 +23,8 @@ export function initManagementCarousel() {
       let vpW = mngViewport.clientWidth;
       if (vpW <= 0) {
         const parentW = mngViewport.parentElement ? mngViewport.parentElement.clientWidth : window.innerWidth;
-        vpW = Math.min(1530, Math.max(720, parentW));
+        const arrowGutter = window.innerWidth <= 1728 ? 210 : 0;
+        vpW = Math.min(1530, Math.max(720, parentW - arrowGutter));
       }
 
       const section = mngViewport.closest('.integrate-school');

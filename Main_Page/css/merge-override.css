@@ -1672,6 +1672,26 @@
     justify-content: center !important;
   }
 
+  @media (max-width: 1728px) and (min-width: 901px) {
+    .mng-viewport {
+      max-width: min(1392px, calc(100vw - (2 * var(--page-pad)) - 210px)) !important;
+    }
+
+    .mng-nav-prev {
+      left: 8px !important;
+    }
+
+    .mng-nav-next {
+      right: 8px !important;
+    }
+  }
+
+  @media (max-width: 1366px) and (min-width: 901px) {
+    .mng-viewport {
+      max-width: min(1080px, calc(100vw - (2 * var(--page-pad)) - 210px)) !important;
+    }
+  }
+
   .mng-card-scaler .hero-slide-wrapper .subtitle,
   .mng-card-scaler > div > div[style*="color: #56CCF2"] {
     color: #56ccf2 !important;
