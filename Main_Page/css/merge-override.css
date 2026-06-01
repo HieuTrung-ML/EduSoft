@@ -1347,3 +1347,453 @@
   }
 }
 
+/* ==========================================================================
+   Desktop responsive pass - laptop 1280 through wide desktop 2560
+   Keep this block last: it normalizes the final cascade without touching the
+   mobile layout that starts at 900px.
+   ========================================================================== */
+
+:root {
+  --page-max: 1720px;
+  --content-max: 1484px;
+  --page-pad: clamp(44px, 5vw, 100px);
+  --desktop-container: min(calc(100vw - (2 * var(--page-pad))), var(--page-max));
+  --content-container: min(calc(100vw - (2 * var(--page-pad))), var(--content-max));
+  --orbit-scale: 0.82;
+  --banner-scale: 0.86;
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --orbit-scale: 0.82;
+    --banner-scale: 0.92;
+  }
+}
+
+@media (min-width: 2200px) {
+  :root {
+    --orbit-scale: 0.80;
+    --banner-scale: 0.92;
+    --page-pad: clamp(100px, 16.4vw, 420px);
+  }
+}
+
+@media (max-width: 1728px) {
+  :root {
+    --orbit-scale: 0.76;
+    --banner-scale: 0.86;
+  }
+}
+
+@media (max-width: 1600px) {
+  :root {
+    --orbit-scale: 0.72;
+    --banner-scale: 0.80;
+  }
+}
+
+@media (max-width: 1536px) {
+  :root {
+    --orbit-scale: 0.68;
+  }
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --orbit-scale: 0.62;
+    --banner-scale: 0.76;
+  }
+}
+
+@media (max-width: 1366px) {
+  :root {
+    --orbit-scale: 0.56;
+    --page-pad: 56px;
+  }
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --orbit-scale: 0.52;
+    --page-pad: 44px;
+  }
+}
+
+@media (min-width: 901px) {
+  #main-nav.frame-header {
+    padding-left: max(var(--page-pad), calc((100vw - var(--page-max)) / 2)) !important;
+    padding-right: max(var(--page-pad), calc((100vw - var(--page-max)) / 2)) !important;
+    min-height: 88px !important;
+    gap: clamp(24px, 3vw, 56px) !important;
+  }
+
+  #main-nav.frame-header.scrolled {
+    min-height: 76px !important;
+  }
+
+  #main-nav .frame-parent2 {
+    gap: clamp(34px, 3.2vw, 64px) !important;
+  }
+
+  #main-nav .product-solution-title {
+    gap: clamp(28px, 2.7vw, 56px) !important;
+  }
+
+  #main-nav .frame-parent3 {
+    gap: clamp(28px, 3vw, 48px) !important;
+  }
+
+  .ellipse-parent {
+    min-height: clamp(720px, 90vh, 1080px) !important;
+    height: auto !important;
+    justify-content: center !important;
+    padding-top: clamp(88px, 6vh, 118px) !important;
+    padding-bottom: clamp(28px, 3vh, 44px) !important;
+    overflow: clip !important;
+  }
+
+  .ellipse-parent > .frame-parent {
+    width: var(--desktop-container) !important;
+    grid-template-columns: minmax(420px, 0.9fr) minmax(560px, 1.1fr) !important;
+    gap: clamp(32px, 4vw, 72px) !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  .ellipse-parent .frame-group {
+    padding-top: 0 !important;
+    justify-content: center !important;
+  }
+
+  .ellipse-parent .frame-container {
+    height: calc(1051px * var(--orbit-scale)) !important;
+    transform: translateX(-3%) !important;
+    justify-content: center !important;
+    overflow: visible !important;
+  }
+
+  .ellipse-parent .vector-parent {
+    transform: translate(-50%, -50%) scale(var(--orbit-scale)) !important;
+  }
+
+  .ellipse-parent .nn-tng-chuyn {
+    font-size: clamp(42px, 3.1vw, 58px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .ellipse-parent .h-tr-nh {
+    width: min(100%, 560px) !important;
+    padding-right: 0 !important;
+    font-size: clamp(16px, 1.05vw, 20px) !important;
+  }
+
+  .ellipse-parent .ng-k-demo-wrapper {
+    width: clamp(180px, 12vw, 240px) !important;
+    height: clamp(54px, 3.6vw, 68px) !important;
+    overflow: hidden !important;
+  }
+
+  .ellipse-parent .ng-k-demo-wrapper::after,
+  .main-services .request-demo::after {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  .desktop-6-inner {
+    padding-left: var(--page-pad) !important;
+    padding-right: var(--page-pad) !important;
+  }
+
+  .frame-parent4,
+  .frame-parent6,
+  .frame-parent7,
+  .content-details-parent,
+  .frame-parent8,
+  .mng-header,
+  .mng-carousel-wrap,
+  .digital-updates,
+  .site-disclaimer .product-support,
+  .site-disclaimer .contact-details {
+    width: var(--content-container) !important;
+    max-width: var(--content-max) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .logo-collection-wrapper {
+    overflow: hidden !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%) !important;
+    mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%) !important;
+  }
+
+  .logo-collection {
+    gap: clamp(48px, 6vw, 96px) !important;
+  }
+
+  .frame-parent7 {
+    max-width: var(--content-max) !important;
+    gap: clamp(40px, 5vw, 96px) !important;
+  }
+
+  .frame-wrapper4 {
+    width: min(38%, 560px) !important;
+    flex: 0 1 min(38%, 560px) !important;
+    padding: 0 !important;
+  }
+
+  .protected-1-icon {
+    flex: 1 1 520px !important;
+    max-width: min(52%, 620px) !important;
+  }
+
+  .content-details-parent {
+    margin-top: -34px !important;
+  }
+
+  .desktop-6-child {
+    padding-left: var(--page-pad) !important;
+    padding-right: var(--page-pad) !important;
+  }
+
+  .frame-parent8 {
+    max-width: var(--content-max) !important;
+  }
+
+  .frame-parent9 {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 0.38fr) minmax(0, 1fr) !important;
+    gap: clamp(28px, 3.2vw, 56px) !important;
+    align-items: start !important;
+  }
+
+  .frame-wrapper6 {
+    width: auto !important;
+    flex: none !important;
+    min-width: 0 !important;
+  }
+
+  .header-container-parent {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(24px, 2.5vw, 36px) !important;
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  .header-container {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+
+  .core-block,
+  .training-platform,
+  .model-types,
+  .frame-parent14 {
+    display: contents !important;
+  }
+
+  .block-core-item,
+  .block-core-item2,
+  .platform-details,
+  .platform-details2 {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    flex: none !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+    padding: clamp(28px, 2.4vw, 40px) !important;
+  }
+
+  .integrate-school {
+    padding-top: clamp(96px, 9vw, 150px) !important;
+    padding-bottom: clamp(112px, 9vw, 170px) !important;
+  }
+
+  .mng-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .mng-carousel-wrap {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .value-knowledge {
+    display: block !important;
+    width: 100% !important;
+    padding: clamp(72px, 7vw, 132px) 0 clamp(86px, 7vw, 136px) !important;
+  }
+
+  .main-services {
+    width: var(--desktop-container) !important;
+    max-width: var(--page-max) !important;
+    min-height: clamp(390px, 26vw, 500px) !important;
+    margin: 0 auto !important;
+    padding: clamp(32px, 3.4vw, 58px) !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr) !important;
+    grid-template-rows: auto auto auto !important;
+    column-gap: clamp(32px, 5vw, 92px) !important;
+    row-gap: 16px !important;
+    align-content: center !important;
+    overflow: hidden !important;
+    contain: paint !important;
+  }
+
+  .main-services .kt-ni-tri2,
+  .main-services .khng-ch-l2,
+  .main-services .request-demo {
+    grid-column: 2 !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 5 !important;
+  }
+
+  .main-services .kt-ni-tri2 {
+    font-size: clamp(34px, 3.1vw, 56px) !important;
+    line-height: 1.18 !important;
+  }
+
+  .main-services .khng-ch-l2 {
+    max-width: 560px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .main-services .request-demo {
+    width: clamp(190px, 13vw, 240px) !important;
+    height: clamp(56px, 4vw, 70px) !important;
+  }
+
+  .main-services .graphics-components {
+    left: 0 !important;
+    top: 50% !important;
+    width: min(58%, 820px) !important;
+    height: 100% !important;
+    transform: translate(-4%, -50%) scale(var(--banner-scale)) !important;
+    transform-origin: center center !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+  }
+
+  .main-services .background-gradient {
+    width: 760px !important;
+    height: 760px !important;
+    max-width: none !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .main-services .book-2-icon2 {
+    left: 50% !important;
+    top: 50% !important;
+    width: min(62%, 460px) !important;
+    height: auto !important;
+    transform: translate(-50%, -38%) !important;
+  }
+
+  .main-services .frame-parent16 {
+    display: none !important;
+  }
+
+  .email-promotions {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: clamp(56px, 5vw, 92px) !important;
+  }
+
+  .digital-updates {
+    align-items: center !important;
+    gap: clamp(32px, 4vw, 64px) !important;
+  }
+
+  .notice-promo-parent {
+    width: min(100%, 820px) !important;
+    align-items: center !important;
+  }
+
+  .notice-promo {
+    justify-content: center !important;
+  }
+
+  .guide-management {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .message-details,
+  .information-rights {
+    width: clamp(320px, 28vw, 520px) !important;
+    max-width: 100% !important;
+  }
+
+  .entry-panel,
+  .details-pane,
+  .contact-container,
+  .action-component {
+    width: 100% !important;
+  }
+
+  .action-component {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .site-disclaimer {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .site-disclaimer .info-navigation-parent,
+  .site-disclaimer .resource-intro {
+    column-gap: clamp(32px, 5vw, 84px) !important;
+  }
+
+  .site-disclaimer .frame-parent19 {
+    gap: clamp(36px, 5vw, 72px) !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  .ellipse-parent {
+    min-height: clamp(980px, 78vh, 1120px) !important;
+    padding-top: 96px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .ellipse-parent > .frame-parent,
+  .main-services {
+    width: var(--desktop-container) !important;
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 901px) {
+  #main-nav .sn-phm,
+  #main-nav .tri-thc-s,
+  #main-nav .c-nhn {
+    font-size: 18px !important;
+  }
+
+  .ellipse-parent {
+    min-height: clamp(690px, 90vh, 780px) !important;
+  }
+
+  .ellipse-parent .nn-tng-chuyn {
+    font-size: clamp(38px, 3.2vw, 46px) !important;
+  }
+
+  .ellipse-parent > .frame-parent {
+    grid-template-columns: minmax(390px, 0.92fr) minmax(500px, 1.08fr) !important;
+    gap: 28px !important;
+  }
+
+  .frame-parent9 {
+    grid-template-columns: minmax(260px, 0.36fr) minmax(0, 1fr) !important;
+  }
+}
+

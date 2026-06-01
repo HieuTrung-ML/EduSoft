@@ -31,3 +31,12 @@ Desktop.ini
 
 # Test Folder
 Test/
+
+# Local responsive audit artifacts
+.chrome-responsive-audit/
+.chrome-shot-*/
+.edge-shot-*/
+responsive-audit-raw.json
+responsive-shots/
+responsive-review-plan.txt
+tools/
