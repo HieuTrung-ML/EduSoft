@@ -4,6 +4,7 @@ import { initFoundationCarousel } from './foundation-carousel.js';
 import { initManagementCarousel } from './management-carousel.js';
 import { initLogoMarquee } from './logo-marquee.js';
 import { initMobileMenu } from './mobile-menu.js';
+import { initHeroRuntimeScale } from './hero-runtime-scale.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   initFadeAnimation();
@@ -12,4 +13,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initManagementCarousel();
   initLogoMarquee();
   initMobileMenu();
+  initHeroRuntimeScale();
 });

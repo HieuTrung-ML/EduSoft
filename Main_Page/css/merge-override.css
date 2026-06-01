@@ -1724,6 +1724,13 @@
   .guide-management {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .vi-nhiu-tin {
+    max-width: 560px !important;
+    line-height: 1.45 !important;
   }
 
   .message-details,
@@ -1733,6 +1740,17 @@
     align-self: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  .information-rights {
+    width: min(calc(100vw - (2 * var(--page-pad))), 760px) !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .information-rights .chng-ti-s {
+    width: auto !important;
+    white-space: nowrap !important;
   }
 
   .entry-panel,
@@ -1819,6 +1837,230 @@
 
   .frame-parent9 {
     grid-template-columns: minmax(260px, 0.36fr) minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  :root {
+    --page-pad: 36px;
+    --content-max: 1028px;
+    --orbit-scale: 0.44;
+  }
+
+  #main-nav.frame-header {
+    min-height: 76px !important;
+    padding-left: var(--page-pad) !important;
+    padding-right: var(--page-pad) !important;
+  }
+
+  #main-nav .draw-ngang-white-1-wrapper,
+  #main-nav #nav-logo,
+  #main-nav #nav-logo-overlay {
+    height: 34px !important;
+  }
+
+  #main-nav .frame-parent2,
+  #main-nav .product-solution-title,
+  #main-nav .frame-parent3 {
+    gap: 20px !important;
+  }
+
+  #main-nav .sn-phm,
+  #main-nav .tri-thc-s,
+  #main-nav .c-nhn {
+    font-size: 15px !important;
+  }
+
+  #main-nav .ng-k-demo-container {
+    width: 132px !important;
+    height: 40px !important;
+  }
+
+  .ellipse-parent {
+    min-height: 650px !important;
+    padding-top: 86px !important;
+  }
+
+  .ellipse-parent > .frame-parent {
+    grid-template-columns: minmax(330px, 0.95fr) minmax(420px, 1.05fr) !important;
+    gap: 22px !important;
+  }
+
+  .ellipse-parent .nn-tng-chuyn {
+    font-size: clamp(32px, 4.2vw, 42px) !important;
+  }
+
+  .technology-platform {
+    padding: 78px var(--page-pad) 88px !important;
+    font-size: 20px !important;
+  }
+
+  .technology-platform .edu-digital-group {
+    width: min(100%, var(--content-max)) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    position: relative !important;
+    align-items: start !important;
+  }
+
+  .technology-platform .edu-digital4,
+  .technology-platform .cng-ngh-nng,
+  .technology-platform .info-promotions {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .technology-platform .edu-digital4 {
+    grid-column: 1 !important;
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    align-self: start !important;
+  }
+
+  .technology-platform .cng-ngh-nng {
+    grid-column: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    margin: 0 0 8px !important;
+    align-self: start !important;
+  }
+
+  .technology-platform .info-promotions {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    align-items: start !important;
+  }
+
+  .technology-platform .latest-promo {
+    width: 100% !important;
+    gap: 22px !important;
+    min-width: 0 !important;
+  }
+
+  .technology-platform .trials-promo {
+    width: 100% !important;
+    padding: 0 !important;
+    font-size: 22px !important;
+  }
+
+  .technology-platform .trial-free-access,
+  .technology-platform .updated-panel,
+  .technology-platform .expert-container-parent {
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 28px !important;
+    gap: 22px !important;
+    font-size: 22px !important;
+  }
+
+  .technology-platform .empty-access-parent,
+  .technology-platform .recent-update {
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  .technology-platform .empty-access-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .technology-platform .dng-th-min {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+  }
+
+  .technology-platform .dng-th-min2,
+  .technology-platform .thng-tin-chi,
+  .technology-platform .h-tr-gii {
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+  }
+
+  .technology-platform .content-overview,
+  .technology-platform .action-request {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .technology-platform .demo-promo {
+    width: 150px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .technology-platform .dng-th-ngay {
+    width: auto !important;
+    height: auto !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+  }
+
+  .email-promotions {
+    font-size: 18px !important;
+  }
+
+  .message-details,
+  .information-rights {
+    width: min(420px, calc(100vw - 72px)) !important;
+  }
+
+  .information-rights {
+    width: min(720px, calc(100vw - 72px)) !important;
+  }
+
+  .vi-nhiu-tin {
+    max-width: 430px !important;
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+  }
+
+  .details-pane {
+    height: 62px !important;
+    align-items: center !important;
+  }
+
+  .enter-your-mail {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+
+  .entry-panel {
+    gap: 24px !important;
+  }
+
+  .contact-container,
+  .action-component {
+    height: 58px !important;
+  }
+
+  .ng-k {
+    font-size: 18px !important;
+    line-height: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .information-rights {
+    gap: 12px !important;
+  }
+
+  .chng-ti-s {
+    font-size: 18px !important;
+    line-height: 1.55 !important;
   }
 }
 
