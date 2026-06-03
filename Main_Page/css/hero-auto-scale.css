@@ -396,3 +396,57 @@
     }
   }
 }
+
+/* Keep hero/nav aligned with the final desktop container pass. */
+@media (min-width: 901px) {
+  :root {
+    --page-max: 1720px;
+    --content-max: 1484px;
+    --page-pad: clamp(36px, 5vw, 100px);
+    --desktop-container: min(calc(100vw - (2 * var(--page-pad))), var(--page-max));
+    --content-container: min(calc(100vw - (2 * var(--page-pad))), var(--content-max));
+  }
+
+  #main-nav.frame-header {
+    padding-left: max(var(--page-pad), calc((100vw - var(--page-max)) / 2)) !important;
+    padding-right: max(var(--page-pad), calc((100vw - var(--page-max)) / 2)) !important;
+  }
+
+  .ellipse-parent > .frame-parent {
+    width: var(--hero-runtime-container, var(--desktop-container)) !important;
+    max-width: var(--page-max) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --page-pad: clamp(96px, 5vw, 110px);
+  }
+}
+
+@media (min-width: 1537px) and (max-width: 1919px) {
+  :root {
+    --page-pad: clamp(72px, 4.8vw, 96px);
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1536px) {
+  :root {
+    --page-pad: clamp(56px, 4.6vw, 72px);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1280px) {
+  :root {
+    --page-pad: 44px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  :root {
+    --page-pad: 36px;
+    --content-max: 1028px;
+  }
+}

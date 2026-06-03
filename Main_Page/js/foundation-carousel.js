@@ -21,17 +21,17 @@ export function initFoundationCarousel() {
       {
         title: "Phù hợp với Giáo dục",
         desc: "Tích hợp bộ tính năng chuyển đổi số toàn diện trên một nền tảng duy nhất",
-        img: "./public/Setting 1.svg"
+        img: "./public/protected 1.svg"
       },
       {
         title: "Cấu hình linh hoạt",
         desc: "Phù hợp với quy chuẩn của Bộ ban hành, tổ chức, linh hoạt theo mô hình của đơn vị",
-        img: "./public/extend 1.svg"
+        img: "./public/Setting 1.svg"
       },
       {
         title: "Mở rộng không hạn chế",
         desc: "Liên kết chặt chẽ giữa các module, tính năng cập nhật được và cải tiến liên tục giúp trải nghiệm thông suốt",
-        img: "./public/protected 1.png"
+        img: "./public/extend 1.svg"
       }
     ];
     
