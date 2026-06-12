@@ -195,3 +195,28 @@
     transform: scale(1.08);
   }
 }
+
+/* ── Orbit system stage container override ──────────────────── */
+.orbit-system {
+  width: 1051px !important;
+  height: 1051px !important;
+}
+
+/* ── Force center logo to be perfectly centered in the 1051x1051px stage ── */
+.ellipse-parent .glass-parent7 {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 180px !important;
+  height: 180px !important;
+}
+
+/* ── Force the SVG track lines to match the 1051x1051px coordinates exactly ── */
+.ellipse-parent .orbit-svg {
+  position: absolute !important;
+  width: 1051px !important;
+  height: 1051px !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+}
