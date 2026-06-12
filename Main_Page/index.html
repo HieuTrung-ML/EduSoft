@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="./css/responsive.css" />
   <link rel="stylesheet" href="./css/merge-override.css" />
   <link rel="stylesheet" href="./css/hero-auto-scale.css" />
+  <link rel="stylesheet" href="./css/spin.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -136,82 +137,143 @@
                     <div class="vector-parent">
                         <img class="frame-item" alt="" src="./public/Ellipse-1.svg" />
 
-                        <div class="frame-div">
+                        <div class="frame-div orbit-system">
                             <!-- SVG Orbit Rings -->
-                            <img class="orbit-svg" alt="" src="./public/Group-1000009209.svg" />
+                            <svg class="orbit-svg" viewBox="0 0 1051 1051" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="overflow: visible;">
+                                <defs>
+                                    <linearGradient id="rg-bright" x1="0.8" y1="0.2" x2="0.2" y2="0.8">
+                                        <stop offset="0"    stop-color="#fff" stop-opacity="0.80"/>
+                                        <stop offset="0.22" stop-color="#fff" stop-opacity="0.25"/>
+                                        <stop offset="0.78" stop-color="#fff" stop-opacity="0.25"/>
+                                        <stop offset="1"    stop-color="#fff" stop-opacity="0.80"/>
+                                    </linearGradient>
+                                    <linearGradient id="rg-soft" x1="0.8" y1="0.2" x2="0.2" y2="0.8">
+                                        <stop offset="0"    stop-color="#fff" stop-opacity="0.60"/>
+                                        <stop offset="0.30" stop-color="#fff" stop-opacity="0.18"/>
+                                        <stop offset="0.70" stop-color="#fff" stop-opacity="0.18"/>
+                                        <stop offset="1"    stop-color="#fff" stop-opacity="0.60"/>
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="525.5" cy="525.5" r="200" stroke="url(#rg-soft)"   stroke-width="1.0"/>
+                                <circle cx="525.5" cy="525.5" r="370" stroke="url(#rg-bright)"  stroke-width="1.4"/>
+                            </svg>
 
-                            <div class="glass-parent">
-                                <div class="glass"></div>
-                                <div class="ti-chnh-parent">
-                                    <h2 class="ti-chnh">Tài chính</h2>
-                                    <img class="tablerwallet-icon" alt="" src="./public/tabler-wallet.svg" />
+                            <!-- ORBIT 0 — INNER -->
+                            <div class="orbit-item" data-orbit="0" data-offset="0">
+                                <div class="spin-pill spin-pill-learning spin-pill-sm">
+                                    <div class="spin-pill-content">
+                                        <h3>Học tập</h3><img alt="" src="./public/hoctap2-1.svg" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="glass-group">
-                                <div class="glass"></div>
-                                <div class="tuyn-sinh-parent">
-                                    <h2 class="ti-chnh">Tuyển sinh</h2>
-                                    <img class="khaothi-2-icon" alt="" src="./public/khaothi-2.svg" />
+
+                            <div class="orbit-item" data-orbit="0" data-offset="45">
+                                <div class="orbit-bubble orbit-icon-sm orbit-icon-1">
+                                    <img class="bubble-icon" alt="Icon 1" src="./public/Frame-1000009462.svg" />
                                 </div>
                             </div>
-                            <div class="glass-container">
-                                <div class="glass"></div>
-                                <div class="o-to-parent">
-                                    <h2 class="ti-chnh">Đào tạo</h2>
-                                    <img class="tablerwallet-icon" alt="" src="./public/daotao1-1.svg" />
+
+                            <div class="orbit-item" data-orbit="0" data-offset="90">
+                                <div class="spin-pill spin-pill-asset spin-pill-sm">
+                                    <div class="spin-pill-content">
+                                        <h3>Tài sản</h3><img alt="" src="./public/Frame.svg" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="glass-parent2">
-                                <div class="glass"></div>
-                                <div class="chng-ch-parent">
-                                    <h2 class="ti-chnh">Chứng chỉ</h2>
-                                    <img class="vb-cc-1-icon" alt="" src="./public/VB-CC-1.svg" />
+
+                            <div class="orbit-item" data-orbit="0" data-offset="135">
+                                <div class="orbit-bubble orbit-icon-sm orbit-icon-2">
+                                    <img class="bubble-icon" alt="Icon 2" src="./public/Frame-1000009451.svg" />
                                 </div>
                             </div>
-                            <div class="glass-parent3">
-                                <div class="glass"></div>
-                                <div class="hc-tp-parent">
-                                    <h3 class="hc-tp">Học tập</h3>
-                                    <img class="hoctap2-1-icon" alt="" src="./public/hoctap2-1.svg" />
+
+                            <div class="orbit-item" data-orbit="0" data-offset="180">
+                                <div class="spin-pill spin-pill-hr spin-pill-sm">
+                                    <div class="spin-pill-content">
+                                        <h3>Nhân sự</h3><img alt="" src="./public/Frame1.svg" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="glass-parent4">
-                                <div class="glass"></div>
-                                <div class="hc-tp-parent">
-                                    <h3 class="hc-tp">Tài sản</h3>
-                                    <img class="frame-icon" alt="" src="./public/Frame.svg" />
+
+                            <div class="orbit-item" data-orbit="0" data-offset="225">
+                                <div class="orbit-bubble orbit-icon-sm orbit-icon-3">
+                                    <img class="bubble-icon" alt="Icon 3" src="./public/Frame-1000009442.svg" />
                                 </div>
                             </div>
-                            <div class="glass-parent5">
-                                <div class="glass"></div>
-                                <div class="hc-tp-parent">
-                                    <h3 class="hc-tp">Nhân sự</h3>
-                                    <img class="frame-icon" alt="" src="./public/Frame1.svg" />
+
+                            <div class="orbit-item" data-orbit="0" data-offset="270">
+                                <div class="spin-pill spin-pill-exam spin-pill-sm">
+                                    <div class="spin-pill-content">
+                                        <h3>Khảo thí</h3><img alt="" src="./public/khaothi-2.svg" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="glass-parent6">
-                                <div class="glass"></div>
-                                <div class="hc-tp-parent">
-                                    <h3 class="hc-tp">Khảo thí</h3>
-                                    <img class="hoctap2-1-icon" alt="" src="./public/khaothi-2.svg" />
+
+                            <div class="orbit-item" data-orbit="0" data-offset="315">
+                                <div class="orbit-bubble orbit-icon-sm orbit-icon-4">
+                                    <img class="bubble-icon" alt="Icon 4" src="./public/Frame-1000009443.svg" />
                                 </div>
                             </div>
-                            <img class="frame-child2" alt="" src="./public/Frame-1000009462.svg" />
 
-                            <img class="frame-child3" alt="" src="./public/Frame-1000009451.svg" />
+                            <!-- ORBIT 1 — OUTER -->
+                            <div class="orbit-item" data-orbit="1" data-offset="0">
+                                <div class="spin-pill spin-pill-finance">
+                                    <div class="spin-pill-content">
+                                        <h2>Tài chính</h2><img alt="" src="./public/tabler-wallet.svg" />
+                                    </div>
+                                </div>
+                            </div>
 
-                            <img class="frame-child4" alt="" src="./public/Frame-1000009442.svg" />
+                            <div class="orbit-item" data-orbit="1" data-offset="45">
+                                <div class="orbit-bubble orbit-icon-lg orbit-icon-5">
+                                    <img class="bubble-icon" alt="Icon 5" src="./public/Frame-1000009444.svg" />
+                                </div>
+                            </div>
 
-                            <img class="frame-child5" alt="" src="./public/Frame-1000009443.svg" />
+                            <div class="orbit-item" data-orbit="1" data-offset="90">
+                                <div class="spin-pill spin-pill-training">
+                                    <div class="spin-pill-content">
+                                        <h2>Đào tạo</h2><img alt="" src="./public/daotao1-1.svg" />
+                                    </div>
+                                </div>
+                            </div>
 
-                            <img class="frame-child6" alt="" src="./public/Frame-1000009444.svg" />
+                            <div class="orbit-item" data-orbit="1" data-offset="135">
+                                <div class="orbit-bubble orbit-icon-lg orbit-icon-6">
+                                    <img class="bubble-icon" alt="Icon 6" src="./public/Frame-1000009461.svg" />
+                                </div>
+                            </div>
 
-                            <img class="frame-child7" loading="lazy" alt="" src="./public/Frame-1000009461.svg" />
+                            <div class="orbit-item" data-orbit="1" data-offset="180">
+                                <div class="spin-pill spin-pill-certificate">
+                                    <div class="spin-pill-content">
+                                        <h2>Chứng chỉ</h2><img alt="" src="./public/VB-CC-1.svg" />
+                                    </div>
+                                </div>
+                            </div>
 
-                            <img class="frame-child8" alt="" src="./public/Frame-1000009445.svg" />
+                            <div class="orbit-item" data-orbit="1" data-offset="225">
+                                <div class="orbit-bubble orbit-icon-lg orbit-icon-7">
+                                    <img class="bubble-icon" alt="Icon 7" src="./public/Frame-1000009445.svg" />
+                                </div>
+                            </div>
 
-                            <img class="frame-child9" loading="lazy" alt="" src="./public/Frame-1000009457.svg" />
+                            <div class="orbit-item" data-orbit="1" data-offset="270">
+                                <div class="spin-pill spin-pill-admission">
+                                    <div class="spin-pill-content">
+                                        <h2>Tuyển sinh</h2><img alt="" src="./public/khaothi-2.svg" />
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="orbit-item" data-orbit="1" data-offset="315">
+                                <div class="orbit-bubble orbit-icon-lg orbit-icon-8">
+                                    <img class="bubble-icon" alt="Icon 8" src="./public/Frame-1000009457.svg" />
+                                </div>
+                            </div>
+
+                            <!-- Center Logo -->
                             <div class="glass-parent7">
                                 <div class="glass9"></div>
                                 <img class="draw-2-icon" loading="lazy" alt="" src="./public/draw-2@2x.png" />

@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════
+   EduSoft Orbit System — spin.css (Main Page Isolated Integration)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Orbit item anchor ──────────────────────────────────────── */
+.orbit-item {
+  position: absolute;
+  left: 0;
+  top:  0;
+  z-index: 5; /* Keep above SVG layers */
+  transform: translate(-50%, -50%) scale(var(--avoid-scale, 1));
+  transform-origin: center center;
+  will-change: left, top, transform;
+}
+
+/* ── Pills ──────────────────────────────────────────────────── */
+.spin-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(
+      138deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.03) 60%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0  8px 32px rgba(0, 0, 0, 0.28),
+    0  2px  8px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(48px) saturate(140%);
+  white-space: nowrap;
+  animation: floatPill 16s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+
+.spin-pill-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.spin-pill h2,
+.spin-pill h3 {
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.spin-pill h2 { font-size: 22px; }
+.spin-pill h3 { font-size: 17px; }
+
+.spin-pill img {
+  display: block;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* Small pills (orbit 0 / inner) */
+.spin-pill-sm           { width: 158px !important; height: 54px !important; }
+.spin-pill-sm img       { width: 24px; height: 24px; }
+
+/* Large pills (orbit 1 / outer) */
+.spin-pill-finance      { width: 192px !important; }
+.spin-pill-admission    { width: 208px !important; }
+.spin-pill-training     { width: 192px !important; }
+.spin-pill-certificate  { width: 208px !important; }
+.spin-pill-exam         { width: 158px !important; }
+.spin-pill-asset        { width: 148px !important; }
+.spin-pill-hr           { width: 158px !important; }
+.spin-pill-learning     { width: 158px !important; }
+
+.spin-pill:not(.spin-pill-sm) img { width: 28px; height: 28px; }
+
+/* ── Bubbles ─────────────────────────────────────────────────── */
+.orbit-bubble {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Glassmorphism base */
+  background:
+    radial-gradient(ellipse at 35% 28%, rgba(255,255,255,0.22) 0%, transparent 35%),
+    radial-gradient(ellipse at 52% 50%, rgba(18, 52, 124, 0.92) 0%, rgba(2, 10, 40, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  box-shadow:
+    inset 6px  8px 22px rgba(255, 255, 255, 0.12),
+    inset -8px -10px 20px rgba(10, 18, 48, 0.22),
+    0 12px 36px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(4px) saturate(110%);
+
+  /* Breathing pulse */
+  animation: floatBubble 16s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+
+/* Iridescent rim */
+.orbit-bubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 1.5px;
+  background:
+    conic-gradient(
+      from 145deg,
+      rgba(255,255,255,0.04)   0deg,
+      rgba(255,120,232,0.75)  42deg,
+      rgba(120,160,255,0.65) 104deg,
+      rgba(160,255,230,0.48) 152deg,
+      rgba(255,255,255,0.08) 208deg,
+      rgba(120,124,255,0.60) 264deg,
+      rgba(60, 48, 72, 0.54) 312deg,
+      rgba(255,255,255,0.04) 360deg
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Specular highlight */
+.orbit-bubble::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.62) 0 8%, transparent 22%),
+    radial-gradient(ellipse at 70% 36%, rgba(255,255,255,0.22) 0 4%, transparent 15%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.orbit-bubble img {
+  position: relative;
+  z-index: 3;
+  width:  54%;
+  height: 54%;
+  object-fit: contain;
+  filter:
+    brightness(1.25)
+    contrast(1.06)
+    drop-shadow(0 0 8px rgba(255,255,255,0.40));
+}
+
+/* Small bubbles (orbit 0 / inner) */
+.orbit-icon-sm          { width: 62px !important; height: 62px !important; }
+
+/* Large bubbles (orbit 1 / outer) */
+.orbit-icon-lg          { width: 84px !important; height: 84px !important; }
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .spin-pill,
+  .orbit-bubble,
+  .orbit-item {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   KEYFRAMES
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes floatPill {
+  0%, 100% {
+    transform: scale(0.92);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes floatBubble {
+  0%, 100% {
+    transform: scale(0.92);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
