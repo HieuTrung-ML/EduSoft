@@ -133,13 +133,10 @@
 .orbit-bubble img {
   position: relative;
   z-index: 3;
-  width:  50%;
-  height: 50%;
+  width:  72%;
+  height: 72%;
   object-fit: contain;
-  filter:
-    brightness(1.1)
-    contrast(1.0)
-    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  /* Removed CSS filter to prevent low-resolution bitmap rasterization and blurry/pixelated edges on SVGs */
 }
 
 /* Small bubbles (orbit 0 / inner) */
@@ -203,3 +200,6 @@
   top: 0 !important;
   transform: none !important;
 }
+
+
+
