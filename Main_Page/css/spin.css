@@ -221,8 +221,8 @@
   top: 50% !important;
   transform: translate(-50%, -50%) !important;
   z-index: 5 !important;
-  width: 190px !important;
-  height: 190px !important;
+  width: 210px !important;
+  height: 210px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -238,8 +238,8 @@
 }
 
 .ellipse-parent .glass-parent7 .draw-2-icon {
-  width: 118px !important;
-  height: 122px !important;
+  width: 130px !important;
+  height: 134px !important;
   object-fit: contain !important;
   margin: 0 !important;
 }
@@ -262,13 +262,13 @@
 }
 
 .ellipse-parent .orbit-ring-img-lg {
-  width: 840px !important;
-  height: 840px !important;
+  width: 940px !important;
+  height: 940px !important;
 }
 
 .ellipse-parent .orbit-ring-img-sm {
-  width: 500px !important;
-  height: 500px !important;
+  width: 550px !important;
+  height: 550px !important;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -300,7 +300,7 @@
 
 /* 901–1199px: orbit-scale ≈ 0.58 → boost ~1.35 */
 @media (min-width: 901px) and (max-width: 1199px) {
-  :root { --item-boost: 1.30; }
+  :root { --item-boost: 1.12; }
 }
 
 /* 1200–1366px: orbit-scale ≈ 0.66 → boost ~1.20 */
@@ -325,7 +325,7 @@
 
 /* Short-height corrections (same boost, already captured by width) */
 @media (min-width: 901px) and (max-width: 1199px) and (max-height: 820px) {
-  :root { --item-boost: 1.30; }
+  :root { --item-boost: 1.12; }
 }
 @media (min-width: 1200px) and (max-width: 1366px) and (max-height: 820px) {
   :root { --item-boost: 1.22; }

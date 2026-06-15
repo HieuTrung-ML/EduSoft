@@ -3,7 +3,7 @@ const HERO_CONFIG = {
   BASE_WIDTH: 1920,
   BASE_HEIGHT: 1080,
 
-  ORBIT_MIN: 0.66,
+  ORBIT_MIN: 0.50,
   ORBIT_MAX: 1.04,
 
   TITLE_MIN: 32,
@@ -18,7 +18,7 @@ const HERO_CONFIG = {
   COPY_WIDTH_MIN: 420,
   COPY_WIDTH_MAX: 880,
   GAP_MIN: 20,
-  GAP_MAX: 72,
+  GAP_MAX: 56,
 
   SHORT_HEIGHT: 820,
   VERY_SHORT_HEIGHT: 760,
@@ -85,7 +85,7 @@ function getPagePad(vw) {
     return clamp(40, vw * 0.038, 56);
   }
 
-  return clamp(HERO_CONFIG.PAGE_PAD_MIN, vw * 0.036, 44);
+  return clamp(72, vw * 0.074, 84);
 }
 
 function computeBaseScale(viewport) {
@@ -94,7 +94,11 @@ function computeBaseScale(viewport) {
   const veryShort = vh <= HERO_CONFIG.VERY_SHORT_HEIGHT;
   const wideShort = vw >= 1537 && short && aspect >= HERO_CONFIG.WIDE_ASPECT;
 
-  const heroHeight = Math.max(HERO_CONFIG.HERO_MIN, vh);
+  const heroHeight = clamp(
+    HERO_CONFIG.HERO_MIN,
+    vw >= 1200 ? vh * 1.08 : vh,
+    HERO_CONFIG.HERO_MAX
+  );
   const widthFactor = clamp(0.75, vw / HERO_CONFIG.BASE_WIDTH, 1.1);
   const heightFactor = clamp(0.85, vh / HERO_CONFIG.BASE_HEIGHT, 1.05);
   const wideShortBoost = wideShort ? 1.1 : 1;
@@ -108,11 +112,11 @@ function computeBaseScale(viewport) {
   } else if (vw >= 1537) {
     orbitScale = clamp(0.88, widthFactor * heightFactor * wideShortBoost * 1.18, 0.96);
   } else if (vw >= 1367) {
-    orbitScale = clamp(0.82, widthFactor * heightFactor * wideShortBoost * 1.24, 0.90);
+    orbitScale = clamp(0.78, widthFactor * heightFactor * wideShortBoost * 1.18, 0.86);
   } else if (vw >= 1200) {
     orbitScale = clamp(0.76, widthFactor * heightFactor * wideShortBoost * 1.30, 0.84);
   } else {
-    orbitScale = clamp(0.68, widthFactor * 1.36, 0.76);
+    orbitScale = clamp(0.50, widthFactor * 0.92, 0.56);
   }
 
   if (short && !wideShort) {
@@ -123,7 +127,7 @@ function computeBaseScale(viewport) {
   if (short) {
     const maxScaleByHeight = clamp(
       HERO_CONFIG.ORBIT_MIN,
-      (vh - 24) / 1051,
+      (heroHeight - 132) / 1051,
       HERO_CONFIG.ORBIT_MAX
     );
     orbitScale = Math.min(orbitScale, maxScaleByHeight);
@@ -157,8 +161,8 @@ function computeBaseScale(viewport) {
 
   const pagePad = getPagePad(vw);
   const container = clamp(600, Math.min(vw - 2 * pagePad, HERO_CONFIG.PAGE_MAX), HERO_CONFIG.PAGE_MAX);
-  const copyWidthRatio = vw >= 1440 ? 0.42 : vw >= 1200 ? 0.4 : 0.32;
-  const copyWidthMin = vw >= 1440 ? 650 : vw >= 1200 ? 540 : HERO_CONFIG.COPY_WIDTH_MIN;
+  const copyWidthRatio = vw >= 1537 ? 0.42 : vw >= 1367 ? 0.40 : vw >= 1200 ? 0.38 : 0.32;
+  const copyWidthMin = vw >= 1537 ? 680 : vw >= 1367 ? 620 : vw >= 1200 ? 540 : HERO_CONFIG.COPY_WIDTH_MIN;
   const copyWidth = clamp(copyWidthMin, vw * copyWidthRatio, HERO_CONFIG.COPY_WIDTH_MAX);
   const gapRatio = wideShort ? 0.042 : 0.032;
   const gap = clamp(HERO_CONFIG.GAP_MIN, vw * gapRatio, HERO_CONFIG.GAP_MAX);
@@ -191,21 +195,40 @@ function getHeroElements() {
   const hero = document.querySelector('.ellipse-parent');
   const orbit = document.querySelector('.ellipse-parent .frame-container');
   const copyColumn = document.querySelector('.ellipse-parent .frame-group');
+  const title = document.querySelector('.ellipse-parent .nn-tng-chuyn');
+  const orbitItems = Array.from(document.querySelectorAll('.ellipse-parent .orbit-item > *, .ellipse-parent .glass-parent7'));
 
-  if (!hero || !orbit || !copyColumn) {
+  if (!hero || !orbit || !copyColumn || !title) {
     return null;
   }
 
-  return { hero, orbit, copyColumn };
+  return { hero, orbit, copyColumn, title, orbitItems };
+}
+
+function getUnionRect(rects) {
+  if (!rects.length) return null;
+
+  return rects.reduce((acc, rect) => ({
+    left: Math.min(acc.left, rect.left),
+    right: Math.max(acc.right, rect.right),
+    top: Math.min(acc.top, rect.top),
+    bottom: Math.max(acc.bottom, rect.bottom),
+  }), {
+    left: rects[0].left,
+    right: rects[0].right,
+    top: rects[0].top,
+    bottom: rects[0].bottom,
+  });
 }
 
 function measureHero(elements, viewport) {
-  const { hero, orbit, copyColumn } = elements;
+  const { hero, orbit, title, orbitItems } = elements;
   const { vw, vh, aspect } = viewport;
 
   const heroRect = hero.getBoundingClientRect();
   const orbitRect = orbit.getBoundingClientRect();
-  const copyRect = copyColumn.getBoundingClientRect();
+  const orbitVisualRect = getUnionRect(orbitItems.map((item) => item.getBoundingClientRect())) || orbitRect;
+  const titleRect = title.getBoundingClientRect();
 
   const isWideShort =
     vw >= 1537 &&
@@ -213,13 +236,13 @@ function measureHero(elements, viewport) {
     aspect >= HERO_CONFIG.WIDE_ASPECT;
 
   const orbitClipped =
-    orbitRect.left < HERO_CONFIG.ORBIT_CLIP_PAD ||
-    orbitRect.right > vw - HERO_CONFIG.ORBIT_CLIP_PAD ||
-    orbitRect.bottom > heroRect.bottom - HERO_CONFIG.ORBIT_CLIP_PAD ||
-    orbitRect.top < heroRect.top + HERO_CONFIG.ORBIT_CLIP_PAD;
+    orbitVisualRect.left < HERO_CONFIG.ORBIT_CLIP_PAD ||
+    orbitVisualRect.right > vw - HERO_CONFIG.ORBIT_CLIP_PAD ||
+    orbitVisualRect.bottom > heroRect.bottom - HERO_CONFIG.ORBIT_CLIP_PAD ||
+    orbitVisualRect.top < heroRect.top + HERO_CONFIG.ORBIT_CLIP_PAD;
 
-  const titleCollides = copyRect.right > orbitRect.left - HERO_CONFIG.COLLISION_GAP;
-  const heroTooTall = heroRect.height > vh + 4;
+  const titleCollides = titleRect.right > orbitVisualRect.left - HERO_CONFIG.COLLISION_GAP;
+  const heroTooTall = heroRect.height > Math.max(vh + 4, vh * 1.12);
 
   return {
     orbitClipped,

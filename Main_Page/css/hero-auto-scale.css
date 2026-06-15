@@ -14,16 +14,19 @@
     --hero-min-h: 700px;
     --hero-max-h: 980px;
     --hero-vh: 88vh;
-    --hero-top-pad: clamp(84px, 6vh, 112px);
-    --hero-bottom-pad: clamp(28px, 3vh, 44px);
-    --hero-gap: clamp(24px, 3vw, 56px);
+    --hero-top-pad: clamp(48px, 5vh, 72px);
+    --hero-bottom-pad: clamp(20px, 2.4vh, 36px);
+    --hero-gap: clamp(20px, 2.4vw, 48px);
     --hero-copy-size: clamp(42px, 3.05vw, 58px);
-    --hero-copy-width: 620px;
+    --hero-copy-width: 720px;
     --hero-subcopy-size: clamp(16px, 1.05vw, 20px);
     --hero-button-w: clamp(182px, 11.5vw, 232px);
     --hero-button-h: clamp(54px, 3.4vw, 66px);
     --orbit-scale: 0.90;
-    --orbit-x-shift: -5%;
+    --orbit-x-shift: 2%;
+    --hero-copy-y-shift: -36px;
+    --hero-copy-track: 42%;
+    --hero-orbit-track: 54%;
   }
 
   @supports (height: 100svh) {
@@ -57,8 +60,8 @@
     width: var(--hero-runtime-container, var(--desktop-container)) !important;
     display: grid !important;
     grid-template-columns:
-      minmax(400px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
-      minmax(520px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
+      minmax(0, var(--hero-copy-track))
+      minmax(0, var(--hero-orbit-track)) !important;
     gap: var(--hero-runtime-gap, var(--hero-gap)) !important;
     align-items: center !important;
     padding: 0 !important;
@@ -68,12 +71,15 @@
     padding-top: 0 !important;
     justify-content: center !important;
     min-width: 0 !important;
+    transform: translateY(var(--hero-copy-y-shift, 0)) !important;
   }
 
   .ellipse-parent .frame-container {
     height: calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale))) !important;
+    width: min(100%, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
     min-width: 0 !important;
     align-self: center !important;
+    justify-self: end !important;
     transform: translateX(var(--orbit-x-shift)) !important;
     justify-content: center !important;
     overflow: visible !important;
@@ -84,7 +90,9 @@
   }
 
   .ellipse-parent .nn-tng-chuyn {
-    max-width: var(--hero-runtime-copy-width, var(--hero-copy-width)) !important;
+    width: max-content !important;
+    max-width: none !important;
+    white-space: nowrap !important;
     font-size: var(--hero-title-runtime, var(--hero-copy-size)) !important;
     line-height: 1.12 !important;
     letter-spacing: 0 !important;
@@ -107,19 +115,22 @@
 
 @media (min-width: 901px) and (max-width: 1199px) {
   :root {
-    --page-pad: clamp(32px, 4vw, 44px);
+    --page-pad: clamp(72px, 7.4vw, 84px);
     --hero-min-h: 620px;
     --hero-max-h: 720px;
     --hero-vh: 88vh;
-    --hero-top-pad: clamp(76px, 7vh, 92px);
+    --hero-top-pad: clamp(48px, 6vh, 64px);
     --hero-gap: clamp(20px, 2.6vw, 30px);
     --hero-copy-size: clamp(32px, 4vw, 42px);
     --hero-copy-width: 460px;
     --hero-subcopy-size: 16px;
     --hero-button-w: clamp(156px, 18vw, 190px);
     --hero-button-h: 50px;
-    --orbit-scale: 0.68;
-    --orbit-x-shift: -4%;
+    --orbit-scale: 0.52;
+    --orbit-x-shift: 0%;
+    --hero-copy-y-shift: -20px;
+    --hero-copy-track: 42%;
+    --hero-orbit-track: 54%;
   }
 
   @supports (height: 100svh) {
@@ -130,8 +141,8 @@
 
   .ellipse-parent > .frame-parent {
     grid-template-columns:
-      minmax(320px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
-      minmax(390px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
+      minmax(0, var(--hero-copy-track))
+      minmax(0, var(--hero-orbit-track)) !important;
   }
 }
 
@@ -141,11 +152,14 @@
     --hero-min-h: 650px;
     --hero-max-h: 790px;
     --hero-vh: 89vh;
-    --hero-gap: clamp(24px, 3vw, 36px);
+    --hero-gap: clamp(20px, 2.4vw, 34px);
     --hero-copy-size: clamp(38px, 3.2vw, 46px);
-    --hero-copy-width: 540px;
+    --hero-copy-width: 560px;
     --orbit-scale: 0.76;
-    --orbit-x-shift: -5%;
+    --orbit-x-shift: 2%;
+    --hero-copy-y-shift: -26px;
+    --hero-copy-track: 41%;
+    --hero-orbit-track: 55%;
   }
 
   @supports (height: 100svh) {
@@ -156,8 +170,8 @@
 
   .ellipse-parent > .frame-parent {
     grid-template-columns:
-      minmax(380px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
-      minmax(490px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
+      minmax(0, var(--hero-copy-track))
+      minmax(0, var(--hero-orbit-track)) !important;
   }
 }
 
@@ -168,9 +182,12 @@
     --hero-max-h: 860px;
     --hero-vh: 90vh;
     --hero-copy-size: clamp(44px, 3.25vw, 52px);
-    --hero-copy-width: 590px;
-    --orbit-scale: 0.82;
-    --orbit-x-shift: -5%;
+    --hero-copy-width: 640px;
+    --orbit-scale: 0.78;
+    --orbit-x-shift: 2%;
+    --hero-copy-y-shift: -30px;
+    --hero-copy-track: 42%;
+    --hero-orbit-track: 54%;
   }
 
   @supports (height: 100svh) {
@@ -187,9 +204,12 @@
     --hero-max-h: 930px;
     --hero-vh: 90vh;
     --hero-copy-size: clamp(48px, 3.1vw, 56px);
-    --hero-copy-width: 620px;
+    --hero-copy-width: 700px;
     --orbit-scale: 0.88;
-    --orbit-x-shift: -5%;
+    --orbit-x-shift: 3%;
+    --hero-copy-y-shift: -34px;
+    --hero-copy-track: 42%;
+    --hero-orbit-track: 54%;
   }
 
   @supports (height: 100svh) {
@@ -206,9 +226,12 @@
     --hero-max-h: 1000px;
     --hero-vh: 90vh;
     --hero-copy-size: clamp(52px, 3vw, 60px);
-    --hero-copy-width: 650px;
+    --hero-copy-width: 740px;
     --orbit-scale: 0.92;
-    --orbit-x-shift: -5%;
+    --orbit-x-shift: 4%;
+    --hero-copy-y-shift: -36px;
+    --hero-copy-track: 43%;
+    --hero-orbit-track: 53%;
   }
 
   @supports (height: 100svh) {
@@ -225,9 +248,12 @@
     --hero-max-h: 1060px;
     --hero-vh: 88vh;
     --hero-copy-size: clamp(56px, 2.85vw, 64px);
-    --hero-copy-width: 680px;
+    --hero-copy-width: 780px;
     --orbit-scale: 0.94;
-    --orbit-x-shift: -4%;
+    --orbit-x-shift: 4%;
+    --hero-copy-y-shift: -36px;
+    --hero-copy-track: 44%;
+    --hero-orbit-track: 52%;
   }
 
   @supports (height: 100svh) {
@@ -244,9 +270,12 @@
     --hero-max-h: 1120px;
     --hero-vh: 78vh;
     --hero-copy-size: clamp(58px, 2.45vw, 68px);
-    --hero-copy-width: 700px;
+    --hero-copy-width: 820px;
     --orbit-scale: 0.96;
-    --orbit-x-shift: -3%;
+    --orbit-x-shift: 5%;
+    --hero-copy-y-shift: -36px;
+    --hero-copy-track: 44%;
+    --hero-orbit-track: 52%;
   }
 
   @supports (height: 100svh) {
@@ -259,16 +288,16 @@
 @media (min-width: 1200px) {
   .ellipse-parent > .frame-parent {
     grid-template-columns:
-      minmax(520px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
-      minmax(480px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
+      minmax(0, var(--hero-copy-track))
+      minmax(0, var(--hero-orbit-track)) !important;
   }
 }
 
 @media (min-width: 1440px) {
   .ellipse-parent > .frame-parent {
     grid-template-columns:
-      minmax(600px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
-      minmax(540px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
+      minmax(0, var(--hero-copy-track))
+      minmax(0, var(--hero-orbit-track)) !important;
   }
 }
 
@@ -277,9 +306,9 @@
     --hero-min-h: 620px;
     --hero-max-h: 780px;
     --hero-vh: 92vh;
-    --hero-top-pad: clamp(72px, 8vh, 88px);
-    --hero-bottom-pad: 24px;
-    --hero-gap: clamp(20px, 3vw, 42px);
+    --hero-top-pad: clamp(48px, 6vh, 60px);
+    --hero-bottom-pad: 18px;
+    --hero-gap: clamp(18px, 2.4vw, 36px);
     --hero-subcopy-size: clamp(15px, 1vw, 18px);
     --hero-button-h: clamp(48px, 3.3vw, 58px);
   }
@@ -295,7 +324,7 @@
   :root {
     --hero-copy-size: clamp(32px, 3.8vw, 40px);
     --hero-copy-width: 450px;
-    --orbit-scale: 0.68;
+    --orbit-scale: 0.52;
   }
 }
 
@@ -311,8 +340,8 @@
   :root {
     --hero-max-h: 800px;
     --hero-copy-size: clamp(42px, 3.2vw, 52px);
-    --hero-copy-width: 590px;
-    --orbit-scale: 0.80;
+    --hero-copy-width: 640px;
+    --orbit-scale: 0.76;
   }
 }
 
@@ -320,7 +349,7 @@
   :root {
     --hero-max-h: 820px;
     --hero-copy-size: clamp(48px, 3vw, 58px);
-    --hero-copy-width: 630px;
+    --hero-copy-width: 700px;
     --orbit-scale: 0.86;
   }
 }
@@ -330,7 +359,7 @@
     --hero-min-h: 680px;
     --hero-max-h: 840px;
     --hero-copy-size: clamp(52px, 2.85vw, 64px);
-    --hero-copy-width: 680px;
+    --hero-copy-width: 760px;
     --orbit-scale: 0.88;
   }
 }
@@ -340,7 +369,7 @@
     --hero-min-h: 700px;
     --hero-max-h: 860px;
     --hero-copy-size: clamp(56px, 2.4vw, 68px);
-    --hero-copy-width: 700px;
+    --hero-copy-width: 800px;
     --orbit-scale: 0.90;
   }
 }
@@ -367,7 +396,7 @@
 
 @media (min-width: 1367px) and (max-width: 1536px) and (max-height: 760px) {
   :root {
-    --orbit-scale: 0.76;
+    --orbit-scale: 0.74;
   }
 }
 
@@ -388,8 +417,8 @@
 @media (min-width: 1537px) and (max-height: 820px) and (min-aspect-ratio: 2 / 1) {
   :root {
     --hero-max-h: 820px;
-    --hero-gap: clamp(30px, 4vw, 72px);
-    --orbit-x-shift: -3%;
+    --hero-gap: clamp(24px, 3vw, 56px);
+    --orbit-x-shift: 4%;
   }
 }
 
@@ -462,7 +491,7 @@
 
 @media (min-width: 901px) and (max-width: 1199px) {
   :root {
-    --page-pad: 36px;
+    --page-pad: clamp(72px, 7.4vw, 84px);
     --content-max: 1028px;
   }
 }

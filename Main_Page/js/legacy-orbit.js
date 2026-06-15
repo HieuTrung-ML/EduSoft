@@ -17,8 +17,8 @@ export function initOrbit() {
   const CY = 525.5;
 
   const ORBITS = [
-    { r: 250, dps:  6.0 },
-    { r: 420, dps: -4.5 },
+    { r: 275, dps:  6.0 },
+    { r: 470, dps: -4.5 },
   ];
 
   const BREATH_MAX = 1.08;
