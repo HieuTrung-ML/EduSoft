@@ -36,6 +36,7 @@
   backdrop-filter: blur(48px) saturate(140%);
   white-space: nowrap;
   animation: floatPill 16s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+  transform-origin: center center;
 }
 
 .spin-pill-content {
@@ -97,6 +98,7 @@
 
   /* Breathing pulse */
   animation: floatBubble 16s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+  transform-origin: center center;
 }
 
 /* Asymmetric White Highlight Border (broken/fading at bottom-right) */
@@ -157,22 +159,43 @@
 
 /* ═══════════════════════════════════════════════════════════════
    KEYFRAMES
+   — Use calc() to combine float breathing with item-boost.
+     The boost is in --item-boost (default 1).
    ═══════════════════════════════════════════════════════════════ */
 @keyframes floatPill {
   0%, 100% {
-    transform: scale(0.92);
+    transform: scale(calc(0.92 * var(--item-boost, 1)));
   }
   50% {
-    transform: scale(1.08);
+    transform: scale(calc(1.08 * var(--item-boost, 1)));
   }
 }
 
 @keyframes floatBubble {
   0%, 100% {
-    transform: scale(0.92);
+    transform: scale(calc(0.92 * var(--item-boost, 1)));
   }
   50% {
-    transform: scale(1.08);
+    transform: scale(calc(1.08 * var(--item-boost, 1)));
+  }
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 6px rgba(0, 120, 255, 0.10),
+      0 0 28px rgba(0, 100, 240, 0.32),
+      0 0 56px rgba(0, 100, 240, 0.14),
+      inset 0 0 20px rgba(0, 100, 240, 0.05);
+    filter: brightness(1.00);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(0, 120, 255, 0.20),
+      0 0 38px rgba(0, 100, 240, 0.60),
+      0 0 76px rgba(0, 100, 240, 0.28),
+      inset 0 0 24px rgba(0, 100, 240, 0.10);
+    filter: brightness(1.12);
   }
 }
 
@@ -183,24 +206,44 @@
 }
 
 /* ── Force center logo to be perfectly centered in the 1051x1051px stage ── */
-.ellipse-parent .glass-parent7 {
+.ellipse-parent .spin-logo {
+  position: absolute !important;
   left: 50% !important;
   top: 50% !important;
   transform: translate(-50%, -50%) !important;
-  width: 180px !important;
-  height: 180px !important;
+  z-index: 5 !important;
+  width: 172px !important;
+  height: 172px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  border: 2.5px solid rgba(58, 186, 255, 0.90) !important;
+  box-shadow:
+    0 0 0 6px rgba(0, 120, 255, 0.12),
+    0 0 28px rgba(0, 100, 240, 0.36),
+    0 0 56px rgba(0, 100, 240, 0.16),
+    inset 0 0 20px rgba(0, 100, 240, 0.06) !important;
+  animation: logoPulse 4.2s ease-in-out infinite !important;
 }
+
+.ellipse-parent .spin-logo img {
+  width: 106px !important;
+  height: 110px !important;
+  object-fit: contain !important;
+}
+
 
 /* Orbit ring images centered in the 1051x1051px stage */
 .ellipse-parent .orbit-ring-img {
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
-  transform: none !important;
-  translate: -50% -50% !important;
+  transform: translate(-50%, -50%) !important;
   max-width: none !important;
   object-fit: contain !important;
-  z-index: 2 !important;
+  z-index: 1 !important; /* Below orbit items */
   pointer-events: none !important;
   user-select: none !important;
 }
@@ -214,3 +257,70 @@
   width: 400px !important;
   height: 400px !important;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   ITEM COUNTER-SCALE — Compensate when orbit stage shrinks
+   ══════════════════════════════════════════════════════════════
+   The orbit stage is scaled via CSS transform: scale(--orbit-scale).
+   At small viewports (≤1199px), orbit-scale is as low as 0.44.
+   Items appear tiny because they inherit the parent scale.
+
+   We counter-scale the items up so they remain readable at all
+   viewport sizes, while keeping them positioned on the orbit path.
+
+   Formula: --item-boost = 1 / orbit-scale  (capped for usability)
+   Applied via scale() INSIDE the .spin-pill / .orbit-bubble elements
+   (not on .orbit-item, which must keep translate for centering).
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  --item-boost: 1;      /* Desktop default — no boost needed */
+}
+
+/* Apply boost to pills and bubbles — baseline (overridden by animation keyframes which already include the boost) */
+/* The scale is embedded inside floatPill/floatBubble keyframes via calc(x * --item-boost) */
+
+/* ≤ 900px: orbit-scale is 0.38 (set by responsive.css) → boost to ~2.2 for mobile readability */
+@media (max-width: 900px) {
+  :root { --item-boost: 2.2; }
+}
+
+/* 901–1199px: orbit-scale ≈ 0.44 → boost to ~1/0.44 = 2.27, cap at 1.8 for sanity */
+@media (min-width: 901px) and (max-width: 1199px) {
+  :root { --item-boost: 1.75; }
+}
+
+/* 1200–1366px: orbit-scale ≈ 0.54 → boost to ~1/0.54 = 1.85, cap at 1.5 */
+@media (min-width: 1200px) and (max-width: 1366px) {
+  :root { --item-boost: 1.45; }
+}
+
+/* 1367–1536px: orbit-scale ≈ 0.64 → boost ~1.25 */
+@media (min-width: 1367px) and (max-width: 1536px) {
+  :root { --item-boost: 1.25; }
+}
+
+/* 1537–1728px: orbit-scale ≈ 0.72 → boost ~1.12 */
+@media (min-width: 1537px) and (max-width: 1728px) {
+  :root { --item-boost: 1.12; }
+}
+
+/* 1729px+: orbit-scale ≥ 0.78 — items are big enough, no boost */
+@media (min-width: 1729px) {
+  :root { --item-boost: 1; }
+}
+
+/* Short-height corrections (same boost, already captured by width) */
+@media (min-width: 901px) and (max-width: 1199px) and (max-height: 820px) {
+  :root { --item-boost: 1.75; }
+}
+@media (min-width: 1200px) and (max-width: 1366px) and (max-height: 820px) {
+  :root { --item-boost: 1.45; }
+}
+@media (min-width: 1200px) and (max-width: 1366px) and (max-height: 760px) {
+  :root { --item-boost: 1.5; }
+}
+@media (min-width: 1367px) and (max-width: 1536px) and (max-height: 760px) {
+  :root { --item-boost: 1.35; }
+}
+
