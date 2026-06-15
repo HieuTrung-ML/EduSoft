@@ -1,7 +1,10 @@
 /**
  * legacy-orbit.js
  * ----------------
- * Dynamic Orbit Engine — Integrated and responsive-safe.
+ * Dynamic Orbit Engine for the Main Page hero.
+ *
+ * Items stay on their orbit path. When a pair enters the warning zone, the
+ * engine scales the visuals down smoothly; once clear, they grow back.
  */
 
 export function initOrbit() {
@@ -10,176 +13,213 @@ export function initOrbit() {
   const stage = document.querySelector('.ellipse-parent .frame-div');
   if (!stage) return;
 
-  const CX = 525.5;   // Center of the 1051x1051px stage
+  const CX = 525.5;
   const CY = 525.5;
 
   const ORBITS = [
-    { r: 200,  dps:  6.0 },   // 0: inner,  CW,  6°/s (cycle: 60s)
-    { r: 370,  dps: -4.5 },   // 1: outer,  CCW, -4.5°/s (cycle: 80s)
+    { r: 250, dps:  6.0 },
+    { r: 420, dps: -4.5 },
   ];
 
-  const COLLISION_PAD  = 6;    // px extra padding on top of item size
-  const RELEASE_PAD    = 18;   // hysteresis band to avoid flicker
-  const LOOKAHEAD_S    = 1.2;  // seconds of look-ahead for prediction
-  const LERP_SHRINK    = 1.5;  // exponential speed: shrink smoothly
-  const LERP_GROW      = 0.8;  // exponential speed: grow back slowly and smoothly
-  const AVOID_SCALE    = 0.82; // target scale when avoiding (shrink both slightly)
+  const BREATH_MAX = 1.08;
+  const CONTACT_PAD = 6;
+  const WARNING_PAD = 118;
+  const RELEASE_PAD = 156;
+  const LOOKAHEAD_S = 2.4;
+  const MIN_SCALE = 0.46;
+  const SCALE_MARGIN = 0.12;
+  const SCALE_IN_SPEED = 8.0;
+  const SCALE_OUT_SPEED = 1.7;
+  const RECOMPUTE_SIZE_MS = 250;
 
-  const angles      = ORBITS.map(() => 0);
-  const smoothScale = [];
-  const wantsSmall  = [];
+  const angles = ORBITS.map(() => 0);
   const activePairs = new Set();
 
-  let paused   = false;
+  let paused = false;
   let lastTime = null;
+  let lastMeasure = 0;
 
   const items = Array.from(stage.querySelectorAll('.orbit-item')).map((el, idx) => {
-    const visual   = el.firstElementChild;
-    const isBubble = visual.classList.contains('orbit-bubble');
+    const visual = el.firstElementChild;
+    const isBubble = visual?.classList.contains('orbit-bubble') || false;
+
     return {
-      el, visual, idx, isBubble,
+      el,
+      visual,
+      idx,
+      isBubble,
       orbitIdx: Number(el.dataset.orbit),
-      offset:   Number(el.dataset.offset),
-      hw: 0,
-      hh: 0,
+      offset: Number(el.dataset.offset),
+      baseHw: 0,
+      baseHh: 0,
       x: CX,
       y: CY,
+      avoidScale: 1,
+      targetAvoidScale: 1,
     };
-  });
+  }).filter(item => item.visual && Number.isFinite(item.orbitIdx) && ORBITS[item.orbitIdx]);
 
-  items.forEach((_, i) => { smoothScale[i] = 1; wantsSmall[i] = false; });
+  function clamp(min, value, max) {
+    return Math.max(min, Math.min(value, max));
+  }
 
-  const PILL_SIZES = {
-    'spin-pill-sm':          { hw: 158 / 2, hh: 54 / 2 },
-    'spin-pill-finance':     { hw: 192 / 2, hh: 64 / 2 },
-    'spin-pill-admission':   { hw: 208 / 2, hh: 64 / 2 },
-    'spin-pill-training':    { hw: 192 / 2, hh: 64 / 2 },
-    'spin-pill-certificate': { hw: 208 / 2, hh: 64 / 2 },
-    'spin-pill-exam':        { hw: 158 / 2, hh: 64 / 2 },
-    'spin-pill-asset':       { hw: 148 / 2, hh: 64 / 2 },
-    'spin-pill-hr':          { hw: 158 / 2, hh: 64 / 2 },
-    'spin-pill-learning':    { hw: 158 / 2, hh: 64 / 2 }
-  };
+  function lerpExp(current, target, speed, dt) {
+    return current + (target - current) * (1 - Math.exp(-speed * dt));
+  }
 
-  function getItemBaseSize(item) {
-    if (item.isBubble) {
-      if (item.visual.classList.contains('orbit-icon-sm')) {
-        return { hw: 31, hh: 31 };
-      }
-      return { hw: 42, hh: 42 };
-    }
-    for (const className of Object.keys(PILL_SIZES)) {
-      if (item.visual.classList.contains(className)) {
-        return PILL_SIZES[className];
-      }
-    }
-    return { hw: 104, hh: 32 };
+  function getItemBoost() {
+    const raw = getComputedStyle(document.documentElement).getPropertyValue('--item-boost');
+    const value = Number.parseFloat(raw);
+    return Number.isFinite(value) && value > 0 ? value : 1;
   }
 
   function measureItems() {
+    const itemBoost = getItemBoost();
+
     items.forEach(item => {
-      const size = getItemBaseSize(item);
-      item.hw = size.hw;
-      item.hh = size.hh;
+      const rect = item.visual.getBoundingClientRect();
+      const width = item.visual.offsetWidth || rect.width || 1;
+      const height = item.visual.offsetHeight || rect.height || 1;
+      const visualScale = itemBoost * BREATH_MAX;
+
+      item.baseHw = (width / 2) * visualScale;
+      item.baseHh = (height / 2) * visualScale;
     });
   }
 
-  function orbitPos(item, extraDeg) {
-    const o   = ORBITS[item.orbitIdx];
-    const rad = (angles[item.orbitIdx] + item.offset + extraDeg) * (Math.PI / 180);
-    return { x: CX + o.r * Math.cos(rad), y: CY + o.r * Math.sin(rad) };
+  function getHalfWidth(item, scale = item.avoidScale) {
+    return item.baseHw * scale;
   }
 
-  function overlap(a, b, pad) {
-    const scaleFactor = 1.08;
+  function getHalfHeight(item, scale = item.avoidScale) {
+    return item.baseHh * scale;
+  }
+
+  function orbitPos(item, extraDeg = 0) {
+    const orbit = ORBITS[item.orbitIdx];
+    const rad = (angles[item.orbitIdx] + item.offset + extraDeg) * (Math.PI / 180);
+
+    return {
+      x: CX + orbit.r * Math.cos(rad),
+      y: CY + orbit.r * Math.sin(rad),
+    };
+  }
+
+  function projectedItem(item, extraDeg = 0) {
+    const position = orbitPos(item, extraDeg);
+    return {
+      ...item,
+      x: position.x,
+      y: position.y,
+    };
+  }
+
+  function circleRadius(item, scale = item.avoidScale) {
+    return getHalfWidth(item, scale);
+  }
+
+  function rectRadius(item, scale = item.avoidScale) {
+    return Math.hypot(getHalfWidth(item, scale), getHalfHeight(item, scale));
+  }
+
+  function overlapsAtScale(a, b, pad, scaleA = a.avoidScale, scaleB = b.avoidScale) {
+    const ahw = getHalfWidth(a, scaleA);
+    const ahh = getHalfHeight(a, scaleA);
+    const bhw = getHalfWidth(b, scaleB);
+    const bhh = getHalfHeight(b, scaleB);
 
     if (!a.isBubble && !b.isBubble) {
-      const thresholdX = (a.hw + b.hw) * scaleFactor + pad;
-      const thresholdY = (a.hh + b.hh) * scaleFactor + pad;
-      return Math.abs(a.x - b.x) < thresholdX && Math.abs(a.y - b.y) < thresholdY;
-    } else if (!a.isBubble && b.isBubble) {
-      const phw = a.hw * scaleFactor;
-      const phh = a.hh * scaleFactor;
-      const cr  = b.hw * scaleFactor;
-
-      const closestX = Math.max(a.x - phw, Math.min(b.x, a.x + phw));
-      const closestY = Math.max(a.y - phh, Math.min(b.y, a.y + phh));
-
-      const dx = b.x - closestX;
-      const dy = b.y - closestY;
-      const distSq = dx * dx + dy * dy;
-
-      const limit = cr + pad;
-      return distSq < limit * limit;
-    } else if (a.isBubble && !b.isBubble) {
-      const phw = b.hw * scaleFactor;
-      const phh = b.hh * scaleFactor;
-      const cr  = a.hw * scaleFactor;
-
-      const closestX = Math.max(b.x - phw, Math.min(a.x, b.x + phw));
-      const closestY = Math.max(b.y - phh, Math.min(a.y, b.y + phh));
-
-      const dx = a.x - closestX;
-      const dy = a.y - closestY;
-      const distSq = dx * dx + dy * dy;
-
-      const limit = cr + pad;
-      return distSq < limit * limit;
-    } else {
-      const ra = a.hw * scaleFactor;
-      const rb = b.hw * scaleFactor;
-      const dx = a.x - b.x;
-      const dy = a.y - b.y;
-      const distSq = dx * dx + dy * dy;
-
-      const limit = ra + rb + pad;
-      return distSq < limit * limit;
+      return (
+        Math.abs(a.x - b.x) < ahw + bhw + pad &&
+        Math.abs(a.y - b.y) < ahh + bhh + pad
+      );
     }
+
+    if (a.isBubble && b.isBubble) {
+      const limit = circleRadius(a, scaleA) + circleRadius(b, scaleB) + pad;
+      return Math.hypot(a.x - b.x, a.y - b.y) < limit;
+    }
+
+    const rect = a.isBubble ? b : a;
+    const circle = a.isBubble ? a : b;
+    const rectScale = a.isBubble ? scaleB : scaleA;
+    const circleScale = a.isBubble ? scaleA : scaleB;
+    const rhw = getHalfWidth(rect, rectScale);
+    const rhh = getHalfHeight(rect, rectScale);
+    const cr = circleRadius(circle, circleScale);
+    const closestX = Math.max(rect.x - rhw, Math.min(circle.x, rect.x + rhw));
+    const closestY = Math.max(rect.y - rhh, Math.min(circle.y, rect.y + rhh));
+    const dx = circle.x - closestX;
+    const dy = circle.y - closestY;
+
+    return dx * dx + dy * dy < (cr + pad) * (cr + pad);
   }
 
-  function predictedOverlap(a, b, pad) {
-    const oa = ORBITS[a.orbitIdx], ob = ORBITS[b.orbitIdx];
-    const pa = orbitPos(a, oa.dps * LOOKAHEAD_S);
-    const pb = orbitPos(b, ob.dps * LOOKAHEAD_S);
+  function proximityScale(a, b) {
+    const dx = Math.abs(a.x - b.x);
+    const dy = Math.abs(a.y - b.y);
 
-    const tempA = { ...a, x: pa.x, y: pa.y };
-    const tempB = { ...b, x: pb.x, y: pb.y };
+    if (!a.isBubble && !b.isBubble) {
+      const reqX = (dx - CONTACT_PAD) / Math.max(a.baseHw + b.baseHw, 1);
+      const reqY = (dy - CONTACT_PAD) / Math.max(a.baseHh + b.baseHh, 1);
+      return clamp(MIN_SCALE, Math.max(reqX, reqY) - SCALE_MARGIN, 1);
+    }
 
-    return overlap(tempA, tempB, pad);
+    const dist = Math.hypot(a.x - b.x, a.y - b.y);
+    const radiusA = a.isBubble ? circleRadius(a, 1) : rectRadius(a, 1);
+    const radiusB = b.isBubble ? circleRadius(b, 1) : rectRadius(b, 1);
+    const req = (dist - CONTACT_PAD) / Math.max(radiusA + radiusB, 1);
+
+    return clamp(MIN_SCALE, req - SCALE_MARGIN, 1);
   }
 
-  function resolveCollisions() {
-    wantsSmall.fill(false);
+  function pairNeedsScale(a, b, key) {
+    const nowWarning = overlapsAtScale(a, b, WARNING_PAD, 1, 1);
+    const stillActive = activePairs.has(key) && overlapsAtScale(a, b, RELEASE_PAD, 1, 1);
 
-    for (let i = 0; i < items.length - 1; i++) {
-      for (let j = i + 1; j < items.length; j++) {
-        const a = items[i], b = items[j];
-        if (a.orbitIdx === b.orbitIdx) continue;
+    if (nowWarning || stillActive) {
+      return true;
+    }
 
-        const key         = `${i}:${j}`;
-        const nowHit      = overlap(a, b, COLLISION_PAD);
-        const futureHit   = predictedOverlap(a, b, COLLISION_PAD);
-        const stillActive = activePairs.has(key) && overlap(a, b, RELEASE_PAD);
+    const futureA = projectedItem(a, ORBITS[a.orbitIdx].dps * LOOKAHEAD_S);
+    const futureB = projectedItem(b, ORBITS[b.orbitIdx].dps * LOOKAHEAD_S);
+    return overlapsAtScale(futureA, futureB, WARNING_PAD, 1, 1);
+  }
 
-        if (nowHit || futureHit || stillActive) {
-          activePairs.add(key);
-          wantsSmall[a.idx] = true;
-          wantsSmall[b.idx] = true;
-        } else {
+  function resolveScaleTargets() {
+    items.forEach(item => {
+      item.targetAvoidScale = 1;
+    });
+
+    for (let i = 0; i < items.length - 1; i += 1) {
+      for (let j = i + 1; j < items.length; j += 1) {
+        const a = items[i];
+        const b = items[j];
+        const key = `${i}:${j}`;
+
+        if (!pairNeedsScale(a, b, key)) {
           activePairs.delete(key);
+          continue;
         }
+
+        activePairs.add(key);
+        const futureA = projectedItem(a, ORBITS[a.orbitIdx].dps * LOOKAHEAD_S);
+        const futureB = projectedItem(b, ORBITS[b.orbitIdx].dps * LOOKAHEAD_S);
+        const targetScale = Math.min(proximityScale(a, b), proximityScale(futureA, futureB));
+        a.targetAvoidScale = Math.min(a.targetAvoidScale, targetScale);
+        b.targetAvoidScale = Math.min(b.targetAvoidScale, targetScale);
       }
     }
   }
 
-  /* ── Randomise float animations (stagger for organic feel) ─────────── */
   stage.querySelectorAll('.spin-pill').forEach(el => {
     el.style.animationDuration = (12.0 + Math.random() * 8.0).toFixed(2) + 's';
-    el.style.animationDelay   = (-Math.random() * 20).toFixed(2) + 's';
+    el.style.animationDelay = (-Math.random() * 20).toFixed(2) + 's';
   });
+
   stage.querySelectorAll('.orbit-bubble').forEach(el => {
     el.style.animationDuration = (12.0 + Math.random() * 8.0).toFixed(2) + 's';
-    el.style.animationDelay   = (-Math.random() * 20).toFixed(2) + 's';
+    el.style.animationDelay = (-Math.random() * 20).toFixed(2) + 's';
   });
 
   measureItems();
@@ -191,34 +231,39 @@ export function initOrbit() {
     const dt = Math.min((now - lastTime) / 1000, 0.05);
     lastTime = now;
 
+    if (now - lastMeasure > RECOMPUTE_SIZE_MS) {
+      measureItems();
+      lastMeasure = now;
+    }
+
     if (!paused) {
-      ORBITS.forEach((o, i) => {
-        angles[i] += o.dps * dt;
-        if (angles[i] >  360) angles[i] -= 360;
+      ORBITS.forEach((orbit, i) => {
+        angles[i] += orbit.dps * dt;
+        if (angles[i] > 360) angles[i] -= 360;
         if (angles[i] < -360) angles[i] += 360;
       });
     }
 
     items.forEach(item => {
-      const p  = orbitPos(item, 0);
-      item.x   = p.x;
-      item.y   = p.y;
-      item.el.style.left = p.x + 'px';
-      item.el.style.top  = p.y + 'px';
+      const position = orbitPos(item);
+      item.x = position.x;
+      item.y = position.y;
+      item.el.style.left = `${position.x}px`;
+      item.el.style.top = `${position.y}px`;
     });
 
-    resolveCollisions();
+    resolveScaleTargets();
 
-    items.forEach((item, i) => {
-      const target = wantsSmall[i] ? AVOID_SCALE : 1;
-      const speed  = wantsSmall[i] ? LERP_SHRINK : LERP_GROW;
-      smoothScale[i] += (target - smoothScale[i]) * (1 - Math.exp(-speed * dt));
-      smoothScale[i]  = Math.min(1, Math.max(AVOID_SCALE, smoothScale[i]));
+    items.forEach(item => {
+      const speed = item.targetAvoidScale < item.avoidScale ? SCALE_IN_SPEED : SCALE_OUT_SPEED;
+      item.avoidScale = lerpExp(item.avoidScale, item.targetAvoidScale, speed, dt);
+      item.avoidScale = clamp(MIN_SCALE, item.avoidScale, 1);
 
-      if (Math.abs(smoothScale[i] - 1) < 0.0005) {
+      if (Math.abs(item.avoidScale - 1) < 0.0005) {
+        item.avoidScale = 1;
         item.el.style.removeProperty('--avoid-scale');
       } else {
-        item.el.style.setProperty('--avoid-scale', smoothScale[i].toFixed(4));
+        item.el.style.setProperty('--avoid-scale', item.avoidScale.toFixed(4));
       }
     });
   }

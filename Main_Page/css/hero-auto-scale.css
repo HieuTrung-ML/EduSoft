@@ -16,14 +16,14 @@
     --hero-vh: 88vh;
     --hero-top-pad: clamp(84px, 6vh, 112px);
     --hero-bottom-pad: clamp(28px, 3vh, 44px);
-    --hero-gap: clamp(30px, 3.6vw, 68px);
+    --hero-gap: clamp(24px, 3vw, 56px);
     --hero-copy-size: clamp(42px, 3.05vw, 58px);
     --hero-copy-width: 620px;
     --hero-subcopy-size: clamp(16px, 1.05vw, 20px);
     --hero-button-w: clamp(182px, 11.5vw, 232px);
     --hero-button-h: clamp(54px, 3.4vw, 66px);
-    --orbit-scale: 0.78;
-    --orbit-x-shift: -2%;
+    --orbit-scale: 0.90;
+    --orbit-x-shift: -5%;
   }
 
   @supports (height: 100svh) {
@@ -56,7 +56,9 @@
   .ellipse-parent > .frame-parent {
     width: var(--hero-runtime-container, var(--desktop-container)) !important;
     display: grid !important;
-    grid-template-columns: minmax(400px, 0.9fr) minmax(520px, 1.1fr) !important;
+    grid-template-columns:
+      minmax(400px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
+      minmax(520px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
     gap: var(--hero-runtime-gap, var(--hero-gap)) !important;
     align-items: center !important;
     padding: 0 !important;
@@ -71,6 +73,7 @@
   .ellipse-parent .frame-container {
     height: calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale))) !important;
     min-width: 0 !important;
+    align-self: center !important;
     transform: translateX(var(--orbit-x-shift)) !important;
     justify-content: center !important;
     overflow: visible !important;
@@ -115,8 +118,8 @@
     --hero-subcopy-size: 16px;
     --hero-button-w: clamp(156px, 18vw, 190px);
     --hero-button-h: 50px;
-    --orbit-scale: 0.58;
-    --orbit-x-shift: -3%;
+    --orbit-scale: 0.68;
+    --orbit-x-shift: -4%;
   }
 
   @supports (height: 100svh) {
@@ -126,7 +129,9 @@
   }
 
   .ellipse-parent > .frame-parent {
-    grid-template-columns: minmax(320px, 0.95fr) minmax(390px, 1.05fr) !important;
+    grid-template-columns:
+      minmax(320px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
+      minmax(390px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
   }
 }
 
@@ -139,8 +144,8 @@
     --hero-gap: clamp(24px, 3vw, 36px);
     --hero-copy-size: clamp(38px, 3.2vw, 46px);
     --hero-copy-width: 540px;
-    --orbit-scale: 0.66;
-    --orbit-x-shift: -2.5%;
+    --orbit-scale: 0.76;
+    --orbit-x-shift: -5%;
   }
 
   @supports (height: 100svh) {
@@ -150,7 +155,9 @@
   }
 
   .ellipse-parent > .frame-parent {
-    grid-template-columns: minmax(380px, 0.92fr) minmax(490px, 1.08fr) !important;
+    grid-template-columns:
+      minmax(380px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
+      minmax(490px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
   }
 }
 
@@ -162,8 +169,8 @@
     --hero-vh: 90vh;
     --hero-copy-size: clamp(44px, 3.25vw, 52px);
     --hero-copy-width: 590px;
-    --orbit-scale: 0.72;
-    --orbit-x-shift: -2%;
+    --orbit-scale: 0.82;
+    --orbit-x-shift: -5%;
   }
 
   @supports (height: 100svh) {
@@ -181,8 +188,8 @@
     --hero-vh: 90vh;
     --hero-copy-size: clamp(48px, 3.1vw, 56px);
     --hero-copy-width: 620px;
-    --orbit-scale: 0.78;
-    --orbit-x-shift: -2%;
+    --orbit-scale: 0.88;
+    --orbit-x-shift: -5%;
   }
 
   @supports (height: 100svh) {
@@ -200,7 +207,8 @@
     --hero-vh: 90vh;
     --hero-copy-size: clamp(52px, 3vw, 60px);
     --hero-copy-width: 650px;
-    --orbit-scale: 0.78;
+    --orbit-scale: 0.92;
+    --orbit-x-shift: -5%;
   }
 
   @supports (height: 100svh) {
@@ -218,7 +226,8 @@
     --hero-vh: 88vh;
     --hero-copy-size: clamp(56px, 2.85vw, 64px);
     --hero-copy-width: 680px;
-    --orbit-scale: 0.82;
+    --orbit-scale: 0.94;
+    --orbit-x-shift: -4%;
   }
 
   @supports (height: 100svh) {
@@ -236,7 +245,8 @@
     --hero-vh: 78vh;
     --hero-copy-size: clamp(58px, 2.45vw, 68px);
     --hero-copy-width: 700px;
-    --orbit-scale: 0.84;
+    --orbit-scale: 0.96;
+    --orbit-x-shift: -3%;
   }
 
   @supports (height: 100svh) {
@@ -248,13 +258,17 @@
 
 @media (min-width: 1200px) {
   .ellipse-parent > .frame-parent {
-    grid-template-columns: minmax(520px, 1fr) minmax(480px, 1fr) !important;
+    grid-template-columns:
+      minmax(520px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
+      minmax(480px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
   }
 }
 
 @media (min-width: 1440px) {
   .ellipse-parent > .frame-parent {
-    grid-template-columns: minmax(600px, 1fr) minmax(540px, 1fr) !important;
+    grid-template-columns:
+      minmax(600px, var(--hero-runtime-copy-width, var(--hero-copy-width)))
+      minmax(540px, calc(1051px * var(--orbit-runtime-scale, var(--orbit-scale)))) !important;
   }
 }
 
@@ -281,7 +295,7 @@
   :root {
     --hero-copy-size: clamp(32px, 3.8vw, 40px);
     --hero-copy-width: 450px;
-    --orbit-scale: 0.58;
+    --orbit-scale: 0.68;
   }
 }
 
@@ -289,7 +303,7 @@
   :root {
     --hero-copy-size: clamp(38px, 3.2vw, 46px);
     --hero-copy-width: 540px;
-    --orbit-scale: 0.66;
+    --orbit-scale: 0.76;
   }
 }
 
@@ -298,7 +312,7 @@
     --hero-max-h: 800px;
     --hero-copy-size: clamp(42px, 3.2vw, 52px);
     --hero-copy-width: 590px;
-    --orbit-scale: 0.70;
+    --orbit-scale: 0.80;
   }
 }
 
@@ -307,7 +321,7 @@
     --hero-max-h: 820px;
     --hero-copy-size: clamp(48px, 3vw, 58px);
     --hero-copy-width: 630px;
-    --orbit-scale: 0.76;
+    --orbit-scale: 0.86;
   }
 }
 
@@ -317,7 +331,7 @@
     --hero-max-h: 840px;
     --hero-copy-size: clamp(52px, 2.85vw, 64px);
     --hero-copy-width: 680px;
-    --orbit-scale: 0.76;
+    --orbit-scale: 0.88;
   }
 }
 
@@ -327,7 +341,7 @@
     --hero-max-h: 860px;
     --hero-copy-size: clamp(56px, 2.4vw, 68px);
     --hero-copy-width: 700px;
-    --orbit-scale: 0.80;
+    --orbit-scale: 0.90;
   }
 }
 
@@ -347,42 +361,42 @@
 
 @media (min-width: 1200px) and (max-width: 1366px) and (max-height: 760px) {
   :root {
-    --orbit-scale: 0.60;
+    --orbit-scale: 0.72;
   }
 }
 
 @media (min-width: 1367px) and (max-width: 1536px) and (max-height: 760px) {
   :root {
-    --orbit-scale: 0.64;
+    --orbit-scale: 0.76;
   }
 }
 
 @media (min-width: 1537px) and (max-width: 1728px) and (max-height: 760px) {
   :root {
     --hero-max-h: 720px;
-    --orbit-scale: 0.70;
+    --orbit-scale: 0.82;
   }
 }
 
 @media (min-width: 1729px) and (max-height: 760px) {
   :root {
     --hero-max-h: 740px;
-    --orbit-scale: 0.76;
+    --orbit-scale: 0.88;
   }
 }
 
 @media (min-width: 1537px) and (max-height: 820px) and (min-aspect-ratio: 2 / 1) {
   :root {
     --hero-max-h: 820px;
-    --hero-gap: clamp(42px, 5vw, 90px);
-    --orbit-x-shift: 0%;
+    --hero-gap: clamp(30px, 4vw, 72px);
+    --orbit-x-shift: -3%;
   }
 }
 
 @media (min-width: 1729px) and (max-height: 820px) and (min-aspect-ratio: 2 / 1) {
   :root {
     --hero-copy-size: clamp(56px, 2.9vw, 66px);
-    --orbit-scale: 0.78;
+    --orbit-scale: 0.92;
   }
 }
 
