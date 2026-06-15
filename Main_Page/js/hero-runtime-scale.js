@@ -106,13 +106,13 @@ function computeBaseScale(viewport) {
   } else if (vw >= 1729) {
     orbitScale = clamp(0.8, widthFactor * heightFactor * wideShortBoost, 0.92);
   } else if (vw >= 1537) {
-    orbitScale = clamp(0.74, widthFactor * heightFactor * wideShortBoost, 0.84);
+    orbitScale = clamp(0.78, widthFactor * heightFactor * wideShortBoost * 1.05, 0.86);
   } else if (vw >= 1367) {
-    orbitScale = clamp(0.68, widthFactor * heightFactor * wideShortBoost, 0.76);
+    orbitScale = clamp(0.72, widthFactor * heightFactor * wideShortBoost * 1.1, 0.80);
   } else if (vw >= 1200) {
-    orbitScale = clamp(0.62, widthFactor * heightFactor * wideShortBoost, 0.7);
+    orbitScale = clamp(0.66, widthFactor * heightFactor * wideShortBoost * 1.15, 0.74);
   } else {
-    orbitScale = clamp(HERO_CONFIG.ORBIT_MIN, widthFactor * 0.9, 0.6);
+    orbitScale = clamp(0.58, widthFactor * 1.25, 0.66);
   }
 
   if (short && !wideShort) {
