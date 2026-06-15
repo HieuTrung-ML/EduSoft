@@ -10,6 +10,7 @@
     --content-max: 1484px;
     --page-pad: clamp(44px, 5vw, 96px);
     --desktop-container: min(calc(100vw - (2 * var(--page-pad))), var(--page-max));
+    --hero-fill-h: 100vh;
 
     --hero-min-h: 700px;
     --hero-max-h: 980px;
@@ -32,6 +33,7 @@
   @supports (height: 100svh) {
     :root {
       --hero-vh: 88svh;
+      --hero-fill-h: 100svh;
     }
   }
 
@@ -43,8 +45,8 @@
 
   .ellipse-parent {
     box-sizing: border-box !important;
-    height: var(--hero-runtime-h, 100svh) !important;
-    min-height: var(--hero-runtime-h, 100svh) !important;
+    height: max(var(--hero-runtime-h, var(--hero-fill-h)), var(--hero-fill-h)) !important;
+    min-height: max(var(--hero-runtime-h, var(--hero-fill-h)), var(--hero-fill-h)) !important;
     padding-top: var(--hero-top-pad) !important;
     padding-bottom: var(--hero-bottom-pad) !important;
     justify-content: center !important;
@@ -52,8 +54,8 @@
   }
 
   .hero-runtime-ready .ellipse-parent {
-    height: var(--hero-runtime-h) !important;
-    min-height: var(--hero-runtime-h) !important;
+    height: max(var(--hero-runtime-h), var(--hero-fill-h)) !important;
+    min-height: max(var(--hero-runtime-h), var(--hero-fill-h)) !important;
   }
 
   .ellipse-parent > .frame-parent {

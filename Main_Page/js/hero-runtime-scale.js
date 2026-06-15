@@ -94,10 +94,12 @@ function computeBaseScale(viewport) {
   const veryShort = vh <= HERO_CONFIG.VERY_SHORT_HEIGHT;
   const wideShort = vw >= 1537 && short && aspect >= HERO_CONFIG.WIDE_ASPECT;
 
+  const minHeroHeight = Math.max(HERO_CONFIG.HERO_MIN, vh);
+  const maxHeroHeight = Math.max(HERO_CONFIG.HERO_MAX, minHeroHeight);
   const heroHeight = clamp(
-    HERO_CONFIG.HERO_MIN,
+    minHeroHeight,
     vw >= 1200 ? vh * 1.08 : vh,
-    HERO_CONFIG.HERO_MAX
+    maxHeroHeight
   );
   const widthFactor = clamp(0.75, vw / HERO_CONFIG.BASE_WIDTH, 1.1);
   const heightFactor = clamp(0.85, vh / HERO_CONFIG.BASE_HEIGHT, 1.05);
@@ -277,10 +279,12 @@ function applyHeroScale() {
     }
 
     if (state.heroTooTall) {
+      const minHeroHeight = Math.max(HERO_CONFIG.HERO_MIN, viewport.vh);
+      const maxHeroHeight = Math.max(HERO_CONFIG.HERO_MAX, minHeroHeight);
       scale.heroHeight = clamp(
-        HERO_CONFIG.HERO_MIN,
+        minHeroHeight,
         scale.heroHeight - 20,
-        HERO_CONFIG.HERO_MAX
+        maxHeroHeight
       );
       scale.orbitScale = clamp(
         HERO_CONFIG.ORBIT_MIN,
